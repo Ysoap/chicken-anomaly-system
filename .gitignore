@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyTorch models
+*.pth
+*.h5
+*.onnx
+*.tflite
+
+# Dataset (large files)
+data/ChickenDet/*
+data/ChickenAct/*
+!data/ChickenDet/.gitkeep
+!data/ChickenAct/.gitkeep
+
+# Android
+mobile-app/.gradle/
+mobile-app/.idea/
+mobile-app/local.properties
+mobile-app/google-services.json
+mobile-app/build/
+mobile-app/app/build/
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Firebase
+firebase-adminsdk-*.json
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Secrets
+.env
+*.key
+*.pem

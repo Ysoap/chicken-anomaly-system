@@ -1,0 +1,7 @@
+# Pipeline configuration
+stage1:
+  enabled: true
+stage2:
+  enabled: true
+stage3:
+  enabled: true

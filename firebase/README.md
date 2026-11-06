@@ -1,0 +1,3 @@
+# Firebase Configuration
+
+TODO: Documentation

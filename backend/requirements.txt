@@ -1,0 +1,16 @@
+torch>=2.0.0
+torchvision
+transformers
+opencv-python
+numpy
+pandas
+scikit-learn
+fastapi
+uvicorn
+firebase-admin
+websockets
+streamlit
+matplotlib
+seaborn
+tqdm
+pytest

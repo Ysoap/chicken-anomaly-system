@@ -1,0 +1,3 @@
+# RT-DETR configuration
+model: rt_detr_v2_l
+num_classes: 1
