@@ -178,6 +178,18 @@ sync checkpoint tiap 120 detik, bisa resume).
   (tambah `--resume auto` untuk lanjut dari checkpoint).
 - Output: checkpoint Trainer per epoch + model terbaik (`best/`) +
   `train_metrics.json` (akurasi val + per kelas).
+- **Masalah 10 Nov 2026 (sudah diperbaiki):** run pertama training mati
+  di awal — `TypeError: TrainingArguments got an unexpected keyword
+  argument 'warmup_ratio'`, exit code 1, tanpa checkpoint; cell notebook
+  tetap ke-centang dan print "Training selesai" walau gagal.
+  Penyebab: `warmup_ratio` baru ada di transformers 4.46, tapi pin
+  notebook (`>=4.40`) tidak memaksa upgrade kalau versi lama sudah
+  terpasang di Colab; transformers 5.x juga menghapus keyword itu.
+  Perbaikan (commit `a346e64`): `train.py` (`make_training_args()`)
+  mencoba `warmup_ratio` dulu, kalau ditolak ulangi tanpa warmup —
+  jadi jalan di transformers lama, 4.46+, maupun 5.x; pin notebook
+  jadi `>=4.46`; cell training sekarang raise `RuntimeError` kalau
+  exit code != 0 (gagal keras, bukan pura-pura selesai).
 
 ## Inference & clip pipeline
 
