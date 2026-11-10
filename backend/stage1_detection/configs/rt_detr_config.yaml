@@ -1,3 +1,38 @@
-# RT-DETR configuration
-model: rt_detr_v2_l
+# RT-DETRv2-S — konfigurasi training Stage 1 (yang benar-benar dipakai)
+#
+# CATATAN PENTING: dokumen awal repo ini menspesifikasikan RT-DETRv2-L
+# (varian besar, ~110M parameter, via Hugging Face). Yang benar-benar
+# dilatih dan terbukti jalan adalah RT-DETRv2-S (varian kecil, backbone
+# PResNet-18, repo resmi lyuwenyu/RT-DETR) — dan hasilnya melampaui target
+# dokumen (AP 0,9261 vs target mAP >0,85). Jadi konfigurasi di bawah ini
+# adalah yang dipakai, bukan yang tertulis di spesifikasi awal.
+model: rt_detr_v2_s
+variant: rtdetrv2_r18vd_120e_coco
+backbone: PResNet18
+repo: https://github.com/lyuwenyu/RT-DETR
+config: configs/rtdetrv2/rtdetrv2_r18vd_120e_coco.yml
+pretrained: rtdetrv2_r18vd_120e_coco_rerun_48.1.pth  # COCO, AP 48.1
+
 num_classes: 1
+remap_mscoco_category: true
+
+training:
+  epoches: 50
+  checkpoint_freq: 5
+  train_batch_size: 16
+  val_batch_size: 32
+  use_amp: true
+  hardware: Google Colab Tesla T4 (gratis)
+  pace: ~11-13 menit/epoch
+
+dataset:
+  name: ChickenDet (ChickenVerse)
+  images: 6539
+  instances: 153764
+  split:
+    train: 5222 images / 116329 instances
+    validation: 1067 images / 24815 instances
+    test: 250 images / 12620 instances  # held-out, hanya evaluasi akhir
+  # PERBAIKAN WAJIB: semua anotasi asli iscrowd=1 -> diubah ke 0
+  # (disimpan sebagai *_fixed.json, file asli tidak diubah). Tanpa ini
+  # training jalan dengan 0 box.
