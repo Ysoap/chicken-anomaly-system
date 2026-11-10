@@ -1,0 +1,22 @@
+{
+  "model": "rt_detr_v2_s (RT-DETRv2-S, rtdetrv2_r18vd_120e_coco)",
+  "checkpoint": "models/best.pth (bobot EMA)",
+  "checkpoint_md5": "6f8457e56c9147d1ba8efc14a7ba05c2",
+  "date": "2026-11-10",
+  "split": "test (held-out, 250 gambar)",
+  "score_threshold": 0.05,
+  "max_boxes_per_image": 300,
+  "n_images": 250,
+  "n_gt_annotations": 12620,
+  "n_predictions": 31144,
+  "elapsed_seconds": 315.2,
+  "AP": 0.8306,
+  "AP50": 0.9674,
+  "AP75": 0.8925,
+  "AP_small": 0.4541,
+  "AP_medium": 0.8355,
+  "AP_large": 0.9083,
+  "AR_max1": 0.0197,
+  "AR_max10": 0.1932,
+  "AR_max100": 0.8694
+}

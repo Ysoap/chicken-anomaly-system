@@ -56,6 +56,34 @@ Log lengkap 65 baris (termasuk epoch yang terulang karena resume):
 `training_log.txt`. Epoch 49 = epoch ke-50 (epoch dihitung dari 0) — tidak
 ada "epoch 50" sebagai angka.
 
+## Evaluasi test set (10 Nov 2026)
+
+`eval_test_set.py` menjalankan `models/best.pth` (bobot EMA, threshold skor
+0,05, maks 300 box/gambar) di **semua 250 gambar test** (kandang komersial
+held-out, 12.620 anotasi) dan menghitung metrik dengan pycocotools COCOeval.
+Hasil lengkap: `results/test_set_eval.json` (CPU, ±5 menit).
+
+| Metrik | Nilai |
+|---|---|
+| AP (mAP 0.50:0.95) | **0,8306** |
+| AP50 | 0,9674 |
+| AP75 | 0,8925 |
+| AP small / medium / large | 0,4541 / 0,8355 / 0,9083 |
+
+**Dibaca jujur:** AP test set 0,8306 sedikit di **bawah target dokumen
+(mAP > 0,85)** — target itu tercapai di val (0,9261), tapi test split lebih
+sulit: kandang komersial yang belum pernah dilihat model, lebih padat
+(median 48 ayam/gambar vs ~33 di val), dan ayam kecil/jauh lemah
+(AP small 0,4541). AP50 0,9674 tetap tinggi, jadi box-nya cukup akurat
+untuk kebutuhan tracking (IoU 0,5). Peningkatan yang masuk akal ke depan:
+augmentasi / resolusi input lebih besar untuk objek kecil, atau tambah data
+latih dari kandang sejenis — bukan menaikkan threshold secara artifisial.
+
+```bash
+python eval_test_set.py --zip /path/ke/ChickenDet.zip \
+    --repo-dir /path/ke/RT-DETR/rtdetrv2_pytorch
+```
+
 ## Cek prediksi contoh
 
 `inference.py` menjalankan `models/best.pth` (bobot EMA — sama seperti saat
@@ -81,6 +109,59 @@ python inference.py --zip /path/ke/ChickenDet.zip
 python inference.py --zip /path/ke/ChickenDet.zip --samples 3 --threshold 0.6
 ```
 
+## Tracking (ByteTrack) — selesai 10 Nov 2026
+
+`inference.py --track` menjalankan deteksi per frame + **ByteTrack** dari
+library `supervision` 0.25.1 (versi terakhir yang masih membawa tracker;
+supervision ≥ 0.26 menghapus modul trackers — jadi jangan upgrade
+supervision tanpa mengganti tracker). Tidak ada tracker yang ditulis
+sendiri. Output: video beranotasi (box + `#TrackID skor`) di `examples/`,
+track per frame di `results/tracks.json`, ringkasan di
+`results/tracking_summary.json`.
+
+```bash
+# dari urutan frame (mis. frame video yang diekstrak)
+python inference.py --track --frames-dir /path/ke/frame/ --fps 10
+# atau langsung dari file video
+python inference.py --track --video /path/ke/video.mp4 --fps 10
+```
+
+### Hasil uji (10 Nov 2026)
+
+Video uji: 72 frame validasi berurutan, kamera fCam16
+(`fCam16.20230220_214500_0000–0071.jpg`, 1400×900, ~33 ayam/frame),
+deteksi threshold 0,3, ByteTrack default (match IoU 0,8, buffer 30 frame).
+Jalan di CPU (±2,5 menit).
+
+| Metrik | Nilai |
+|---|---|
+| Frame | 72 |
+| Rata-rata deteksi / frame | 33,96 |
+| Track aktif per frame | ~29–35 (frame 0: 33, frame 71: 33) |
+| Total Track ID unik | 91 |
+| ID baru muncul setelah frame 0 | 58 |
+| ID frame 0 yang bertahan sampai frame 71 | 10 dari 33 |
+| Median umur track | 33 frame |
+| Track hidup ≥ 10 / ≥ 30 frame | 70 / 49 |
+
+**Dibaca jujur:** tracking jalan dan ID-nya konsisten untuk sebagian besar
+ayam (median umur track 33 dari 72 frame, 49 track hidup ≥ 30 frame), tapi
+**ID switch masih sering** — hanya 10 dari 33 ID awal yang bertahan sampai
+akhir klip. Penyebabnya: kandang padat + oklusi berat antar ayam yang
+mirip, ayam bergerak cepat (ada yang motion-blur sampai tidak terdeteksi
+di satu frame), dan ByteTrack tanpa fitur penampilan (hanya IoU + Kalman).
+Untuk Stage 2 ini cukup sebagai fondasi (klip per ayam dipotong dari track),
+tapi perilaku yang butuh identitas jangka panjang akan terpotong-potong;
+perbaikan ke depan: kamera/frame-rate lebih tinggi, atau tracker dengan
+ReID (mis. BoT-SORT).
+
+**Eksperimen tuning (dicatat, bukan dipakai):** match IoU diturunkan ke 0,6
+dicoba 10 Nov — hasilnya *lebih buruk* (154 ID unik, median umur track
+11,5 frame, hanya 4 ID awal bertahan). Jadi default 0,8 dipertahankan.
+
+Contoh frame beranotasi: `examples/track_frame_000.png`,
+`track_frame_024.png`, `track_frame_048.png`, `track_frame_071.png`.
+
 ## Model
 
 `models/best.pth` (322.403.181 byte, md5 `6f8457e56c9147d1ba8efc14a7ba05c2`)
@@ -93,24 +174,31 @@ git lfs pull
 
 ## Yang belum dikerjakan
 
-- **ByteTrack** (tracking + Track ID konsisten per ekor) belum terintegrasi —
-  `inference.py` saat ini murni deteksi per frame. Ini langkah berikut Stage 1.
-- Evaluasi di **test set** (250 gambar held-out) belum dilakukan.
+- ~~ByteTrack (tracking + Track ID konsisten per ekor)~~ — selesai 10 Nov 2026
+  (lihat "Tracking (ByteTrack)" di atas; ID switch masih sering, catatannya
+  ada di sana).
+- ~~Evaluasi di test set (250 gambar held-out)~~ — selesai 10 Nov 2026
+  (AP 0,8306 / AP50 0,9674; AP sedikit di bawah target 0,85 — lihat
+  "Evaluasi test set").
 - Uji FPS/latensi di hardware target (RTX 3060) belum dilakukan — angka 30 FPS
-  di dokumen masih target, bukan hasil ukur.
+  di dokumen masih target, bukan hasil ukur. Di CPU VM (±1,2 detik/gambar
+  untuk deteksi) jelas bukan hardware target.
+- Perbaikan AP objek kecil (AP small 0,4541 di test set) belum dicoba.
 
 ## Struktur folder
 
 ```
 backend/stage1_detection/
 ├── train.py            # training standalone (port notebook Colab)
-├── inference.py        # inference + gambar box prediksi vs GT
+├── inference.py        # inference + gambar box prediksi vs GT + mode --track (ByteTrack)
+├── eval_test_set.py    # evaluasi test set 250 gambar (COCOeval)
 ├── configs/
 │   └── rt_detr_config.yaml   # konfigurasi training yang dipakai
 ├── models/
 │   └── best.pth        # model final (Git LFS)
 ├── notebooks/
 │   └── Colab-ChickenDet-RTDETRv2-Official.ipynb  # notebook training asli
-├── examples/           # contoh hasil prediksi (2 gambar)
+├── examples/           # contoh hasil prediksi (2 gambar) + video/frame tracking
+├── results/            # test_set_eval.json + tracks.json + tracking_summary.json
 └── training_log.txt    # log epoch/AP dari training
 ```
