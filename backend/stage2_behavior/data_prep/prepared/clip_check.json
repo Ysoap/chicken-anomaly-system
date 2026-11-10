@@ -1,0 +1,344 @@
+{
+  "body_shaking": {
+    "n_clips": 352,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 21,
+        "fps": 25.0,
+        "width": 142,
+        "height": 118,
+        "duration_s": 0.84
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 108,
+        "height": 124,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "drinking": {
+    "n_clips": 1373,
+    "label4": "INGESTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 100,
+        "height": 128,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 112,
+        "height": 114,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "dust_bathing": {
+    "n_clips": 530,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 144,
+        "height": 160,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 12,
+        "fps": 25.0,
+        "width": 100,
+        "height": 166,
+        "duration_s": 0.48
+      }
+    ]
+  },
+  "feeding": {
+    "n_clips": 1924,
+    "label4": "INGESTIVE",
+    "checked": [
+      {
+        "path": "F02_00001.mp4",
+        "ok": true,
+        "n_frames": 42,
+        "fps": 25.0,
+        "width": 150,
+        "height": 206,
+        "duration_s": 1.68
+      },
+      {
+        "path": "F02_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 144,
+        "height": 224,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "head_scratching": {
+    "n_clips": 500,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 24,
+        "fps": 25.0,
+        "width": 102,
+        "height": 110,
+        "duration_s": 0.96
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 124,
+        "height": 186,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "litter_pecking": {
+    "n_clips": 858,
+    "label4": "INGESTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 26,
+        "fps": 25.0,
+        "width": 120,
+        "height": 146,
+        "duration_s": 1.04
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 102,
+        "height": 112,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "litter_scratching": {
+    "n_clips": 577,
+    "label4": "INGESTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 100,
+        "height": 124,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 104,
+        "height": 132,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "pooping": {
+    "n_clips": 260,
+    "label4": null,
+    "excluded_reason": "peristiwa fisiologis sesaat, bukan state perilaku (lihat label_mapping)",
+    "checked": []
+  },
+  "preening": {
+    "n_clips": 1917,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 144,
+        "height": 142,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 134,
+        "height": 126,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "resting": {
+    "n_clips": 2419,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 102,
+        "height": 100,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 106,
+        "height": 110,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "running": {
+    "n_clips": 629,
+    "label4": "ACTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 120,
+        "height": 106,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 126,
+        "height": 102,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "standing": {
+    "n_clips": 872,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 126,
+        "height": 134,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 130,
+        "height": 116,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "stretching": {
+    "n_clips": 1202,
+    "label4": "RESTING",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 136,
+        "height": 128,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 134,
+        "height": 112,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "walking": {
+    "n_clips": 1515,
+    "label4": "ACTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 118,
+        "height": 116,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 114,
+        "height": 114,
+        "duration_s": 1.88
+      }
+    ]
+  },
+  "wing_flapping": {
+    "n_clips": 322,
+    "label4": "ACTIVE",
+    "checked": [
+      {
+        "path": "F01_00001.mp4",
+        "ok": true,
+        "n_frames": 47,
+        "fps": 25.0,
+        "width": 110,
+        "height": 110,
+        "duration_s": 1.88
+      },
+      {
+        "path": "F01_00002.mp4",
+        "ok": true,
+        "n_frames": 8,
+        "fps": 25.0,
+        "width": 200,
+        "height": 244,
+        "duration_s": 0.32
+      }
+    ]
+  }
+}
