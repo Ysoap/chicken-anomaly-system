@@ -102,6 +102,50 @@ def compute_metrics(eval_pred):
     return out
 
 
+def make_training_args(args, TrainingArguments):
+    """Bangun TrainingArguments; toleran terhadap transformers lama.
+
+    ``warmup_ratio`` baru ada sejak transformers 4.46. Colab sering masih
+    memakai versi yang lebih lama (pin notebook ``transformers>=4.40`` tidak
+    memaksa upgrade kalau versi lama sudah terpasang), sehingga
+    ``TrainingArguments`` di sana menolak keyword itu dengan TypeError —
+    dan training mati sebelum mulai (kejadian 10 Nov 2026: exit code 1,
+    tanpa checkpoint). Kalau keyword ditolak, ulangi tanpa warmup_ratio
+    (warmup 0) supaya training tetap jalan di transformers lama.
+    """
+    kwargs = dict(
+        output_dir=args.output_dir,
+        num_train_epochs=args.epochs,
+        per_device_train_batch_size=args.train_batch,
+        per_device_eval_batch_size=args.eval_batch,
+        learning_rate=args.lr,
+        lr_scheduler_type="cosine",
+        warmup_ratio=args.warmup_ratio,
+        weight_decay=0.05,
+        logging_steps=20,
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        save_total_limit=3,
+        load_best_model_at_end=True,
+        metric_for_best_model="accuracy",
+        greater_is_better=True,
+        fp16=not args.no_fp16,
+        report_to="none",
+        seed=args.seed,
+        dataloader_num_workers=args.num_workers,
+        remove_unused_columns=False,
+    )
+    try:
+        return TrainingArguments(**kwargs)
+    except TypeError as e:
+        if "warmup_ratio" not in str(e):
+            raise
+        print("transformers di lingkungan ini belum mendukung 'warmup_ratio' "
+              "(butuh >=4.46); lanjut tanpa warmup.")
+        kwargs.pop("warmup_ratio")
+        return TrainingArguments(**kwargs)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--frames-manifest", required=True)
@@ -166,28 +210,7 @@ def main():
     print(f"Model: {args.checkpoint} -> {num_labels} kelas "
           f"({sum(p.numel() for p in model.parameters()) / 1e6:.1f}M parameter)")
 
-    targs = TrainingArguments(
-        output_dir=args.output_dir,
-        num_train_epochs=args.epochs,
-        per_device_train_batch_size=args.train_batch,
-        per_device_eval_batch_size=args.eval_batch,
-        learning_rate=args.lr,
-        lr_scheduler_type="cosine",
-        warmup_ratio=args.warmup_ratio,
-        weight_decay=0.05,
-        logging_steps=20,
-        eval_strategy="epoch",
-        save_strategy="epoch",
-        save_total_limit=3,
-        load_best_model_at_end=True,
-        metric_for_best_model="accuracy",
-        greater_is_better=True,
-        fp16=not args.no_fp16,
-        report_to="none",
-        seed=args.seed,
-        dataloader_num_workers=args.num_workers,
-        remove_unused_columns=False,
-    )
+    targs = make_training_args(args, TrainingArguments)
     trainer = Trainer(model=model, args=targs, train_dataset=train_ds,
                       eval_dataset=eval_ds, compute_metrics=compute_metrics)
 
