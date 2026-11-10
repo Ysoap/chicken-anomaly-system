@@ -107,3 +107,36 @@ def test_output_tracking_ada():
         s = json.load(f)
     assert s['n_frames'] >= 30, f"frame tracking: {s['n_frames']}"
     assert s['unique_track_ids'] > 0, 'tidak ada Track ID sama sekali'
+
+
+def test_uji_tracking_multi_video_ada():
+    """Ringkasan uji tracking multi-video (4 sekuens) ada di tracking_tests/.
+
+    Artefak uji ini dikumpulkan di backend/stage1_detection/tracking_tests/
+    (samples/outputs/summaries + README), bukan di examples/ atau results/.
+    """
+    import json
+    base = os.path.join(STAGE1, 'tracking_tests')
+    summary_path = os.path.join(base, 'summaries',
+                                'multi_video_tracking_summary.json')
+    assert os.path.exists(summary_path), \
+        'tracking_tests/summaries/multi_video_tracking_summary.json tidak ditemukan'
+    with open(summary_path) as f:
+        s = json.load(f)
+    assert len(s) == 4, f"sekuens uji: {len(s)} (harusnya 4)"
+    for name, v in s.items():
+        assert v['n_frames'] >= 50, f"{name}: frame {v['n_frames']}"
+        assert v['unique_track_ids'] > 0, f"{name}: tidak ada Track ID"
+        assert v['median_track_lifetime_frames'] > 0, \
+            f"{name}: median umur track 0"
+        tracks = os.path.join(base, 'summaries', f'tracks_{name}.json')
+        assert os.path.exists(tracks), f"tracks JSON {name} tidak ditemukan"
+    # Minimal 1 video beranotasi penuh + frame contoh tiap video.
+    outputs = os.path.join(base, 'outputs')
+    videos = [p for p in os.listdir(outputs) if p.endswith('.mp4')]
+    assert len(videos) >= 1, 'tidak ada video beranotasi di tracking_tests/outputs/'
+    jpgs = [p for p in os.listdir(outputs) if p.endswith('.jpg')]
+    assert len(jpgs) >= 4, f"frame contoh: {len(jpgs)} (harusnya >= 4)"
+    samples = os.path.join(base, 'samples')
+    mp4s = [p for p in os.listdir(samples) if p.endswith('.mp4')]
+    assert len(mp4s) == 4, f"video sample: {len(mp4s)} (harusnya 4)"

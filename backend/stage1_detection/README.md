@@ -162,6 +162,56 @@ dicoba 10 Nov — hasilnya *lebih buruk* (154 ID unik, median umur track
 Contoh frame beranotasi: `examples/track_frame_000.png`,
 `track_frame_024.png`, `track_frame_048.png`, `track_frame_071.png`.
 
+### Uji tracking multi-video (10 Nov 2026)
+
+Tracker yang sama diuji di **4 video sample berbeda** (masing-masing
+72 frame, 10 fps, threshold deteksi 0,3, ByteTrack default) supaya
+kestabilannya tidak hanya dinilai dari satu kandang. Sekuens dipilih
+dengan kamera, tanggal/waktu, dan kepadatan ayam yang berbeda.
+Semua artefak uji ini ada di `tracking_tests/` (sampel video, video
+beranotasi, frame contoh, ringkasan JSON — total ±18 MB).
+
+| Sekuens | GT ayam/ frame | Deteksi/ frame | ID unik | ID frame 0 bertahan | Median umur track | ID baru/ frame |
+|---|---|---|---|---|---|---|
+| fCam16 21 Feb 13:00 (siang, paling padat) | 33,3 | 31,56 | 85 | 12/34 (35%) | 34 | 0,72 |
+| fCam13 10 Feb 20:30 (malam) | 30,0 | 28,32 | 107 | 5/32 (16%) | 24 | 1,06 |
+| fCam6 15 Feb 22:15 (malam) | 25,8 | 24,22 | 113 | 5/32 (16%) | 18 | 1,14 |
+| fCam15 13 Feb 19:15 (senja, paling sepi) | 21,7 | 20,19 | 95 | 2/23 (9%) | 14 | 1,01 |
+| *fCam16 20 Feb 21:45 (uji tunggal sebelumnya)* | *33,6* | *33,96* | *91* | *10/33 (30%)* | *33* | *0,82* |
+
+**Dibaca jujur — hipotesis awal GUGUR:** kami menduga makin padat makin
+banyak ID switch, tapi hasilnya kebalikannya — dua sekuens fCam16 yang
+*paling padat* justru paling stabil (median umur track 33–34 frame,
+35% ID awal bertahan), sedangkan fCam15 yang *paling sepi* paling tidak
+stabil (median 14 frame, hanya 9% ID awal bertahan). Jadi kepadatan saja
+bukan penjelasannya. Yang terlihat dari cek visual per video:
+
+- **fCam15 (paling lemah):** ada ayam yang tidak terdeteksi sama sekali
+  (2 ayam jalan di kiri bawah tanpa box; skor 0,55 di salah satu ayam) —
+  deteksi yang putus memutus track.
+- **fCam6 (ID unik terbanyak, 113):** beberapa deteksi skor rendah
+  (0,32–0,63) termasuk 1 false positive di tempat pakan (skor 0,32);
+  ayam bergerombol di balik pagar kawat.
+- **fCam13:** ayam mengantre rapat di sepanjang pagar (oklusi berat di
+  situ), 1 ayam jalan di tengah tanpa box.
+- **fCam16 (paling stabil):** box rapat, skor mayoritas 0,94–0,99,
+  walau ada motion-blur di ayam yang bergerak cepat.
+
+Dugaan penyebab ketidakstabilan: deteksi yang hilang/rendah skor,
+oklusi di pagar, dan perbedaan cahaya/sudut kamera antar sekuens —
+tapi ini belum dibuktikan; butuh uji terkontrol (kamera dan waktu sama,
+kepadatan beda) atau perbandingan tracker ber-ReID untuk memastikan.
+Untuk Stage 2, artinya klip per ayam bisa terpotong-potong terutama di
+kondisi seperti fCam15/fCam6; perbaikan ke depan: tracker dengan ReID
+(mis. BoT-SORT) atau frame-rate lebih tinggi.
+
+Catatan ukuran: hanya 1 video beranotasi penuh yang disimpan
+(`tracking_tests/outputs/tracked_fCam16.20230221_130001.mp4`, sekuens
+paling stabil); 3 video lain diwakili frame contoh JPG. Video sample
+yang disimpan adalah re-encode ringkas (960 px, CRF 28); rakitan asli
+bisa dibuat ulang dari `ChickenDet.zip` via
+`tracking_tests/samples/make_samples.sh`.
+
 ## Model
 
 `models/best.pth` (322.403.181 byte, md5 `6f8457e56c9147d1ba8efc14a7ba05c2`)
@@ -198,7 +248,10 @@ backend/stage1_detection/
 │   └── best.pth        # model final (Git LFS)
 ├── notebooks/
 │   └── Colab-ChickenDet-RTDETRv2-Official.ipynb  # notebook training asli
-├── examples/           # contoh hasil prediksi (2 gambar) + video/frame tracking
+├── examples/           # contoh hasil prediksi (2 gambar) + video/frame tracking uji tunggal
 ├── results/            # test_set_eval.json + tracks.json + tracking_summary.json
+├── tracking_tests/     # uji tracking multi-video: samples/ (video sample) +
+│                       #   outputs/ (1 video beranotasi + frame contoh) +
+│                       #   summaries/ (ringkasan + tracks JSON per video) + README
 └── training_log.txt    # log epoch/AP dari training
 ```
