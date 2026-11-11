@@ -307,6 +307,47 @@ Stage 1 (`tracks_fCam16.json`, 85 ID unik), model fine-tune `models/`,
   di track seperti itu tidak stabil dan jangan dipakai mentah-mentah
   di Stage 3 tanpa ambang confidence.
 
+## Gabung fragmen track / stitching (11 Nov 2026)
+
+Tujuan: mengurangi kotak putih di video berlabel — track yang tidak
+punya jendela 16 frame penuh (ID switch / track pendek) tidak dapat
+klip dan tidak terklasifikasi. `merge_track_fragments.py` menyambung
+run-run (rangkaian frame berurutan satu ID) yang kemungkinan ayam
+yang sama, dengan ambang KONSERVATIF: gap ≤ 4 frame, jarak pusat bbox
+≤ 0,6× ukuran bbox, rasio luas bbox 0,6–1,67, plus ratio test 0,75
+(dua kandidat yang hampir sama dekat → ditolak karena ambigu).
+Hasil: `results/infer_fcam16_merged/merged_tracks_fCam16.json` +
+`merge_report.json`; inference ulang + render ulang video berlabel
+(`results/fCam16_annotated_merged.mp4`).
+
+- **Diterima: 4 merge dari 46 kandidat** — ID 89→76, 28→91, 64→127,
+  39→122 (2 ditolak ambigu; 40 dilewati, 39 di antaranya karena frame
+  tumpang tindih dengan komponen target). ID: 85 → 81; track
+  terklasifikasi 43 → 42 (dua ID terklasifikasi bergabung jadi satu:
+  28+91); klip tetap **120** (distribusi sama: RESTING 66, ACTIVE 46,
+  INGESTIVE 8); **box-frame berlabel 1.908 → 1.913, kotak putih
+  364 → 359** — hanya 5 box-frame yang dapat label (89, 127, 122
+  masing-masing 1–3 frame lewat label fallback track gabungannya).
+  Tidak ada track yang label mayoritasnya berubah sesudah merge
+  (28+91 sama-sama RESTING), dan cek visual frame 0/20/40/60 tidak
+  menemukan label yang jelas salah akibat sambungan.
+- **Catatan jujur — hasilnya kecil, dan itu temuan yang penting.**
+  Komposisi 359 box-frame putih yang tersisa: 252 (70%) fragmen tepi
+  video (ayam masuk/keluar frame di awal/akhir klip 7,2 dtk — tidak
+  ada pasangan di luar video, stitching TIDAK BISA memperbaikinya),
+  19 blip 1–3 frame, 88 fragmen menengah (sebagian besar terhalang
+  tumpang tindih waktu). Jadi di klip pendek yang padat ini, langit-langit
+  method 2 memang rendah.
+- **Yang dicoba dulu dan GAGAL (dicatat supaya tidak diulang):**
+  varian run-level — run-run satu ID boleh terpecah ke komponen
+  berbeda — justru menambah kotak putih (364 → 512 box-frame putih;
+  dengan fase perbaikan naive malah 610), karena run ekor/kepala dari
+  ID yang tadinya terklasifikasi terpisah menjadi track putih dan
+  kehilangan label fallback-nya. Karena itu script final memakai
+  komponen ID-utuh: komponen tidak pernah terpecah, hanya bergabung,
+  sehingga box-frame berlabel dijamin tidak pernah turun (script
+  gagal keras bila jaminan ini dilanggar).
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
@@ -315,7 +356,12 @@ Stage 1 (`tracks_fCam16.json`, 85 ID unik), model fine-tune `models/`,
   (Git LFS, `model.safetensors` 87 MB + `config.json`).
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
-  `results/fCam16_annotated.mp4`).
+  `results/fCam16_annotated.mp4`); **stitching fragmen track** —
+  SELESAI 11 Nov (lihat di atas: hanya +5 box-frame berlabel; varian
+  run-level dicoba dan dibuang karena menambah kotak putih).
+- **Tracker ber-ReID (BoT-SORT)** — opsi jangka panjang untuk ID
+  switch: stitching (method 2) langit-langitnya rendah di klip padat
+  (lihat di atas), akar masalahnya tetap di tracker. Belum dikerjakan.
 - **Kelas AGONISTIC** — tidak ada data latih di ChickenAct (lihat
   Taksonomi); deteksi agresi Stage 3 butuh data tambahan atau fitur
   non-VideoMAE.
