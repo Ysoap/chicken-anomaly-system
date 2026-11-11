@@ -243,14 +243,44 @@ selesai (±8 menit CPU); distribusi label nyaris seragam (INGESTIVE 87,
 RESTING 29, ACTIVE 3, AGONISTIC 1) — sesuai ekspektasi classifier head
 yang masih acak; label belum bermakna sebelum fine-tune.
 
+## Evaluasi test set (11 Nov 2026)
+
+Training selesai 11 Nov 00:15 WIB (10/10 epoch, val terbaik 92,94%).
+Model terbaik (`models/`, best checkpoint dari Drive
+`runs/stage2-videomae/best/`) dievaluasi di **2.097 klip test held-out**
+— split yang SAMA dengan training (manifest seed 42; test tidak pernah
+dipakai training/val) — dengan `eval_test_set.py` (batch 8, CPU,
+±84 menit di VM; hasil lengkap `results/test_set_eval.json`).
+
+- **Akurasi test: 91,99%** (1.929/2.097 benar) vs val 92,94% —
+  selisih hanya ~1 poin: model menggeneralisasi dengan baik ke data
+  yang belum pernah dilihat; tidak ada jurang val/test yang besar.
+- Per kelas: **ACTIVE 95,07%** (328/345 — paling mudah dibedakan),
+  **INGESTIVE 91,84%** (608/662), **RESTING 91,10%** (993/1.090 —
+  paling rendah walau datanya paling banyak).
+- Confusion matrix (baris = benar, kolom = prediksi): kesalahan
+  terbesar **INGESTIVE ↔ RESTING** — 46 klip INGESTIVE diprediksi
+  RESTING dan 79 klip RESTING diprediksi INGESTIVE; total 125 dari
+  168 kesalahan (~74%). Masuk akal secara perilaku: litter
+  pecking/scratching (kepala menunduk mematuk) vs preening/resting
+  (kepala menunduk, diam) sulit dibedakan dalam klip 16 frame, dan
+  RESTING adalah kelas paling heterogen (7 sub-perilaku). ACTIVE
+  hampir tidak pernah tertukar (hanya 17 dari 345 klip salah).
+- Catatan jujur: train loss akhir ~0 (model menghafal data train),
+  eval loss naik pelan antar epoch (0,38 → 0,44) — tanda overfitting
+  ringan — tapi pemilihan model terbaik memakai akurasi val, jadi
+  checkpoint yang disimpan tetap yang terbaik; angka test di atas
+  yang membuktikan overfitting itu tidak merusak performa di data
+  baru. RESTING 52% data tidak membuat akurasinya paling tinggi —
+  imbalance bukan penjelasan untuk kelemahan RESTING; heterogenitas
+  kelasnya yang lebih menentukan.
+
 ## Yang belum dikerjakan
 
-- **Fine-tuning VideoMAE** (training di Colab oleh user — notebook
-  sudah siap; belum dijalankan).
-- **Evaluasi test set** (2.097 klip held-out) setelah training.
-- **Simpan model hasil fine-tune ke repo** (Git LFS, seperti
-  `best.pth` Stage 1; `.gitattributes` sudah mengarahkan
-  `*.safetensors` ke LFS).
+- **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
+  val 92,94%); **evaluasi test set** — SELESAI 11 Nov (91,99%,
+  lihat di atas); **model hasil fine-tune** — TERSIMPAN di `models/`
+  (Git LFS, `model.safetensors` 87 MB + `config.json`).
 - **Uji `inference.py` end-to-end di video sample** dengan model
   hasil fine-tune (saat ini hanya smoke test dengan checkpoint
   pretrained — labelnya belum bermakna).
