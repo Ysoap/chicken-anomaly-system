@@ -275,15 +275,47 @@ dipakai training/val) — dengan `eval_test_set.py` (batch 8, CPU,
   imbalance bukan penjelasan untuk kelemahan RESTING; heterogenitas
   kelasnya yang lebih menentukan.
 
+## Uji inference video sample (11 Nov 2026)
+
+Video `fCam16_sample.mp4` (siang, 72 frame @10 fps, 7,2 dtk) + tracks
+Stage 1 (`tracks_fCam16.json`, 85 ID unik), model fine-tune `models/`,
+`inference.py --video` di CPU (~7 menit, 120 klip):
+
+- **120 klip dari 43 track terklasifikasi** — 42 ID lainnya tidak punya
+  jendela 16 frame berurutan penuh (ID switch / track pendek), jadi
+  tidak dapat klip dan tidak terklasifikasi. Itu keterbatasan tracking,
+  bukan model.
+- Distribusi klip: **RESTING 66, ACTIVE 46, INGESTIVE 8**; mayoritas
+  per track: RESTING 29, ACTIVE 12, INGESTIVE 2. Confidence rata-rata
+  klip 0,97 (tinggi — ingat, ini confidence model sendiri, bukan
+  akurasi; video ini tidak punya ground truth perilaku).
+- Video berlabel: `results/fCam16_annotated.mp4` (960x618, 7,2 dtk,
+  10 MB) — kotak + `ID <n> <LABEL> <conf>` per frame; warna hijau
+  INGESTIVE, oranye ACTIVE, biru RESTING; track tanpa klip hanya
+  `ID <n>` (kotak putih). Dibuat dengan `render_annotated_video.py`
+  (label per frame dari klip yang mencakup frame itu, fallback label
+  mayoritas track). Hasil: `results/infer_fcam16/track_predictions.json`.
+- Cek visual (frame 0/20/40/60): kotak nempel di ayam yang benar
+  (skala bbox 1400x900 → 960x618 diterapkan, sama seperti clip
+  builder); campuran label masuk akal — INGESTIVE muncul di dekat
+  tempat pakan, bukan semua satu label. **Catatan jujur:** tidak ada
+  ground truth untuk video ini, jadi kebenaran label per track tidak
+  bisa dihitung — yang terverifikasi baru: plumbing end-to-end jalan
+  (Stage 1 → klip → VideoMAE → label), kotak sejajar, dan distribusi
+  label tidak kolaps ke satu kelas. Satu track sempat terbelah
+  (RESTING 1 vs ACTIVE 1, mean prob 0,50 vs 0,50) — label mayoritas
+  di track seperti itu tidak stabil dan jangan dipakai mentah-mentah
+  di Stage 3 tanpa ambang confidence.
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
   val 92,94%); **evaluasi test set** — SELESAI 11 Nov (91,99%,
   lihat di atas); **model hasil fine-tune** — TERSIMPAN di `models/`
   (Git LFS, `model.safetensors` 87 MB + `config.json`).
-- **Uji `inference.py` end-to-end di video sample** dengan model
-  hasil fine-tune (saat ini hanya smoke test dengan checkpoint
-  pretrained — labelnya belum bermakna).
+- **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
+  (lihat di atas: 120 klip, 43 track, video berlabel
+  `results/fCam16_annotated.mp4`).
 - **Kelas AGONISTIC** — tidak ada data latih di ChickenAct (lihat
   Taksonomi); deteksi agresi Stage 3 butuh data tambahan atau fitur
   non-VideoMAE.
