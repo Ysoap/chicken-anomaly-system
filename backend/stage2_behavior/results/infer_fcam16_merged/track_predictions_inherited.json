@@ -1,0 +1,69 @@
+{
+  "mode": "track_inherited",
+  "display_only": true,
+  "warning": "Label warisan HANYA untuk tampilan video demo \u2014 BUKAN prediksi model. Label ini copy dari label mayoritas track gabungannya dan bisa BASI (perilaku ayam bisa berubah selama di luar frame) atau SALAH bila sambungan merge-nya keliru. Jangan dipakai mentah-mentah di Stage 3 (aturan durasi); bila dipakai, tandai dan bobot rendah.",
+  "method": "Label propagation di atas stitching method 2 (merge_track_fragments.py): fragmen tanpa klip mewarisi label mayoritas track gabungan yang disambung dengannya. Hanya merge yang diterima yang dipakai; tidak ada label baru yang dikarang.",
+  "based_on": {
+    "predictions_merged": "results/infer_fcam16_merged/track_predictions.json",
+    "merge_report": "results/infer_fcam16_merged/merge_report.json",
+    "predictions_original": "results/infer_fcam16/track_predictions.json",
+    "video": "fCam16_sample.mp4"
+  },
+  "inherited_labels": [
+    {
+      "merged_track_id": 76,
+      "fragment_id": 89,
+      "frames": [
+        43
+      ],
+      "label": "RESTING",
+      "inherited": true,
+      "inherited_from": 76,
+      "source": "label mayoritas track gabungan 76 ({'RESTING': 2})",
+      "note": "fragmen 89 (1 frame) tidak punya klip sebelum merge; label diwarisi dari fragmen 76 yang disambung dengannya"
+    },
+    {
+      "merged_track_id": 64,
+      "fragment_id": 127,
+      "frames": [
+        65,
+        68,
+        69
+      ],
+      "label": "RESTING",
+      "inherited": true,
+      "inherited_from": 64,
+      "source": "label mayoritas track gabungan 64 ({'RESTING': 1})",
+      "note": "fragmen 127 (3 frame) tidak punya klip sebelum merge; label diwarisi dari fragmen 64 yang disambung dengannya"
+    },
+    {
+      "merged_track_id": 39,
+      "fragment_id": 122,
+      "frames": [
+        62
+      ],
+      "label": "ACTIVE",
+      "inherited": true,
+      "inherited_from": 39,
+      "source": "label mayoritas track gabungan 39 ({'INGESTIVE': 1, 'ACTIVE': 5})",
+      "note": "fragmen 122 (1 frame) tidak punya klip sebelum merge; label diwarisi dari fragmen 39 yang disambung dengannya"
+    }
+  ],
+  "skipped_merges": [
+    {
+      "from_id": 28,
+      "to_id": 91,
+      "merged_track_id": 28,
+      "reason": "kedua fragmen sudah berlabel sebelum merge; tidak ada yang baru diwariskan"
+    }
+  ],
+  "counts": {
+    "n_merges_accepted": 4,
+    "n_fragments_inherited": 3,
+    "n_box_frames_inherited": 5,
+    "n_merges_skipped": 1,
+    "white_box_frames_before_merge": 364,
+    "white_box_frames_after_merge": 359,
+    "white_box_frames_after_inheritance": 354
+  }
+}

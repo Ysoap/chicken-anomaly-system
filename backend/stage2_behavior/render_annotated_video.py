@@ -34,14 +34,36 @@ CLASS_COLORS = {
     "RESTING": (255, 100, 0),    # biru
 }
 DEFAULT_COLOR = (255, 255, 255)  # putih, kalau label tak dikenal
+INHERITED_COLOR = (255, 0, 255)  # magenta, KHUSUS label warisan
 
 
-def label_for_frame(track_id, frame_idx, clip_results, track_summary):
+def load_inherited(path):
+    """Peta (track_id, frame) -> label warisan dari
+    track_predictions_inherited.json (propagate_labels.py)."""
+    with open(path) as f:
+        data = json.load(f)
+    mapping = {}
+    for e in data.get("inherited_labels", []):
+        for fr in e["frames"]:
+            mapping[(int(e["merged_track_id"]), int(fr))] = e["label"]
+    return mapping
+
+
+def label_for_frame(track_id, frame_idx, clip_results, track_summary,
+                    inherited=None):
     """Label + confidence track di satu frame.
 
-    Kembalikan (label, confidence, sumber) dengan sumber 'clip' (dari
-    klip yang mencakup frame) atau 'track' (fallback label mayoritas).
+    Kembalikan (label, confidence, sumber) dengan sumber 'inherited'
+    (label warisan dari propagate_labels.py — HANYA untuk tampilan),
+    'clip' (dari klip yang mencakup frame) atau 'track' (fallback
+    label mayoritas).
     """
+    if inherited is not None:
+        lab = inherited.get((int(track_id), int(frame_idx)))
+        if lab is not None:
+            # Label warisan TIDAK punya confidence sendiri — jangan
+            # tampilkan angka confidence sumbernya (menyesatkan).
+            return lab, None, "inherited"
     covering = [r for r in clip_results
                 if r["track_id"] == track_id
                 and r["start_frame"] <= frame_idx <= r["end_frame"]]
@@ -67,6 +89,9 @@ def main():
     ap.add_argument("--tracks", required=True, help="tracks.json Stage 1.")
     ap.add_argument("--predictions", required=True,
                     help="track_predictions.json hasil inference.py --video.")
+    ap.add_argument("--inherited", default=None,
+                    help="track_predictions_inherited.json (opsional) — "
+                         "label warisan ditandai '(warisan)' warna magenta.")
     ap.add_argument("--out", required=True, help="MP4 hasil render.")
     ap.add_argument("--font-scale", type=float, default=0.45)
     ap.add_argument("--thickness", type=int, default=2)
@@ -76,6 +101,10 @@ def main():
         pred = json.load(f)
     clip_results = pred["clip_results"]
     track_summary = pred["track_summary"]
+    inherited = load_inherited(args.inherited) if args.inherited else None
+    if inherited is not None:
+        print(f"Label warisan: {len(inherited)} box-frame "
+              f"dari {args.inherited}")
     print(f"Prediksi: {len(clip_results)} klip, "
           f"{len(track_summary)} track terklasifikasi "
           f"(checkpoint: {pred.get('checkpoint')})")
@@ -116,11 +145,14 @@ def main():
                               bbox[2] * sx, bbox[3] * sy)
             x1, y1, x2, y2 = (int(round(x1)), int(round(y1)),
                               int(round(x2)), int(round(y2)))
-            label, conf, _src = label_for_frame(
-                tid, frame_idx, clip_results, track_summary)
+            label, conf, src = label_for_frame(
+                tid, frame_idx, clip_results, track_summary, inherited)
             if label is None:
                 text = f"ID {tid}"
                 color = DEFAULT_COLOR
+            elif src == "inherited":
+                text = f"ID {tid} {label} (warisan)"
+                color = INHERITED_COLOR
             else:
                 conf_txt = f" {conf:.2f}" if conf is not None else ""
                 text = f"ID {tid} {label}{conf_txt}"

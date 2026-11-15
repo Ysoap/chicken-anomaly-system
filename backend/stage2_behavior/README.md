@@ -348,6 +348,37 @@ Hasil: `results/infer_fcam16_merged/merged_tracks_fCam16.json` +
   sehingga box-frame berlabel dijamin tidak pernah turun (script
   gagal keras bila jaminan ini dilanggar).
 
+## Label propagation / label warisan (15 Nov 2026)
+
+Tujuan: menandai 5 box-frame yang dapat label lewat stitching sebagai
+label warisan (bukan prediksi model), supaya di video demo kelihatan
+bedanya. `propagate_labels.py` membaca `merge_report.json` + prediksi
+hasil merge + prediksi asli; hanya fragmen yang tadinya putih yang
+mewarisi label mayoritas track gabungannya. Hasil:
+`results/infer_fcam16_merged/track_predictions_inherited.json` (file
+delta — prediksi model tidak diubah) + video
+`results/fCam16_annotated_inherited.mp4` (label warisan: teks
+"(warisan)", kotak magenta, tanpa angka confidence).
+
+- **Yang diwarisi: 3 fragmen, 5 box-frame** — 89 (frame 43) ←
+  RESTING dari 76; 127 (frame 65, 68, 69) ← RESTING dari 64; 122
+  (frame 62) ← ACTIVE dari 39. Merge 28→91 dilewati: kedua fragmen
+  sudah berlabel sebelum merge (frame 40 sudah berlabel via fallback
+  track 28). Kotak putih 359 → 354.
+- **Verifikasi:** script gagal keras bila ada frame warisan yang
+  sudah berlabel sebelum merge, bila label fallback track gabungan
+  tidak sama dengan label warisan, atau bila jumlah box-frame warisan
+  tidak sama dengan selisih merge_report (+5). Cek visual frame
+  43/62/65 + hitung piksel magenta: 5 frame warisan terkonfirmasi,
+  frame kontrol 40 (merge yang dilewati) tidak bertanda.
+- **Batasan — baca dulu sebelum memakai: label warisan HANYA untuk
+  tampilan video demo.** Labelnya copy dari label mayoritas track
+  gabungan — bisa basi (perilaku berubah selama di luar frame) dan
+  bisa salah bila sambungan merge-nya keliru. Jangan dipakai
+  mentah-mentah di Stage 3 (aturan durasi); bila dipakai, tandai dan
+  bobot rendah. Efeknya kecil karena stitching-nya sendiri hanya
+  menyambung 4 pasang.
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
@@ -358,7 +389,9 @@ Hasil: `results/infer_fcam16_merged/merged_tracks_fCam16.json` +
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —
   SELESAI 11 Nov (lihat di atas: hanya +5 box-frame berlabel; varian
-  run-level dicoba dan dibuang karena menambah kotak putih).
+  run-level dicoba dan dibuang karena menambah kotak putih);
+  **label propagation (label warisan)** — SELESAI 15 Nov (lihat di
+  atas: 3 fragmen, 5 box-frame, display-only).
 - **Tracker ber-ReID (BoT-SORT)** — opsi jangka panjang untuk ID
   switch: stitching (method 2) langit-langitnya rendah di klip padat
   (lihat di atas), akar masalahnya tetap di tracker. Belum dikerjakan.
