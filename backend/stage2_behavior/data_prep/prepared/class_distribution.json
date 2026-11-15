@@ -1,0 +1,104 @@
+{
+  "total_clips": 14990,
+  "excluded": {
+    "pooping": 260
+  },
+  "n_classes_15": 14,
+  "n_classes_4": 3,
+  "classes_4_present": [
+    "ACTIVE",
+    "INGESTIVE",
+    "RESTING"
+  ],
+  "per_label15": {
+    "body_shaking": 352,
+    "drinking": 1373,
+    "dust_bathing": 530,
+    "feeding": 1924,
+    "head_scratching": 500,
+    "litter_pecking": 858,
+    "litter_scratching": 577,
+    "preening": 1917,
+    "resting": 2419,
+    "running": 629,
+    "standing": 872,
+    "stretching": 1202,
+    "walking": 1515,
+    "wing_flapping": 322
+  },
+  "per_label4": {
+    "INGESTIVE": 4732,
+    "ACTIVE": 2466,
+    "RESTING": 7792
+  },
+  "per_label15_train": {
+    "body_shaking": 261,
+    "drinking": 1016,
+    "dust_bathing": 392,
+    "feeding": 1424,
+    "head_scratching": 370,
+    "litter_pecking": 635,
+    "litter_scratching": 427,
+    "preening": 1419,
+    "resting": 1790,
+    "running": 466,
+    "standing": 645,
+    "stretching": 890,
+    "walking": 1121,
+    "wing_flapping": 238
+  },
+  "per_label15_val": {
+    "body_shaking": 42,
+    "drinking": 165,
+    "dust_bathing": 64,
+    "feeding": 231,
+    "head_scratching": 60,
+    "litter_pecking": 103,
+    "litter_scratching": 69,
+    "preening": 230,
+    "resting": 290,
+    "running": 75,
+    "standing": 105,
+    "stretching": 144,
+    "walking": 182,
+    "wing_flapping": 39
+  },
+  "per_label15_test": {
+    "body_shaking": 49,
+    "drinking": 192,
+    "dust_bathing": 74,
+    "feeding": 269,
+    "head_scratching": 70,
+    "litter_pecking": 120,
+    "litter_scratching": 81,
+    "preening": 268,
+    "resting": 339,
+    "running": 88,
+    "standing": 122,
+    "stretching": 168,
+    "walking": 212,
+    "wing_flapping": 45
+  },
+  "per_label4_train": {
+    "INGESTIVE": 3502,
+    "ACTIVE": 1825,
+    "RESTING": 5767,
+    "AGONISTIC": 0
+  },
+  "per_label4_val": {
+    "INGESTIVE": 568,
+    "ACTIVE": 296,
+    "RESTING": 935,
+    "AGONISTIC": 0
+  },
+  "per_label4_test": {
+    "INGESTIVE": 662,
+    "ACTIVE": 345,
+    "RESTING": 1090,
+    "AGONISTIC": 0
+  },
+  "val_frac": 0.12,
+  "test_frac": 0.14,
+  "seed": 42,
+  "note": "Split acak stratified kami sendiri (seed tetap). Split resmi ChickenAct (train 11278/val 1829/test 2143) tidak bisa direproduksi dari zip karena tidak ada manifest split di dalamnya."
+}

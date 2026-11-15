@@ -1,0 +1,57 @@
+{
+  "checkpoint": "backend/stage2_behavior/models",
+  "n_clips": 2097,
+  "split": "test",
+  "classes": [
+    "INGESTIVE",
+    "ACTIVE",
+    "RESTING"
+  ],
+  "accuracy": 0.9199,
+  "per_class": {
+    "INGESTIVE": {
+      "n_clips": 662,
+      "correct": 608,
+      "accuracy": 0.9184
+    },
+    "ACTIVE": {
+      "n_clips": 345,
+      "correct": 328,
+      "accuracy": 0.9507
+    },
+    "RESTING": {
+      "n_clips": 1090,
+      "correct": 993,
+      "accuracy": 0.911
+    }
+  },
+  "confusion_matrix": {
+    "rows_true_cols_pred": [
+      [
+        608,
+        8,
+        46
+      ],
+      [
+        7,
+        328,
+        10
+      ],
+      [
+        79,
+        18,
+        993
+      ]
+    ],
+    "labels": [
+      "INGESTIVE",
+      "ACTIVE",
+      "RESTING"
+    ]
+  },
+  "batch_size": 8,
+  "device": "cpu",
+  "elapsed_seconds": 5029.4,
+  "clips_per_second": 0.42,
+  "checkpoint_note": "Dievaluasi dari salinan Drive PBL-Ayam/runs/stage2-videomae/best/ (md5 model.safetensors cb6d5c4f22948bb7beea1b858f111fce), identik byte-demi-byte dengan models/model.safetensors di repo ini."
+}

@@ -1,0 +1,818 @@
+{
+  "input": "tracks_fCam16.json",
+  "params": {
+    "max_gap": 4,
+    "max_dist_ref": 0.6,
+    "min_area_ratio": 0.6,
+    "max_area_ratio": 1.67,
+    "ratio_test": 0.75
+  },
+  "summary": {
+    "n_ids_before": 85,
+    "n_ids_after": 81,
+    "n_runs": 191,
+    "n_runs_ge16": 53,
+    "n_ids_with_clip_window_before": 43,
+    "n_ids_with_clip_window_after": 42,
+    "n_edges_candidate": 46,
+    "n_edges_accepted": 4,
+    "n_edges_rejected_ambiguous": 2,
+    "n_edges_skipped_conflict": 40,
+    "n_ids_renumbered": 0,
+    "clip_windows_before": 120,
+    "clip_windows_after": 120,
+    "labeled_box_frames_before": 1908,
+    "labeled_box_frames_after": 1913,
+    "white_box_frames_before": 364,
+    "white_box_frames_after": 359
+  },
+  "accepted_merges": [
+    {
+      "from_id": 89,
+      "to_id": 76,
+      "from_span": [
+        43,
+        43
+      ],
+      "to_span": [
+        45,
+        71
+      ],
+      "gap": 1,
+      "dist_px": 25.9,
+      "dist_ref": 0.184,
+      "area_ratio": 1.11,
+      "reason": ""
+    },
+    {
+      "from_id": 28,
+      "to_id": 91,
+      "from_span": [
+        40,
+        40
+      ],
+      "to_span": [
+        45,
+        63
+      ],
+      "gap": 4,
+      "dist_px": 41.1,
+      "dist_ref": 0.31,
+      "area_ratio": 0.91,
+      "reason": ""
+    },
+    {
+      "from_id": 64,
+      "to_id": 127,
+      "from_span": [
+        59,
+        60
+      ],
+      "to_span": [
+        65,
+        65
+      ],
+      "gap": 4,
+      "dist_px": 78.9,
+      "dist_ref": 0.554,
+      "area_ratio": 0.87,
+      "reason": ""
+    },
+    {
+      "from_id": 39,
+      "to_id": 122,
+      "from_span": [
+        3,
+        60
+      ],
+      "to_span": [
+        62,
+        62
+      ],
+      "gap": 1,
+      "dist_px": 84.9,
+      "dist_ref": 0.589,
+      "area_ratio": 0.75,
+      "reason": ""
+    }
+  ],
+  "rejected_ambiguous": [
+    {
+      "from_id": 12,
+      "to_id": 22,
+      "from_span": [
+        51,
+        51
+      ],
+      "to_span": [
+        55,
+        55
+      ],
+      "gap": 3,
+      "dist_px": 41.8,
+      "dist_ref": 0.309,
+      "area_ratio": 1.22,
+      "reason": "ambigu: kandidat terbaik dist_ref=0.309 vs kedua 0.322 (rasio 0.96 >= 0.75)"
+    },
+    {
+      "from_id": 12,
+      "to_id": 22,
+      "from_span": [
+        51,
+        51
+      ],
+      "to_span": [
+        52,
+        52
+      ],
+      "gap": 0,
+      "dist_px": 43.9,
+      "dist_ref": 0.322,
+      "area_ratio": 1.24,
+      "reason": "ambigu: kandidat terbaik dist_ref=0.309 vs kedua 0.322 (rasio 0.96 >= 0.75)"
+    }
+  ],
+  "skipped_edges": [
+    {
+      "from_id": 67,
+      "to_id": 58,
+      "from_span": [
+        54,
+        54
+      ],
+      "to_span": [
+        55,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 1.8,
+      "dist_ref": 0.014,
+      "area_ratio": 1.03,
+      "reason": "frame tumpang tindih dengan komponen target (frame [32, 33, 34, 35, 36]...)"
+    },
+    {
+      "from_id": 25,
+      "to_id": 11,
+      "from_span": [
+        50,
+        50
+      ],
+      "to_span": [
+        51,
+        59
+      ],
+      "gap": 0,
+      "dist_px": 6.8,
+      "dist_ref": 0.052,
+      "area_ratio": 1.18,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 69,
+      "to_id": 8,
+      "from_span": [
+        34,
+        43
+      ],
+      "to_span": [
+        44,
+        46
+      ],
+      "gap": 0,
+      "dist_px": 12.2,
+      "dist_ref": 0.082,
+      "area_ratio": 0.9,
+      "reason": "frame tumpang tindih dengan komponen target (frame [46])"
+    },
+    {
+      "from_id": 23,
+      "to_id": 33,
+      "from_span": [
+        26,
+        33
+      ],
+      "to_span": [
+        34,
+        40
+      ],
+      "gap": 0,
+      "dist_px": 24.3,
+      "dist_ref": 0.173,
+      "area_ratio": 0.84,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 35, 36]...)"
+    },
+    {
+      "from_id": 20,
+      "to_id": 69,
+      "from_span": [
+        46,
+        57
+      ],
+      "to_span": [
+        58,
+        58
+      ],
+      "gap": 0,
+      "dist_px": 27.9,
+      "dist_ref": 0.205,
+      "area_ratio": 1.12,
+      "reason": "frame tumpang tindih dengan komponen target (frame [34, 42, 43, 46])"
+    },
+    {
+      "from_id": 31,
+      "to_id": 35,
+      "from_span": [
+        4,
+        26
+      ],
+      "to_span": [
+        27,
+        27
+      ],
+      "gap": 0,
+      "dist_px": 35.2,
+      "dist_ref": 0.229,
+      "area_ratio": 1.23,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 5, 10, 11, 13]...)"
+    },
+    {
+      "from_id": 11,
+      "to_id": 25,
+      "from_span": [
+        51,
+        59
+      ],
+      "to_span": [
+        60,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 36.1,
+      "dist_ref": 0.248,
+      "area_ratio": 0.74,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 32,
+      "to_id": 55,
+      "from_span": [
+        24,
+        65
+      ],
+      "to_span": [
+        66,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 37.1,
+      "dist_ref": 0.255,
+      "area_ratio": 1.02,
+      "reason": "frame tumpang tindih dengan komponen target (frame [22, 24, 25, 26, 27]...)"
+    },
+    {
+      "from_id": 41,
+      "to_id": 11,
+      "from_span": [
+        26,
+        48
+      ],
+      "to_span": [
+        49,
+        49
+      ],
+      "gap": 0,
+      "dist_px": 39.2,
+      "dist_ref": 0.276,
+      "area_ratio": 1.09,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4])"
+    },
+    {
+      "from_id": 25,
+      "to_id": 11,
+      "from_span": [
+        0,
+        47
+      ],
+      "to_span": [
+        51,
+        59
+      ],
+      "gap": 3,
+      "dist_px": 36.3,
+      "dist_ref": 0.276,
+      "area_ratio": 1.01,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 22,
+      "to_id": 31,
+      "from_span": [
+        12,
+        38
+      ],
+      "to_span": [
+        41,
+        66
+      ],
+      "gap": 2,
+      "dist_px": 42.5,
+      "dist_ref": 0.285,
+      "area_ratio": 1.26,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 12, 13, 14, 15]...)"
+    },
+    {
+      "from_id": 76,
+      "to_id": 89,
+      "from_span": [
+        38,
+        40
+      ],
+      "to_span": [
+        43,
+        43
+      ],
+      "gap": 2,
+      "dist_px": 39.9,
+      "dist_ref": 0.299,
+      "area_ratio": 1.09,
+      "reason": "sudah satu komponen"
+    },
+    {
+      "from_id": 58,
+      "to_id": 67,
+      "from_span": [
+        23,
+        53
+      ],
+      "to_span": [
+        54,
+        54
+      ],
+      "gap": 0,
+      "dist_px": 45.5,
+      "dist_ref": 0.307,
+      "area_ratio": 0.81,
+      "reason": "frame tumpang tindih dengan komponen target (frame [32, 33, 34, 35, 36]...)"
+    },
+    {
+      "from_id": 42,
+      "to_id": 8,
+      "from_span": [
+        59,
+        64
+      ],
+      "to_span": [
+        65,
+        65
+      ],
+      "gap": 0,
+      "dist_px": 40.5,
+      "dist_ref": 0.308,
+      "area_ratio": 1.12,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 5, 6, 7, 8]...)"
+    },
+    {
+      "from_id": 8,
+      "to_id": 42,
+      "from_span": [
+        65,
+        65
+      ],
+      "to_span": [
+        66,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 41.4,
+      "dist_ref": 0.316,
+      "area_ratio": 0.9,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 5, 6, 7, 8]...)"
+    },
+    {
+      "from_id": 11,
+      "to_id": 25,
+      "from_span": [
+        49,
+        49
+      ],
+      "to_span": [
+        50,
+        50
+      ],
+      "gap": 0,
+      "dist_px": 45.1,
+      "dist_ref": 0.318,
+      "area_ratio": 0.73,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 35,
+      "to_id": 31,
+      "from_span": [
+        27,
+        27
+      ],
+      "to_span": [
+        28,
+        39
+      ],
+      "gap": 0,
+      "dist_px": 50.3,
+      "dist_ref": 0.328,
+      "area_ratio": 0.9,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 5, 10, 11, 13]...)"
+    },
+    {
+      "from_id": 18,
+      "to_id": 41,
+      "from_span": [
+        0,
+        25
+      ],
+      "to_span": [
+        26,
+        48
+      ],
+      "gap": 0,
+      "dist_px": 44.8,
+      "dist_ref": 0.351,
+      "area_ratio": 1.19,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 66, 67, 68, 69])"
+    },
+    {
+      "from_id": 69,
+      "to_id": 20,
+      "from_span": [
+        58,
+        58
+      ],
+      "to_span": [
+        59,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 51.8,
+      "dist_ref": 0.367,
+      "area_ratio": 1.13,
+      "reason": "frame tumpang tindih dengan komponen target (frame [34, 42, 43, 46])"
+    },
+    {
+      "from_id": 9,
+      "to_id": 15,
+      "from_span": [
+        0,
+        57
+      ],
+      "to_span": [
+        58,
+        60
+      ],
+      "gap": 0,
+      "dist_px": 58.2,
+      "dist_ref": 0.407,
+      "area_ratio": 1.06,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 25,
+      "to_id": 11,
+      "from_span": [
+        0,
+        47
+      ],
+      "to_span": [
+        49,
+        49
+      ],
+      "gap": 1,
+      "dist_px": 65.6,
+      "dist_ref": 0.462,
+      "area_ratio": 1.18,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 29,
+      "to_id": 13,
+      "from_span": [
+        0,
+        4
+      ],
+      "to_span": [
+        5,
+        19
+      ],
+      "gap": 0,
+      "dist_px": 65.8,
+      "dist_ref": 0.467,
+      "area_ratio": 0.78,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 6, 7, 8]...)"
+    },
+    {
+      "from_id": 15,
+      "to_id": 12,
+      "from_span": [
+        0,
+        5
+      ],
+      "to_span": [
+        10,
+        19
+      ],
+      "gap": 4,
+      "dist_px": 69.0,
+      "dist_ref": 0.469,
+      "area_ratio": 1.18,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 103,
+      "to_id": 132,
+      "from_span": [
+        52,
+        64
+      ],
+      "to_span": [
+        69,
+        70
+      ],
+      "gap": 4,
+      "dist_px": 66.6,
+      "dist_ref": 0.481,
+      "area_ratio": 1.51,
+      "reason": "frame tumpang tindih dengan komponen target (frame [69, 70])"
+    },
+    {
+      "from_id": 33,
+      "to_id": 23,
+      "from_span": [
+        0,
+        22
+      ],
+      "to_span": [
+        26,
+        33
+      ],
+      "gap": 3,
+      "dist_px": 68.9,
+      "dist_ref": 0.498,
+      "area_ratio": 1.39,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 35, 36]...)"
+    },
+    {
+      "from_id": 13,
+      "to_id": 29,
+      "from_span": [
+        0,
+        1
+      ],
+      "to_span": [
+        6,
+        19
+      ],
+      "gap": 4,
+      "dist_px": 69.2,
+      "dist_ref": 0.504,
+      "area_ratio": 1.13,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 6, 7, 8]...)"
+    },
+    {
+      "from_id": 22,
+      "to_id": 12,
+      "from_span": [
+        49,
+        50
+      ],
+      "to_span": [
+        51,
+        51
+      ],
+      "gap": 0,
+      "dist_px": 71.4,
+      "dist_ref": 0.506,
+      "area_ratio": 0.8,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 12]...)"
+    },
+    {
+      "from_id": 46,
+      "to_id": 9,
+      "from_span": [
+        7,
+        60
+      ],
+      "to_span": [
+        61,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 83.6,
+      "dist_ref": 0.511,
+      "area_ratio": 0.83,
+      "reason": "frame tumpang tindih dengan komponen target (frame [7, 8, 9, 10, 11]...)"
+    },
+    {
+      "from_id": 31,
+      "to_id": 22,
+      "from_span": [
+        28,
+        39
+      ],
+      "to_span": [
+        43,
+        43
+      ],
+      "gap": 3,
+      "dist_px": 76.8,
+      "dist_ref": 0.514,
+      "area_ratio": 1.0,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 12, 13, 14, 15]...)"
+    },
+    {
+      "from_id": 35,
+      "to_id": 22,
+      "from_span": [
+        10,
+        11
+      ],
+      "to_span": [
+        12,
+        38
+      ],
+      "gap": 0,
+      "dist_px": 72.9,
+      "dist_ref": 0.521,
+      "area_ratio": 1.26,
+      "reason": "frame tumpang tindih dengan komponen target (frame [2, 3, 13, 27, 49]...)"
+    },
+    {
+      "from_id": 62,
+      "to_id": 65,
+      "from_span": [
+        25,
+        41
+      ],
+      "to_span": [
+        42,
+        47
+      ],
+      "gap": 0,
+      "dist_px": 73.4,
+      "dist_ref": 0.521,
+      "area_ratio": 0.83,
+      "reason": "frame tumpang tindih dengan komponen target (frame [26, 27, 57])"
+    },
+    {
+      "from_id": 23,
+      "to_id": 43,
+      "from_span": [
+        44,
+        46
+      ],
+      "to_span": [
+        47,
+        57
+      ],
+      "gap": 0,
+      "dist_px": 54.8,
+      "dist_ref": 0.528,
+      "area_ratio": 0.62,
+      "reason": "frame tumpang tindih dengan komponen target (frame [26, 27, 28, 29, 30]...)"
+    },
+    {
+      "from_id": 65,
+      "to_id": 62,
+      "from_span": [
+        42,
+        47
+      ],
+      "to_span": [
+        48,
+        71
+      ],
+      "gap": 0,
+      "dist_px": 76.7,
+      "dist_ref": 0.529,
+      "area_ratio": 0.71,
+      "reason": "frame tumpang tindih dengan komponen target (frame [26, 27, 57])"
+    },
+    {
+      "from_id": 34,
+      "to_id": 17,
+      "from_span": [
+        19,
+        22
+      ],
+      "to_span": [
+        23,
+        56
+      ],
+      "gap": 0,
+      "dist_px": 46.0,
+      "dist_ref": 0.534,
+      "area_ratio": 1.44,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 64,
+      "to_id": 105,
+      "from_span": [
+        32,
+        52
+      ],
+      "to_span": [
+        53,
+        61
+      ],
+      "gap": 0,
+      "dist_px": 70.9,
+      "dist_ref": 0.566,
+      "area_ratio": 0.73,
+      "reason": "frame tumpang tindih dengan komponen target (frame [59, 60])"
+    },
+    {
+      "from_id": 31,
+      "to_id": 59,
+      "from_span": [
+        41,
+        66
+      ],
+      "to_span": [
+        71,
+        71
+      ],
+      "gap": 4,
+      "dist_px": 84.7,
+      "dist_ref": 0.571,
+      "area_ratio": 0.85,
+      "reason": "frame tumpang tindih dengan komponen target (frame [24, 25, 26, 28, 29]...)"
+    },
+    {
+      "from_id": 41,
+      "to_id": 11,
+      "from_span": [
+        26,
+        48
+      ],
+      "to_span": [
+        51,
+        59
+      ],
+      "gap": 2,
+      "dist_px": 80.1,
+      "dist_ref": 0.586,
+      "area_ratio": 0.94,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4])"
+    },
+    {
+      "from_id": 31,
+      "to_id": 35,
+      "from_span": [
+        0,
+        0
+      ],
+      "to_span": [
+        2,
+        5
+      ],
+      "gap": 1,
+      "dist_px": 87.7,
+      "dist_ref": 0.592,
+      "area_ratio": 1.04,
+      "reason": "frame tumpang tindih dengan komponen target (frame [4, 5, 10, 11, 13]...)"
+    },
+    {
+      "from_id": 24,
+      "to_id": 20,
+      "from_span": [
+        0,
+        45
+      ],
+      "to_span": [
+        46,
+        57
+      ],
+      "gap": 0,
+      "dist_px": 84.8,
+      "dist_ref": 0.597,
+      "area_ratio": 0.84,
+      "reason": "frame tumpang tindih dengan komponen target (frame [0, 1, 2, 3, 4]...)"
+    },
+    {
+      "from_id": 8,
+      "to_id": 86,
+      "from_span": [
+        62,
+        62
+      ],
+      "to_span": [
+        63,
+        64
+      ],
+      "gap": 0,
+      "dist_px": 84.8,
+      "dist_ref": 0.599,
+      "area_ratio": 1.05,
+      "reason": "frame tumpang tindih dengan komponen target (frame [45])"
+    }
+  ],
+  "renumbered_runs": []
+}
