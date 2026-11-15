@@ -13,6 +13,9 @@ Dipakai pertama kali untuk video demo Big Broiler 091 (6000 frame @10 fps,
 - menyimpan checkpoint JSON tiap N frame (atomic rename) supaya kalau
   proses putus di tengah, hasil sampai frame terakhir tidak hilang dan
   bisa dilanjutkan dengan ``--resume-from``.
+- di akhir, filter track statis (``filter_static_tracks.py``, default
+  aktif — lihat modul itu; ``--no-filter-static`` untuk mematikan):
+  menulis ``<out>.filtered.json`` yang dipakai inference berikutnya.
 
 Detektor sama persis seperti ``prediksi_contoh.py`` (bobot EMA best.pth,
 resize 640x640 + /255, ``orig_size`` = [w, h] frame asli).
@@ -125,6 +128,11 @@ def main():
                     help="Simpan checkpoint tiap N frame.")
     ap.add_argument("--resume-from", default=None,
                     help="tracks.json checkpoint untuk dilanjutkan.")
+    ap.add_argument("--no-filter-static", action="store_true",
+                    help="Matikan filter track statis di akhir tracking.")
+    ap.add_argument("--min-displacement", type=float, default=10.0,
+                    help="Ambang perpindahan pusat bbox (px) buat filter "
+                         "track statis. Default 10.")
     args = ap.parse_args()
 
     import supervision as sv
@@ -232,6 +240,24 @@ def main():
     print(f"Selesai: {n_processed} frame dalam {el / 60:.1f} menit "
           f"({el / max(n_processed, 1):.2f} dtk/frame); "
           f"{len(ids)} ID unik -> {args.out}")
+    if not args.no_filter_static:
+        # Filter track statis (benda mati) — lihat filter_static_tracks.py.
+        # File mentah tetap tersimpan di args.out; inference berikutnya
+        # memakai file .filtered.json.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from filter_static_tracks import filter_static_tracks
+        filtered, report = filter_static_tracks(
+            {"fps": fps, "score_threshold": args.thresh, "frames": frames_out},
+            args.min_displacement)
+        base, ext = os.path.splitext(args.out)
+        filtered_path = f"{base}.filtered{ext}"
+        save_atomic(filtered_path, filtered)
+        print(f"Filter statis (ambang {args.min_displacement} px): "
+              f"{report['n_tracks_before']} -> {report['n_tracks_kept']} ID "
+              f"(buang {report['n_tracks_dropped']}: "
+              f"{report['dropped_track_ids']}); "
+              f"box {report['n_boxes_before']} -> {report['n_boxes_after']} "
+              f"-> {filtered_path}")
     return 0
 
 

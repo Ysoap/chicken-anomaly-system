@@ -431,6 +431,30 @@ sebagai ayam dengan skor 0,97**. GT memang hanya 8 track.
   749 klip, semuanya RESTING dengan confidence ~1,00.** Tanpa FP:
   RESTING 5.532 (90,4%), INGESTIVE 527 (8,6%), ACTIVE 61 (1,0%) —
   bias RESTING tetap.
+
+### Filter track statis — SELESAI 16 Nov 2026
+
+- Script baru `backend/stage1_detection/filter_static_tracks.py`
+  (ambang default 10 px, `--min-displacement` untuk mengubah,
+  `--no-filter-static` di `track_video.py` untuk mematikan). Aturan:
+  buang track yang pusat bbox-nya berpindah < 10 px sepanjang
+  hidupnya. Terpasang di akhir `track_video.py` (menulis
+  `<out>.filtered.json`, dipakai inference berikutnya) dan bisa
+  dijalankan manual pada hasil lama.
+- Hasil di Big Broiler 091: 41 → 17 track (buang 24, termasuk
+  ke-14 ID FP statis + ID 1031, 1 klip); box 58.817 → 49.832;
+  klip 7.164 → **6.119**. Distribusi sesudah filter: RESTING
+  5.531 (90,4%), INGESTIVE 527 (8,6%), ACTIVE 61 (1,0%) — bias
+  RESTING tetap, tapi durasi RESTING tidak lagi tercemar benda
+  mati. (Selisih 1 klip RESTING vs hitungan manual 5.532: ID 1031,
+  102 frame, 1 klip, perpindahan 8,9 px — ikut terbuang filter.)
+  Tidak satu pun ayam asli terbuang (ayam paling diam, ID 1032,
+  berpindah 31,2 px — 8x ambang FP terbesar 3,8 px).
+- File: `results/infer_bigbroiler091/merged_tracks_bigbroiler091.filtered.json`
+  (+ `.report.json`) dan `track_predictions_filtered.json`. File
+  mentah tidak diubah. Video berlabel dari file terfilter:
+  `bigbroiler091_annotated_filtered.mp4` (6000 frame, 49.832 kotak
+  — kotak listrik dan bohlam drinker sudah tidak berlabel).
 - **Vote terbelah (butuh ambang confidence di Stage 3):** ID 8
   (100 RESTING / 45 INGESTIVE), ID 1011 (141 / 98 / 7 ACTIVE),
   ID 1014 mayoritas INGESTIVE (30 / 15 / 1) — satu-satunya track
