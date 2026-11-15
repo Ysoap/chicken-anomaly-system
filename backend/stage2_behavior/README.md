@@ -379,6 +379,132 @@ delta — prediksi model tidak diubah) + video
   bobot rendah. Efeknya kecil karena stitching-nya sendiri hanya
   menyambung 4 pasang.
 
+## Pipeline penuh video demo Big Broiler 091 (15 Nov 2026)
+
+Video demo 10 menit, overhead murni (dataset Big Broiler, UGent/DECIDE,
+AGPL-3.0): `topview_test/bigbroiler_091_720p_10fps.mp4` — 6000 frame
+@10 fps, 1280×720, 8 ayam broiler umur 32 hari + ground truth bbox dan
+perilaku per frame (CSV). Alur: tracking Stage 1 (RT-DETRv2-S +
+ByteTrack, threshold 0,6) → perbaikan seam + stitching → inference
+Stage 2 batched → render. Script baru: `backend/stage1_detection/track_video.py`
+(tracking streaming + checkpoint + resume), `infer_video_batched.py`
+(inference streaming + batch, resume dari JSONL),
+`fix_seam.py` (perbaiki tracks tercemar sambungan resume),
+`analyze_bigbroiler091.py` (ringkasan + banding GT), dan opsi
+`--max-frames` di `render_annotated_video.py`.
+
+**Koreksi atas klaim lama:** "9/9 ayam terdeteksi" di 3 frame contoh
+SALAH — yang benar **8 ayam + 1 kotak listrik (ID 2) yang terdeteksi
+sebagai ayam dengan skor 0,97**. GT memang hanya 8 track.
+
+### Hasil tracking (6000 frame, 58.817 box)
+
+- **32 ID mentah → 41 ID setelah perbaikan seam + merge.** Run
+  tracking pertama mati (SIGTERM, diduga restart VM) di frame 3600;
+  resume memakai tracker BARU sehingga ID sesudah frame 3600 tertukar
+  (ayam lama ID 1→5, 6→1, 5→8, dst). `fix_seam.py` me-renumber frame
+  ≥3600 (+1000), lalu stitching menyambung 9 pasang seam (9 edge,
+  9 diterima, jarak 0,0–0,9 px) → 50 → 41 ID. Tanpa perbaikan ini
+  statistik per ID korup (satu ID berisi dua ayam berbeda).
+- **Median span 166 frame** — angka ini ketarik ke bawah oleh banyak
+  fragmen pendek; 8 ayam utama span 4334–6000 frame (ID 1, 3, 4, 5, 9
+  nyaris penuh 6000 frame). Tiap track GT diwakili 1–4 ID kita
+  (3557→4 ID, 3558→2, 3559→3, 3555→2) — **ID switch masih ada**,
+  terutama di paruh kedua video.
+- **Kotak putih: 108 box-frame (0,18%)** dari 58.817 — jauh lebih baik
+  dari fCam16 (359 dari 2.272, 15,8%). 12 track tanpa jendela klip
+  penuh (total 108 box).
+
+### Hasil inference (7.164 klip, 29 track terklasifikasi)
+
+| Label | Klip | % |
+|---|---|---|
+| RESTING | 6.571 | 91,7% |
+| INGESTIVE | 532 | 7,4% |
+| ACTIVE | 61 | 0,9% |
+
+- **FP statis mengotori 14,6% klip.** 12 ID statis (rentang gerak
+  pusat ≤3 px, track ≥30 frame): 7.502 box (12,8%) + 886 klip,
+  ditambah ID 15 (drinker, 1.059 frame, 131 klip — lolos ambang
+  dengan selisih 0,8 px) dan ID 19 (drinker, 239 frame, 27 klip).
+  **ID 2 = kotak listrik abu-abu di dinding: 6000 frame penuh,
+  749 klip, semuanya RESTING dengan confidence ~1,00.** Tanpa FP:
+  RESTING 5.532 (90,4%), INGESTIVE 527 (8,6%), ACTIVE 61 (1,0%) —
+  bias RESTING tetap.
+- **Vote terbelah (butuh ambang confidence di Stage 3):** ID 8
+  (100 RESTING / 45 INGESTIVE), ID 1011 (141 / 98 / 7 ACTIVE),
+  ID 1014 mayoritas INGESTIVE (30 / 15 / 1) — satu-satunya track
+  ayam yang mayoritas INGESTIVE. Tidak ada track mayoritas ACTIVE.
+- **Confidence rata-rata per label:** RESTING 0,9955, INGESTIVE
+  0,9602, ACTIVE 0,9120 — model sangat yakin bahkan saat salah
+  (lihat bias di bawah).
+
+### Perbandingan ke ground truth (pemetaan kasar, BUKAN akurasi)
+
+- **8/8 track GT tercocok** (3552–3559 semua ditemukan pipeline).
+- Distribusi aksi GT (94.973 baris frame): Eat+Drink 31,8%,
+  Locomotion+Explor_Forag+Stretching+Feather_Pecking 8,5%,
+  Inactive+Resting+Preening+Panting+Lying 57,3%, Out_Of_Sight 2,4%.
+  Model: RESTING 91,7% vs GT ~57% — **bias top-view kuat**:
+  dari atas, makan (kepala menunduk) terlihat seperti gumpalan
+  statis → RESTING; crop mengikuti ayam sehingga gerak jalan hanya
+  terlihat sebagai gerak latar + kaki yang dari atas nyaris tak
+  terlihat. Angka 91,99% (test set) itu dari sudut miring — di
+  top-view wajar turun, bukan berarti model rusak.
+- **ID 1011: ayam asli yang tidak pernah cocok GT** (1.982 frame,
+  246 klip, skor rata-rata 0,96; terverifikasi visual di frame 4500
+  — sendirian di drinker — dan 5000 — ayam putih distinct di samping
+  ID 9). Jarak median ke track GT terdekat 231–349 px, 0 vote dalam
+  1.982 frame. Penjelasan paling mungkin: **GT tidak lengkap di
+  video akhir** — di frame GT 11250 hanya 4 dari 8 track yang
+  dianotasi, dan track 3555 berhenti total di frame GT 11303.
+  Jadi "ID tanpa GT" ≠ FP; ada 26 ID tanpa GT, sebagian ayam asli
+  yang GT-nya bolong, sebagian FP statis, sebagian fragmen.
+- **Batasan — baca dulu:** label perilaku di top-view TANPA ground
+  truth perilaku langsung per klip; distribusi label adalah hasil
+  model, bukan akurasi. FP statis (kotak listrik, bohlam drinker)
+  WAJIB difilter sebelum Stage 3, kalau tidak durasi RESTING
+  tercemar ~15%. ID switch masih ada meski kandang sepi dan nyaris
+  tanpa oklusi — stitching posisi saja tidak cukup; ReID tetap opsi
+  jangka panjang.
+
+### Perbandingan vs fCam16 (72 frame, sudut miring, 33 ayam/frame)
+
+| | fCam16 | Big Broiler 091 |
+|---|---|---|
+| Frame | 72 | 6.000 |
+| Box total | 2.272 | 58.817 |
+| ID unik (setelah merge) | 81 | 41 |
+| Klip | 120 | 7.164 |
+| Track terklasifikasi | 42 | 29 |
+| Kotak putih | 359 (15,8%) | 108 (0,18%) |
+| Distribusi klip | RESTING 66, ACTIVE 46, INGESTIVE 8 | RESTING 6.571, INGESTIVE 532, ACTIVE 61 |
+| Ground truth | tidak ada | 8/8 track tercocok |
+
+### File hasil
+
+`results/infer_bigbroiler091/`: `tracks_bigbroiler091.json` (mentah,
+32 ID), `tracks_bigbroiler091_fixed.json` (seam diperbaiki),
+`merged_tracks_bigbroiler091.json` (41 ID) + `merge_report.json`,
+`clip_results.jsonl` + `track_predictions.json` (7.164 klip),
+`summary.json` (ringkasan + banding GT), `bigbroiler091_annotated.mp4`
+(6000 frame, 600 dtk, 199 MB, 58.817 kotak digambar; gaya sama
+seperti fCam16 — kotak + `ID <n> <LABEL> <conf>`, track tanpa klip =
+kotak putih hanya ID), `bigbroiler091_60s_annotated.mp4` (sampel 60
+dtk pertama). Log: `infer_full.log`, `infer_full_resume1.log`,
+`infer_full_resume2.log`, `track_full_resume.log`,
+`render_full.log`.
+
+### Waktu jalan (CPU VM, 1,5 CPU shared)
+
+Tracking ~2 jam total (run 1 mati SIGTERM di frame 3600, resume
+~52 mnt); inference ~5,8 jam total dalam 3 run (run 1 mati SIGTERM
+di ~klip 2.784, resume 1 mati saat restart runtime di ~klip 5.320,
+resume 2 selesai 7.164 klip dalam 101 mnt — resume dari JSONL
+bekerja, tidak ada klip yang hilang/duplikat); render ~5 mnt.
+Semua interupsi selamat karena hasil antara disimpan berkala
+(checkpoint JSON tiap N frame, JSONL per klip).
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
@@ -391,7 +517,10 @@ delta — prediksi model tidak diubah) + video
   SELESAI 11 Nov (lihat di atas: hanya +5 box-frame berlabel; varian
   run-level dicoba dan dibuang karena menambah kotak putih);
   **label propagation (label warisan)** — SELESAI 15 Nov (lihat di
-  atas: 3 fragmen, 5 box-frame, display-only).
+  atas: 3 fragmen, 5 box-frame, display-only); **pipeline penuh
+  video demo 10 menit (Big Broiler 091)** — SELESAI 15 Nov (lihat di
+  atas: 6.000 frame, 7.164 klip, video berlabel
+  `results/infer_bigbroiler091/bigbroiler091_annotated.mp4`).
 - **Tracker ber-ReID (BoT-SORT)** — opsi jangka panjang untuk ID
   switch: stitching (method 2) langit-langitnya rendah di klip padat
   (lihat di atas), akar masalahnya tetap di tracker. Belum dikerjakan.

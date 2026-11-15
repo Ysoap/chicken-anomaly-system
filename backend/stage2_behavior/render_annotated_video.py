@@ -50,13 +50,17 @@ def load_inherited(path):
 
 
 def label_for_frame(track_id, frame_idx, clip_results, track_summary,
-                    inherited=None):
+                    inherited=None, clips_by_track=None):
     """Label + confidence track di satu frame.
 
     Kembalikan (label, confidence, sumber) dengan sumber 'inherited'
     (label warisan dari propagate_labels.py — HANYA untuk tampilan),
     'clip' (dari klip yang mencakup frame) atau 'track' (fallback
     label mayoritas).
+
+    ``clips_by_track``: indeks {track_id: [klip]} yang dibuat sekali di
+    main() — tanpa ini tiap panggilan memindai SEMUA klip (video panjang:
+    ~6.700 klip x 60 ribu kotak = ratusan juta perbandingan).
     """
     if inherited is not None:
         lab = inherited.get((int(track_id), int(frame_idx)))
@@ -64,9 +68,10 @@ def label_for_frame(track_id, frame_idx, clip_results, track_summary,
             # Label warisan TIDAK punya confidence sendiri — jangan
             # tampilkan angka confidence sumbernya (menyesatkan).
             return lab, None, "inherited"
-    covering = [r for r in clip_results
-                if r["track_id"] == track_id
-                and r["start_frame"] <= frame_idx <= r["end_frame"]]
+    pool = (clips_by_track.get(track_id, []) if clips_by_track is not None
+            else clip_results)
+    covering = [r for r in pool
+                if r["start_frame"] <= frame_idx <= r["end_frame"]]
     if covering:
         # Mayoritas label klip yang tumpang tindih; confidence = rata-rata
         # confidence klip dengan label mayoritas itu.
@@ -93,6 +98,9 @@ def main():
                     help="track_predictions_inherited.json (opsional) — "
                          "label warisan ditandai '(warisan)' warna magenta.")
     ap.add_argument("--out", required=True, help="MP4 hasil render.")
+    ap.add_argument("--max-frames", type=int, default=0,
+                    help="Batasi frame yang di-render (0 = seluruh video). "
+                         "Berguna untuk sampel pendek dari video panjang.")
     ap.add_argument("--font-scale", type=float, default=0.45)
     ap.add_argument("--thickness", type=int, default=2)
     args = ap.parse_args()
@@ -101,6 +109,10 @@ def main():
         pred = json.load(f)
     clip_results = pred["clip_results"]
     track_summary = pred["track_summary"]
+    from collections import defaultdict as _dd
+    clips_by_track = _dd(list)
+    for _r in clip_results:
+        clips_by_track[_r["track_id"]].append(_r)
     inherited = load_inherited(args.inherited) if args.inherited else None
     if inherited is not None:
         print(f"Label warisan: {len(inherited)} box-frame "
@@ -134,6 +146,8 @@ def main():
     frame_idx = 0
     n_drawn = 0
     while True:
+        if args.max_frames and frame_idx >= args.max_frames:
+            break
         ok, frame = cap.read()
         if not ok:
             break
@@ -146,7 +160,8 @@ def main():
             x1, y1, x2, y2 = (int(round(x1)), int(round(y1)),
                               int(round(x2)), int(round(y2)))
             label, conf, src = label_for_frame(
-                tid, frame_idx, clip_results, track_summary, inherited)
+                tid, frame_idx, clip_results, track_summary, inherited,
+                clips_by_track)
             if label is None:
                 text = f"ID {tid}"
                 color = DEFAULT_COLOR

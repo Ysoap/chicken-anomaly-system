@@ -1,0 +1,9084 @@
+{
+  "mode": "track",
+  "checkpoint": "backend/stage2_behavior/models",
+  "pretrained_smoke_test_only": false,
+  "video": "bigbroiler_091_720p_10fps.mp4",
+  "n_clips": 685,
+  "label_distribution": {
+    "RESTING": 630,
+    "INGESTIVE": 53,
+    "ACTIVE": 2
+  },
+  "clip_results": [
+    {
+      "track_id": 1,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 1,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0013,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9986
+      },
+      "confidence": 0.9986
+    },
+    {
+      "track_id": 1,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.2307,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.769
+      },
+      "confidence": 0.769
+    },
+    {
+      "track_id": 1,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.4726,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.527
+      },
+      "confidence": 0.527
+    },
+    {
+      "track_id": 1,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 1,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0492,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9506
+      },
+      "confidence": 0.9506
+    },
+    {
+      "track_id": 1,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.7511,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.2486
+      },
+      "confidence": 0.7511
+    },
+    {
+      "track_id": 1,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0053,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9945
+      },
+      "confidence": 0.9945
+    },
+    {
+      "track_id": 1,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 1,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 1,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.2698,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.7298
+      },
+      "confidence": 0.7298
+    },
+    {
+      "track_id": 1,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9991
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 1,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 1,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0163,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9834
+      },
+      "confidence": 0.9834
+    },
+    {
+      "track_id": 1,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 1,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 1,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 1,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 1,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 2,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 2,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 2,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 2,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 2,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 3,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.1554,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.8443
+      },
+      "confidence": 0.8443
+    },
+    {
+      "track_id": 3,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.322,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.6776
+      },
+      "confidence": 0.6776
+    },
+    {
+      "track_id": 3,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 3,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0022,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9977
+      },
+      "confidence": 0.9977
+    },
+    {
+      "track_id": 3,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0119,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.988
+      },
+      "confidence": 0.988
+    },
+    {
+      "track_id": 3,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0016,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9983
+      },
+      "confidence": 0.9983
+    },
+    {
+      "track_id": 3,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0006,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 3,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 3,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 3,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9991
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 3,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 3,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 3,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 3,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 3,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0018,
+        "ACTIVE": 0.0015,
+        "RESTING": 0.9966
+      },
+      "confidence": 0.9966
+    },
+    {
+      "track_id": 3,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9977,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.002
+      },
+      "confidence": 0.9977
+    },
+    {
+      "track_id": 3,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.6595,
+        "ACTIVE": 0.0034,
+        "RESTING": 0.3371
+      },
+      "confidence": 0.6595
+    },
+    {
+      "track_id": 4,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9991
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 4,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 4,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 4,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 4,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 4,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 4,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 4,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 4,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 4,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 4,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 4,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0009,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9989
+      },
+      "confidence": 0.9989
+    },
+    {
+      "track_id": 5,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 5,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9991,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0007
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 5,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9991,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0007
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 5,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9613,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0385
+      },
+      "confidence": 0.9613
+    },
+    {
+      "track_id": 5,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0033,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9965
+      },
+      "confidence": 0.9965
+    },
+    {
+      "track_id": 5,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0007,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9991
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 5,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 5,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9986,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0013
+      },
+      "confidence": 0.9986
+    },
+    {
+      "track_id": 5,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9983,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0015
+      },
+      "confidence": 0.9983
+    },
+    {
+      "track_id": 5,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9988,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0011
+      },
+      "confidence": 0.9988
+    },
+    {
+      "track_id": 5,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9987,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0012
+      },
+      "confidence": 0.9987
+    },
+    {
+      "track_id": 5,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0092,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9906
+      },
+      "confidence": 0.9906
+    },
+    {
+      "track_id": 5,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0025,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9972
+      },
+      "confidence": 0.9972
+    },
+    {
+      "track_id": 5,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0082,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9915
+      },
+      "confidence": 0.9915
+    },
+    {
+      "track_id": 5,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0089,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9909
+      },
+      "confidence": 0.9909
+    },
+    {
+      "track_id": 5,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.7872,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.2122
+      },
+      "confidence": 0.7872
+    },
+    {
+      "track_id": 5,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0041,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9957
+      },
+      "confidence": 0.9957
+    },
+    {
+      "track_id": 5,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.7627,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.2369
+      },
+      "confidence": 0.7627
+    },
+    {
+      "track_id": 5,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.7844,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.2151
+      },
+      "confidence": 0.7844
+    },
+    {
+      "track_id": 5,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 5,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 5,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0026,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9972
+      },
+      "confidence": 0.9972
+    },
+    {
+      "track_id": 5,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 5,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0017,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9981
+      },
+      "confidence": 0.9981
+    },
+    {
+      "track_id": 5,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 5,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.5898,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.4097
+      },
+      "confidence": 0.5898
+    },
+    {
+      "track_id": 5,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9604,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0394
+      },
+      "confidence": 0.9604
+    },
+    {
+      "track_id": 5,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 5,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 5,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9895,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0102
+      },
+      "confidence": 0.9895
+    },
+    {
+      "track_id": 5,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0045,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9953
+      },
+      "confidence": 0.9953
+    },
+    {
+      "track_id": 5,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9972,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0027
+      },
+      "confidence": 0.9972
+    },
+    {
+      "track_id": 5,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0082,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9915
+      },
+      "confidence": 0.9915
+    },
+    {
+      "track_id": 5,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 5,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.999
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 5,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.2353,
+        "ACTIVE": 0.0008,
+        "RESTING": 0.7639
+      },
+      "confidence": 0.7639
+    },
+    {
+      "track_id": 5,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.8476,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.1519
+      },
+      "confidence": 0.8476
+    },
+    {
+      "track_id": 5,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9991,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0008
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 5,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0018,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9981
+      },
+      "confidence": 0.9981
+    },
+    {
+      "track_id": 5,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0019,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.998
+      },
+      "confidence": 0.998
+    },
+    {
+      "track_id": 5,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.4568,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.5427
+      },
+      "confidence": 0.5427
+    },
+    {
+      "track_id": 5,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.5116,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.4879
+      },
+      "confidence": 0.5116
+    },
+    {
+      "track_id": 5,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 5,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0009,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.999
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 5,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 5,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 5,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 6,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0001,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 6,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0039,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.996
+      },
+      "confidence": 0.996
+    },
+    {
+      "track_id": 6,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 6,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 6,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 6,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 6,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0045,
+        "RESTING": 0.9952
+      },
+      "confidence": 0.9952
+    },
+    {
+      "track_id": 7,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0031,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9967
+      },
+      "confidence": 0.9967
+    },
+    {
+      "track_id": 7,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.2669,
+        "RESTING": 0.7325
+      },
+      "confidence": 0.7325
+    },
+    {
+      "track_id": 7,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.1437,
+        "RESTING": 0.8558
+      },
+      "confidence": 0.8558
+    },
+    {
+      "track_id": 7,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0005,
+        "RESTING": 0.9988
+      },
+      "confidence": 0.9988
+    },
+    {
+      "track_id": 7,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 7,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 7,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.2628,
+        "ACTIVE": 0.1424,
+        "RESTING": 0.5947
+      },
+      "confidence": 0.5947
+    },
+    {
+      "track_id": 7,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 1,
+      "label": "ACTIVE",
+      "probs": {
+        "INGESTIVE": 0.455,
+        "ACTIVE": 0.542,
+        "RESTING": 0.003
+      },
+      "confidence": 0.542
+    },
+    {
+      "track_id": 7,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 7,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0007,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 7,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 7,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.001,
+        "RESTING": 0.9987
+      },
+      "confidence": 0.9987
+    },
+    {
+      "track_id": 7,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0144,
+        "ACTIVE": 0.0115,
+        "RESTING": 0.9742
+      },
+      "confidence": 0.9742
+    },
+    {
+      "track_id": 7,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.243,
+        "ACTIVE": 0.0088,
+        "RESTING": 0.7483
+      },
+      "confidence": 0.7483
+    },
+    {
+      "track_id": 7,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 7,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 7,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0013,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9986
+      },
+      "confidence": 0.9986
+    },
+    {
+      "track_id": 7,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0012,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.9984
+      },
+      "confidence": 0.9984
+    },
+    {
+      "track_id": 7,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 1,
+      "label": "ACTIVE",
+      "probs": {
+        "INGESTIVE": 0.1729,
+        "ACTIVE": 0.8245,
+        "RESTING": 0.0026
+      },
+      "confidence": 0.8245
+    },
+    {
+      "track_id": 7,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9955,
+        "ACTIVE": 0.0042,
+        "RESTING": 0.0003
+      },
+      "confidence": 0.9955
+    },
+    {
+      "track_id": 7,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9996,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0002
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9996,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0002
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9978,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.0019
+      },
+      "confidence": 0.9978
+    },
+    {
+      "track_id": 7,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9055,
+        "ACTIVE": 0.0009,
+        "RESTING": 0.0936
+      },
+      "confidence": 0.9055
+    },
+    {
+      "track_id": 7,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9992,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0005
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 7,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9989,
+        "ACTIVE": 0.0007,
+        "RESTING": 0.0004
+      },
+      "confidence": 0.9989
+    },
+    {
+      "track_id": 7,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9995,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0003
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 7,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9989,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0009
+      },
+      "confidence": 0.9989
+    },
+    {
+      "track_id": 7,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.996,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0038
+      },
+      "confidence": 0.996
+    },
+    {
+      "track_id": 7,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.1195,
+        "ACTIVE": 0.0013,
+        "RESTING": 0.8792
+      },
+      "confidence": 0.8792
+    },
+    {
+      "track_id": 8,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0041,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9958
+      },
+      "confidence": 0.9958
+    },
+    {
+      "track_id": 8,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9994,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0005
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 8,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0914,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9084
+      },
+      "confidence": 0.9084
+    },
+    {
+      "track_id": 8,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.999,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0009
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 8,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9985,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0014
+      },
+      "confidence": 0.9985
+    },
+    {
+      "track_id": 8,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.5737,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.4259
+      },
+      "confidence": 0.5737
+    },
+    {
+      "track_id": 8,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9995,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0003
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9987,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0012
+      },
+      "confidence": 0.9987
+    },
+    {
+      "track_id": 8,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9985,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0014
+      },
+      "confidence": 0.9985
+    },
+    {
+      "track_id": 8,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0152,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9846
+      },
+      "confidence": 0.9846
+    },
+    {
+      "track_id": 8,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9986,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0013
+      },
+      "confidence": 0.9986
+    },
+    {
+      "track_id": 8,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9996,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0002
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9994,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0004
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 8,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0033,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9966
+      },
+      "confidence": 0.9966
+    },
+    {
+      "track_id": 8,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0027,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9972
+      },
+      "confidence": 0.9972
+    },
+    {
+      "track_id": 8,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9925,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0074
+      },
+      "confidence": 0.9925
+    },
+    {
+      "track_id": 8,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 8,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0024,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9974
+      },
+      "confidence": 0.9974
+    },
+    {
+      "track_id": 8,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0174,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9824
+      },
+      "confidence": 0.9824
+    },
+    {
+      "track_id": 8,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 8,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0014,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9984
+      },
+      "confidence": 0.9984
+    },
+    {
+      "track_id": 8,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9991,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.0005
+      },
+      "confidence": 0.9991
+    },
+    {
+      "track_id": 8,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9134,
+        "ACTIVE": 0.0004,
+        "RESTING": 0.0862
+      },
+      "confidence": 0.9134
+    },
+    {
+      "track_id": 8,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 8,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 8,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0025,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9974
+      },
+      "confidence": 0.9974
+    },
+    {
+      "track_id": 8,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9995,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0003
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 8,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.8292,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.1704
+      },
+      "confidence": 0.8292
+    },
+    {
+      "track_id": 8,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.7667,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.2329
+      },
+      "confidence": 0.7667
+    },
+    {
+      "track_id": 8,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9981,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0018
+      },
+      "confidence": 0.9981
+    },
+    {
+      "track_id": 9,
+      "start_frame": 0,
+      "end_frame": 15,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 8,
+      "end_frame": 23,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 16,
+      "end_frame": 31,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 24,
+      "end_frame": 39,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 32,
+      "end_frame": 47,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 40,
+      "end_frame": 55,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 48,
+      "end_frame": 63,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 9,
+      "start_frame": 56,
+      "end_frame": 71,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0006,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 9,
+      "start_frame": 64,
+      "end_frame": 79,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 72,
+      "end_frame": 87,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 80,
+      "end_frame": 95,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 88,
+      "end_frame": 103,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 96,
+      "end_frame": 111,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 104,
+      "end_frame": 119,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 112,
+      "end_frame": 127,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 120,
+      "end_frame": 135,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0106,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9893
+      },
+      "confidence": 0.9893
+    },
+    {
+      "track_id": 9,
+      "start_frame": 128,
+      "end_frame": 143,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0029,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9969
+      },
+      "confidence": 0.9969
+    },
+    {
+      "track_id": 9,
+      "start_frame": 136,
+      "end_frame": 151,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0038,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.996
+      },
+      "confidence": 0.996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 144,
+      "end_frame": 159,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0007,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9992
+      },
+      "confidence": 0.9992
+    },
+    {
+      "track_id": 9,
+      "start_frame": 152,
+      "end_frame": 167,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 160,
+      "end_frame": 175,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 168,
+      "end_frame": 183,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 176,
+      "end_frame": 191,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 184,
+      "end_frame": 199,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0019,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.998
+      },
+      "confidence": 0.998
+    },
+    {
+      "track_id": 9,
+      "start_frame": 192,
+      "end_frame": 207,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 200,
+      "end_frame": 215,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0113,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9886
+      },
+      "confidence": 0.9886
+    },
+    {
+      "track_id": 9,
+      "start_frame": 208,
+      "end_frame": 223,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0034,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9965
+      },
+      "confidence": 0.9965
+    },
+    {
+      "track_id": 9,
+      "start_frame": 216,
+      "end_frame": 231,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 224,
+      "end_frame": 239,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 232,
+      "end_frame": 247,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 240,
+      "end_frame": 255,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 9,
+      "start_frame": 248,
+      "end_frame": 263,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0024,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9974
+      },
+      "confidence": 0.9974
+    },
+    {
+      "track_id": 9,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.8916,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.1082
+      },
+      "confidence": 0.8916
+    },
+    {
+      "track_id": 9,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0038,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.996
+      },
+      "confidence": 0.996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 272,
+      "end_frame": 287,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 280,
+      "end_frame": 295,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 288,
+      "end_frame": 303,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 296,
+      "end_frame": 311,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 304,
+      "end_frame": 319,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.1364,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.8634
+      },
+      "confidence": 0.8634
+    },
+    {
+      "track_id": 9,
+      "start_frame": 312,
+      "end_frame": 327,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0042,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9957
+      },
+      "confidence": 0.9957
+    },
+    {
+      "track_id": 9,
+      "start_frame": 320,
+      "end_frame": 335,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.999
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 9,
+      "start_frame": 328,
+      "end_frame": 343,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0008,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.999
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 9,
+      "start_frame": 336,
+      "end_frame": 351,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0009,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.999
+      },
+      "confidence": 0.999
+    },
+    {
+      "track_id": 9,
+      "start_frame": 344,
+      "end_frame": 359,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0011,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9988
+      },
+      "confidence": 0.9988
+    },
+    {
+      "track_id": 9,
+      "start_frame": 352,
+      "end_frame": 367,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 360,
+      "end_frame": 375,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 368,
+      "end_frame": 383,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0025,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9974
+      },
+      "confidence": 0.9974
+    },
+    {
+      "track_id": 9,
+      "start_frame": 376,
+      "end_frame": 391,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.1292,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.8705
+      },
+      "confidence": 0.8705
+    },
+    {
+      "track_id": 9,
+      "start_frame": 384,
+      "end_frame": 399,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0273,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9726
+      },
+      "confidence": 0.9726
+    },
+    {
+      "track_id": 9,
+      "start_frame": 392,
+      "end_frame": 407,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 400,
+      "end_frame": 415,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 408,
+      "end_frame": 423,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 416,
+      "end_frame": 431,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 424,
+      "end_frame": 439,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 432,
+      "end_frame": 447,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0005,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9993
+      },
+      "confidence": 0.9993
+    },
+    {
+      "track_id": 9,
+      "start_frame": 440,
+      "end_frame": 455,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 448,
+      "end_frame": 463,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 456,
+      "end_frame": 471,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 464,
+      "end_frame": 479,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9958,
+        "ACTIVE": 0.0007,
+        "RESTING": 0.0035
+      },
+      "confidence": 0.9958
+    },
+    {
+      "track_id": 9,
+      "start_frame": 472,
+      "end_frame": 487,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9994,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0004
+      },
+      "confidence": 0.9994
+    },
+    {
+      "track_id": 9,
+      "start_frame": 480,
+      "end_frame": 495,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0013,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9986
+      },
+      "confidence": 0.9986
+    },
+    {
+      "track_id": 9,
+      "start_frame": 488,
+      "end_frame": 503,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9995
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 496,
+      "end_frame": 511,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9995,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.0003
+      },
+      "confidence": 0.9995
+    },
+    {
+      "track_id": 9,
+      "start_frame": 504,
+      "end_frame": 519,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9996,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.0002
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 512,
+      "end_frame": 527,
+      "label_id": 0,
+      "label": "INGESTIVE",
+      "probs": {
+        "INGESTIVE": 0.9956,
+        "ACTIVE": 0.0003,
+        "RESTING": 0.0041
+      },
+      "confidence": 0.9956
+    },
+    {
+      "track_id": 9,
+      "start_frame": 520,
+      "end_frame": 535,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 528,
+      "end_frame": 543,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 9,
+      "start_frame": 536,
+      "end_frame": 551,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 9,
+      "start_frame": 544,
+      "end_frame": 559,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 9,
+      "start_frame": 552,
+      "end_frame": 567,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 9,
+      "start_frame": 560,
+      "end_frame": 575,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 568,
+      "end_frame": 583,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 576,
+      "end_frame": 591,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 9,
+      "start_frame": 584,
+      "end_frame": 599,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0003,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 10,
+      "start_frame": 14,
+      "end_frame": 29,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 10,
+      "start_frame": 62,
+      "end_frame": 77,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 10,
+      "start_frame": 70,
+      "end_frame": 85,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 10,
+      "start_frame": 78,
+      "end_frame": 93,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 13,
+      "start_frame": 256,
+      "end_frame": 271,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 13,
+      "start_frame": 264,
+      "end_frame": 279,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 431,
+      "end_frame": 446,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 15,
+      "start_frame": 439,
+      "end_frame": 454,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 447,
+      "end_frame": 462,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 455,
+      "end_frame": 470,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 463,
+      "end_frame": 478,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 471,
+      "end_frame": 486,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 479,
+      "end_frame": 494,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 487,
+      "end_frame": 502,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 495,
+      "end_frame": 510,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 503,
+      "end_frame": 518,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 511,
+      "end_frame": 526,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0001,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 519,
+      "end_frame": 534,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 527,
+      "end_frame": 542,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 15,
+      "start_frame": 535,
+      "end_frame": 550,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 543,
+      "end_frame": 558,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 551,
+      "end_frame": 566,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 559,
+      "end_frame": 574,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "confidence": 0.9997
+    },
+    {
+      "track_id": 15,
+      "start_frame": 567,
+      "end_frame": 582,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 575,
+      "end_frame": 590,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    },
+    {
+      "track_id": 15,
+      "start_frame": 583,
+      "end_frame": 598,
+      "label_id": 2,
+      "label": "RESTING",
+      "probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "confidence": 0.9996
+    }
+  ],
+  "track_summary": {
+    "1": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0245,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9754
+      },
+      "label_counts": {
+        "RESTING": 73,
+        "INGESTIVE": 1
+      }
+    },
+    "2": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0004,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9994
+      },
+      "label_counts": {
+        "RESTING": 74
+      }
+    },
+    "3": {
+      "n_clips": 72,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0301,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9697
+      },
+      "label_counts": {
+        "RESTING": 70,
+        "INGESTIVE": 2
+      }
+    },
+    "4": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "label_counts": {
+        "RESTING": 74
+      }
+    },
+    "5": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.2155,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.7843
+      },
+      "label_counts": {
+        "RESTING": 57,
+        "INGESTIVE": 17
+      }
+    },
+    "6": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "label_counts": {
+        "RESTING": 74
+      }
+    },
+    "7": {
+      "n_clips": 72,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.1553,
+        "ACTIVE": 0.0273,
+        "RESTING": 0.8175
+      },
+      "label_counts": {
+        "RESTING": 60,
+        "ACTIVE": 2,
+        "INGESTIVE": 10
+      }
+    },
+    "8": {
+      "n_clips": 71,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.2284,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.7715
+      },
+      "label_counts": {
+        "RESTING": 54,
+        "INGESTIVE": 17
+      }
+    },
+    "9": {
+      "n_clips": 74,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0844,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9155
+      },
+      "label_counts": {
+        "RESTING": 68,
+        "INGESTIVE": 6
+      }
+    },
+    "10": {
+      "n_clips": 4,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "label_counts": {
+        "RESTING": 4
+      }
+    },
+    "13": {
+      "n_clips": 2,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9997
+      },
+      "label_counts": {
+        "RESTING": 2
+      }
+    },
+    "15": {
+      "n_clips": 20,
+      "majority_label": "RESTING",
+      "label_by_mean_prob": "RESTING",
+      "mean_probs": {
+        "INGESTIVE": 0.0002,
+        "ACTIVE": 0.0002,
+        "RESTING": 0.9996
+      },
+      "label_counts": {
+        "RESTING": 20
+      }
+    }
+  }
+}
