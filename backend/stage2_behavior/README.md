@@ -750,12 +750,100 @@ selesai 7.432 klip — resume dari JSONL bekerja, 7.432 pasangan
 ~5 mnt. Pola interupsi sama seperti 091: restart runtime berkala
 (SIGTERM) — semua selamat karena hasil antara disimpan berkala.
 
+## Fine-tune Big Broiler — persiapan (16 Nov 2026)
+
+**Status: dataset + notebook SIAP; training BELUM dijalankan (menunggu
+user Run All di Colab).** Alasan: akurasi lapangan jauh di bawah
+test-set — INGESTIVE ketukar RESTING 86,57% (top-view 091) / 71,23%
+(miring 080). Model dilatih dari klip ChickenAct dan belum pernah
+melihat video kandang beneran; fine-tune lanjutan ini mengajarinya
+langsung dari video Big Broiler.
+
+### Dataset: BigBroiler-Finetune.zip (Drive: PBL-Ayam/dataset/, 554.110.228 byte, md5 28a3308ee3b307ac7c0552a3f095a4e3)
+
+- Klip 16 frame @224x224, crop persegi mengikuti kotak GT tiap frame
+  (margin 1,3 — sama seperti `clip_builder.py`), label = suara
+  mayoritas aksi GT. Script pembangun:
+  `data_prep/build_bigbroiler_clips.py`.
+- Klip usable (stride 16, STRICT — ke-16 frame harus punya aksi GT
+  valid, seri dibuang):
+
+  | Video | INGESTIVE | ACTIVE | RESTING | Total |
+  |---|---|---|---|---|
+  | 091 (top-view) | 734 | 138 | 1.271 | 2.143 |
+  | 080 (miring) | 79 | 33 | 451 | 563 |
+  | 075 (miring) | 4 | 86 | 118 | 208 |
+- Pemetaan aksi GT → 3 kelas = `compare_gt.ACTION_MAP` persis
+  (Explor_Forag → ACTIVE). Perluasan HANYA untuk 5 aksi yang tidak ada
+  di CSV 091: Sleeping → RESTING, Flapping → ACTIVE, Head_Shaking →
+  RESTING, Short_Leg_Move → ACTIVE, Swallowing → INGESTIVE (mengikuti
+  logika `label_mapping.py`; angka 091 tidak berubah). Tanpa suara:
+  Sneezing, Defecating, Video_Problem, Other.
+- **075 TIDAK bisa jadi test set utama**: cuma 208 klip usable dan
+  INGESTIVE-nya cuma 4 (di 075 praktis tidak ada adegan makan — GT-nya
+  didominasi Explor_Forag + Inactive). Rencana awal (075 hold-out
+  penuh) diganti fallback yang sudah direncanakan: split temporal.
+- Split (seed 42): train/val dari 091 paruh-1 (start < 3000) + 080
+  semua; val 10% stratified per kelas (169 klip); **test utama = 091
+  paruh-2 (1.011 klip: ING 330 / ACT 63 / REST 618)**; **test kedua
+  = 075 seluruhnya (208 klip)** sebagai cek generalisasi video tak
+  terlihat.
+- Imbalance: train mentah ING 435 / ACT 97 / REST 994 → **RESTING
+  train di-downsample ke 435** (jumlah INGESTIVE), train akhir 967
+  klip. Alasan: paling gampang + andal; `train.py` tidak dukung
+  class-weighted loss tanpa ubah kode; ACTIVE dibiarkan (recall 95% di
+  test-set ChickenAct). Val/test TIDAK di-downsample (metrik jujur).
+  559 klip RESTING train yang dibuang tidak masuk manifest.
+- Verifikasi: semua 37.776 file frame ada (0 hilang); 8 contact sheet
+  dicek visual — crop nempel di ayam yang benar, label masuk akal
+  (termasuk INGESTIVE top-view 091: ayam menunduk di drinker).
+
+### Notebook: notebooks/Colab-BigBroiler-Finetune.ipynb
+
+- Salinan notebook Stage 2 yang disesuaikan: checkpoint awal = model
+  Stage 2 dari Drive (`runs/stage2-videomae/best/` — BUKAN Kinetics
+  lagi); LR 1e-5; epoch 4; run baru `runs/stage2-bigbroiler-finetune/`;
+  dataset hanya dari Drive (tanpa Zenodo); cell training raise
+  RuntimeError kalau exit code ≠ 0.
+- **Pin `transformers>=4.46,<5`** (beda dari Stage 2): checkpoint
+  Stage 2 disimpan dengan transformers 4.x (attention bias bernama
+  `q_bias`/`v_bias`); 5.x menamai ulang jadi `query.bias`/`value.bias`
+  sehingga 24 vektor bias tidak termuat dan di-init acak (terbukti di
+  smoke test VM, transformers 5.22.2). Pin ini memastikan fine-tune
+  mulai PERSIS dari model Stage 2.
+- Validasi: semua cell kode ter-compile; tanpa path lokal VM / file ID
+  Drive; smoke test `train.py` (CPU VM, 6 train + 3 val klip, 1 epoch)
+  lolos end-to-end (load model → train → eval → `best/` +
+  `train_metrics.json`).
+- Perkiraan waktu training: ~61 step/epoch, 4 epoch ~244 step,
+  kira-kira 15–30 menit di T4.
+
+### Cara jalanin (user, di Colab)
+
+1. Buka notebook `Colab-BigBroiler-Finetune.ipynb` dari Drive (akun
+   pandumanis72).
+2. Runtime → Change runtime type → T4 GPU. Run All.
+3. Setelah selesai: evaluasi kedua test set dengan `eval_test_set.py`
+   (lihat langkah terakhir di notebook), bandingkan dengan baseline
+   sebelum fine-tune (091 paruh-2 ~61,8% top-view; 075 belum pernah
+   diukur).
+
+### Ekspektasi jujur
+
+Belum ada yang tahu berapa naiknya akurasi — diukur lawan kedua test
+set setelah latih. Yang diharapkan naik: recall INGESTIVE (13,11%
+top-view / 28,77% miring sekarang). Kalau tidak naik, itu juga hasil —
+dilaporkan apa adanya.
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
   val 92,94%); **evaluasi test set** — SELESAI 11 Nov (91,99%,
   lihat di atas); **model hasil fine-tune** — TERSIMPAN di `models/`
   (Git LFS, `model.safetensors` 87 MB + `config.json`).
+- **Fine-tune Big Broiler (lanjutan)** — PERSIAPAN SELESAI 16 Nov
+  (dataset 2.355 klip + notebook, lihat di atas); **training BELUM
+  dijalankan** — menunggu user Run All di Colab.
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —
