@@ -962,8 +962,68 @@ Dua catatan jujur: (1) ACTIVE masih lemah (recall 34,92% di test
 khusus, bukan sekadar tambah epoch; (2) di video baru (075) model
 over-prediksi INGESTIVE — perlu kalibrasi/ambang sebelum dipakai
 langsung di Stage 3. Angka demo yang jujur sekarang: test-set
-91,99%, lapangan top-view 90,50% (fine-tune), lapangan miring
-80,91% (model lama — belum diukur ulang dengan model fine-tune).
+91,99%, lapangan top-view 90,50% (fine-tune, klip test), lapangan
+miring 80,91% (model lama — belum diukur ulang dengan model fine-tune).
+
+### Uji video 091 dengan model fine-tune — SELESAI 17 Nov 2026 (VM, CPU)
+
+Prosedur SAMA seperti pipeline 091 baseline, hanya checkpoint diganti
+`models` (Stage 2) → `models_finetune`; tracking Stage 1 TIDAK
+diulang — inference jalan langsung pada
+`results/infer_bigbroiler091/merged_tracks_bigbroiler091.filtered.json`
+(17 track, 6.119 klip, filter statis sudah diterapkan). Script
+`infer_video_batched.py` (stride 8, margin 1,3, batch 8, model
+fine-tune dimuat di VM transformers 5.22.2 tanpa bobot hilang —
+smoke test lolos, 186/186 bobot, `missing_keys`/`unexpected_keys`
+kosong) + `render_annotated_video.py` + `compare_gt.py` (metode sama:
+IoU ≥ 0,3, label GT suara mayoritas) + `analyze_gt_halves.py`
+(metrik per paruh). File:
+`results/infer_bigbroiler091_finetune/` (`track_predictions.json`,
+`clip_results.jsonl`, `gt_comparison.json`/`.md`, `gt_halves.json`,
+`bigbroiler091_annotated_finetune.mp4` — 6.000 frame, 49.832 kotak).
+
+- **Akurasi GT keseluruhan: 87,11% (4.259/4.889 klip tercocokkan,
+  coverage 79,9%)**, dari baseline 61,83% (**+25,28 poin**).
+  Confusion (baris = GT, kolom = prediksi): INGESTIVE [1.461, 25,
+  63] n=1.549; ACTIVE [60, 255, 156] n=471; RESTING [173, 153,
+  2.543] n=2.869.
+- Per kelas: INGESTIVE recall **94,32%** (dari 13,11%, +81,21),
+  precision 86,25%, F1 0,90; ACTIVE recall 54,14% (dari 7,86%),
+  precision 58,89%, F1 0,56; RESTING recall 88,64% (dari 97,00%),
+  precision 92,07%, F1 0,90.
+- **INGESTIVE → RESTING tinggal 4,07%** (63/1.549), dari 86,57%
+  (1.341/1.549) — masalah utama TERATASI. RESTING → INGESTIVE naik
+  tipis 2,96% → 6,03%.
+- **Paruh-2 saja (angka jujur — paruh-1 dipakai training, jadi
+  terkontaminasi): akurasi 86,31% (2.037/2.360)**, dari baseline
+  paruh-2 65,13% (**+21,18 poin**); INGESTIVE recall 92,47% (dari
+  18,47%, +74,00 poin), INGESTIVE → RESTING 5,68% (dari 81,11%);
+  ACTIVE recall 47,92% (dari 8,75%); RESTING recall 89,76% (dari
+  97,88%). Paruh-1: akurasi 87,82%, INGESTIVE recall 95,85% —
+  selisih paruh-1 vs paruh-2 cuma 1,51 poin akurasi, jadi perbaikan
+  ini generalisasi beneran, bukan hafalan data latih.
+- Konsisten dengan evaluasi test set klip pada paruh-2 yang sama
+  (90,50% / INGESTIVE recall 93,94%): angka video sedikit lebih
+  rendah karena klip video dipotong dari kotak tracking (bukan kotak
+  GT) — wajar.
+- Verifikasi visual frame 600/3000/5000: kotak + label menempel di
+  ayam yang benar; ayam di drinker berlabel INGESTIVE (hijau)
+  ber-confidence 0,95–1,00 — yang dulu dilabel RESTING; tidak ada
+  kotak FP di kotak listrik/silo.
+- Jalan: ~5 jam CPU (6.119 klip, ~0,35 klip/dtk) dalam 4 run —
+  runtime VM restart 3× (16 Nov ~23:54, 17 Nov ~01:55 dan ~03:55 WIB),
+  resume dari `clip_results.jsonl` bekerja tanpa klip hilang/duplikat
+  (6.119 baris, semua pasangan `(track_id, start_frame)` unik).
+  Catatan proses: `monitor_091.sh` sempat me-restart script saat
+  inference selesai normal tapi file GT belum ada (dianggap mati) —
+  dua render berjalan berbarengan dan video sempat korup; render
+  kedua selesai benar (198 MB, 6.000 frame, 49.832 kotak). Monitor
+  itu tidak di-commit.
+- **Kesimpulan: fine-tune BERHASIL di video 091** — akurasi lapangan
+  top-view 61,83% → **87,11%** (paruh-2 jujur 86,31%), recall
+  INGESTIVE 13,11% → **94,32%** (paruh-2 92,47%). Sisa masalah:
+  ACTIVE masih terlemah (recall 54,14% video / 34,92% test klip)
+  dan model sedikit over-prediksi INGESTIVE di RESTING (6,03%).
 
 ## Yang belum dikerjakan
 
@@ -977,7 +1037,11 @@ langsung di Stage 3. Angka demo yang jujur sekarang: test-set
   6,1x dari v1 — + notebook v2 skema 13 part, lihat di atas):
   **test 091 paruh-2 90,50%** (recall INGESTIVE 93,94%, dari 13,11%),
   **test-075 67,31%**; ACTIVE masih lemah (recall 34,92% di test 091).
-  Model di `models_finetune/` (Git LFS).
+  Model di `models_finetune/` (Git LFS). **Uji video 091 dengan
+  model fine-tune SELESAI 17 Nov** (pipeline penuh, 6.119 klip:
+  akurasi lapangan 87,11%, paruh-2 jujur 86,31%, recall INGESTIVE
+  92,47% — lihat di atas); uji video 080 dengan model fine-tune
+  dikerjakan terpisah (subagent lain, menunggu hasil 091).
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —

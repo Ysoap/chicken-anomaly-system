@@ -1,0 +1,233 @@
+{
+ "split_frame": 3000,
+ "frame_alignment_offset_used": 0,
+ "note": "first_half = klip yang seluruhnya di frame < 3000 (dipakai sebagai training fine-tune = terkontaminasi); second_half = klip yang seluruhnya di frame >= 3000 (tidak pernah dilatih = angka jujur); straddling = klip yang mengangkangi batas (start 2992) dan dikeluarkan dari kedua paruh.",
+ "all": {
+  "n_clips_total": 6119,
+  "n_clips_matched": 4889,
+  "n_clips_unmatched": 1230,
+  "coverage": 0.799,
+  "accuracy_matched": 0.8711,
+  "n_correct": 4259,
+  "confusion_matrix_rows_gt_cols_pred": {
+   "INGESTIVE": {
+    "INGESTIVE": 1461,
+    "ACTIVE": 25,
+    "RESTING": 63
+   },
+   "ACTIVE": {
+    "INGESTIVE": 60,
+    "ACTIVE": 255,
+    "RESTING": 156
+   },
+   "RESTING": {
+    "INGESTIVE": 173,
+    "ACTIVE": 153,
+    "RESTING": 2543
+   }
+  },
+  "per_class": {
+   "INGESTIVE": {
+    "n_gt": 1549,
+    "recall": 0.9432,
+    "precision": 0.8625,
+    "f1": 0.901
+   },
+   "ACTIVE": {
+    "n_gt": 471,
+    "recall": 0.5414,
+    "precision": 0.5889,
+    "f1": 0.5642
+   },
+   "RESTING": {
+    "n_gt": 2869,
+    "recall": 0.8864,
+    "precision": 0.9207,
+    "f1": 0.9032
+   }
+  },
+  "ingestive_predicted_as_resting": 0.0407,
+  "resting_predicted_as_ingestive": 0.0603,
+  "gt_label_distribution_matched": {
+   "RESTING": 2869,
+   "ACTIVE": 471,
+   "INGESTIVE": 1549
+  },
+  "pred_label_distribution_matched": {
+   "RESTING": 2762,
+   "INGESTIVE": 1694,
+   "ACTIVE": 433
+  }
+ },
+ "first_half": {
+  "n_clips_total": 2978,
+  "n_clips_matched": 2520,
+  "n_clips_unmatched": 458,
+  "coverage": 0.8462,
+  "accuracy_matched": 0.8782,
+  "n_correct": 2213,
+  "confusion_matrix_rows_gt_cols_pred": {
+   "INGESTIVE": {
+    "INGESTIVE": 808,
+    "ACTIVE": 12,
+    "RESTING": 23
+   },
+   "ACTIVE": {
+    "INGESTIVE": 43,
+    "ACTIVE": 139,
+    "RESTING": 48
+   },
+   "RESTING": {
+    "INGESTIVE": 99,
+    "ACTIVE": 82,
+    "RESTING": 1266
+   }
+  },
+  "per_class": {
+   "INGESTIVE": {
+    "n_gt": 843,
+    "recall": 0.9585,
+    "precision": 0.8505,
+    "f1": 0.9013
+   },
+   "ACTIVE": {
+    "n_gt": 230,
+    "recall": 0.6043,
+    "precision": 0.5966,
+    "f1": 0.6004
+   },
+   "RESTING": {
+    "n_gt": 1447,
+    "recall": 0.8749,
+    "precision": 0.9469,
+    "f1": 0.9095
+   }
+  },
+  "ingestive_predicted_as_resting": 0.0273,
+  "resting_predicted_as_ingestive": 0.0684,
+  "gt_label_distribution_matched": {
+   "RESTING": 1447,
+   "ACTIVE": 230,
+   "INGESTIVE": 843
+  },
+  "pred_label_distribution_matched": {
+   "RESTING": 1337,
+   "INGESTIVE": 950,
+   "ACTIVE": 233
+  }
+ },
+ "second_half": {
+  "n_clips_total": 3132,
+  "n_clips_matched": 2360,
+  "n_clips_unmatched": 772,
+  "coverage": 0.7535,
+  "accuracy_matched": 0.8631,
+  "n_correct": 2037,
+  "confusion_matrix_rows_gt_cols_pred": {
+   "INGESTIVE": {
+    "INGESTIVE": 651,
+    "ACTIVE": 13,
+    "RESTING": 40
+   },
+   "ACTIVE": {
+    "INGESTIVE": 17,
+    "ACTIVE": 115,
+    "RESTING": 108
+   },
+   "RESTING": {
+    "INGESTIVE": 74,
+    "ACTIVE": 71,
+    "RESTING": 1271
+   }
+  },
+  "per_class": {
+   "INGESTIVE": {
+    "n_gt": 704,
+    "recall": 0.9247,
+    "precision": 0.8774,
+    "f1": 0.9004
+   },
+   "ACTIVE": {
+    "n_gt": 240,
+    "recall": 0.4792,
+    "precision": 0.5779,
+    "f1": 0.5239
+   },
+   "RESTING": {
+    "n_gt": 1416,
+    "recall": 0.8976,
+    "precision": 0.8957,
+    "f1": 0.8966
+   }
+  },
+  "ingestive_predicted_as_resting": 0.0568,
+  "resting_predicted_as_ingestive": 0.0523,
+  "gt_label_distribution_matched": {
+   "RESTING": 1416,
+   "ACTIVE": 240,
+   "INGESTIVE": 704
+  },
+  "pred_label_distribution_matched": {
+   "RESTING": 1419,
+   "ACTIVE": 199,
+   "INGESTIVE": 742
+  }
+ },
+ "straddling": {
+  "n_clips_total": 9,
+  "n_clips_matched": 9,
+  "n_clips_unmatched": 0,
+  "coverage": 1.0,
+  "accuracy_matched": 1.0,
+  "n_correct": 9,
+  "confusion_matrix_rows_gt_cols_pred": {
+   "INGESTIVE": {
+    "INGESTIVE": 2,
+    "ACTIVE": 0,
+    "RESTING": 0
+   },
+   "ACTIVE": {
+    "INGESTIVE": 0,
+    "ACTIVE": 1,
+    "RESTING": 0
+   },
+   "RESTING": {
+    "INGESTIVE": 0,
+    "ACTIVE": 0,
+    "RESTING": 6
+   }
+  },
+  "per_class": {
+   "INGESTIVE": {
+    "n_gt": 2,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   "ACTIVE": {
+    "n_gt": 1,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0
+   },
+   "RESTING": {
+    "n_gt": 6,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0
+   }
+  },
+  "ingestive_predicted_as_resting": 0.0,
+  "resting_predicted_as_ingestive": 0.0,
+  "gt_label_distribution_matched": {
+   "RESTING": 6,
+   "INGESTIVE": 2,
+   "ACTIVE": 1
+  },
+  "pred_label_distribution_matched": {
+   "RESTING": 6,
+   "INGESTIVE": 2,
+   "ACTIVE": 1
+  }
+ }
+}
