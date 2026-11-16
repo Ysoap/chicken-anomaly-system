@@ -1,0 +1,42 @@
+{
+  "architectures": [
+    "VideoMAEForVideoClassification"
+  ],
+  "attention_probs_dropout_prob": 0.0,
+  "decoder_hidden_size": 192,
+  "decoder_intermediate_size": 768,
+  "decoder_num_attention_heads": 3,
+  "decoder_num_hidden_layers": 12,
+  "dtype": "float32",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.0,
+  "hidden_size": 384,
+  "id2label": {
+    "0": "INGESTIVE",
+    "1": "ACTIVE",
+    "2": "RESTING"
+  },
+  "image_size": 224,
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "label2id": {
+    "ACTIVE": 1,
+    "INGESTIVE": 0,
+    "RESTING": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "model_type": "videomae",
+  "norm_pix_loss": true,
+  "num_attention_heads": 16,
+  "num_channels": 3,
+  "num_frames": 16,
+  "num_hidden_layers": 12,
+  "patch_size": 16,
+  "problem_type": "single_label_classification",
+  "qkv_bias": true,
+  "qv_bias": true,
+  "transformers_version": "4.57.6",
+  "tubelet_size": 2,
+  "use_cache": false,
+  "use_mean_pooling": true
+}

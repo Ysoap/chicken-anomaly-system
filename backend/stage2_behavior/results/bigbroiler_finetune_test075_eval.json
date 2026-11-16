@@ -1,0 +1,56 @@
+{
+  "checkpoint": "backend/stage2_behavior/models_finetune",
+  "n_clips": 208,
+  "split": "test",
+  "classes": [
+    "INGESTIVE",
+    "ACTIVE",
+    "RESTING"
+  ],
+  "accuracy": 0.6731,
+  "per_class": {
+    "INGESTIVE": {
+      "n_clips": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    },
+    "ACTIVE": {
+      "n_clips": 86,
+      "correct": 48,
+      "accuracy": 0.5581
+    },
+    "RESTING": {
+      "n_clips": 118,
+      "correct": 88,
+      "accuracy": 0.7458
+    }
+  },
+  "confusion_matrix": {
+    "rows_true_cols_pred": [
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        15,
+        48,
+        23
+      ],
+      [
+        20,
+        10,
+        88
+      ]
+    ],
+    "labels": [
+      "INGESTIVE",
+      "ACTIVE",
+      "RESTING"
+    ]
+  },
+  "batch_size": 8,
+  "device": "cpu",
+  "elapsed_seconds": 497.8,
+  "clips_per_second": 0.42
+}

@@ -1,0 +1,73 @@
+{
+  "checkpoint": "backend/stage2_behavior/models_finetune",
+  "n_clips": 1011,
+  "split": "test",
+  "classes": [
+    "INGESTIVE",
+    "ACTIVE",
+    "RESTING"
+  ],
+  "accuracy": 0.905,
+  "per_class": {
+    "INGESTIVE": {
+      "n_clips": 330,
+      "correct": 310,
+      "accuracy": 0.9394
+    },
+    "ACTIVE": {
+      "n_clips": 63,
+      "correct": 22,
+      "accuracy": 0.3492
+    },
+    "RESTING": {
+      "n_clips": 618,
+      "correct": 583,
+      "accuracy": 0.9434
+    }
+  },
+  "precision": {
+    "INGESTIVE": 0.9366,
+    "ACTIVE": 0.5116,
+    "RESTING": 0.9152
+  },
+  "f1": {
+    "INGESTIVE": 0.938,
+    "ACTIVE": 0.4151,
+    "RESTING": 0.9291
+  },
+  "confusion_matrix": {
+    "rows_true_cols_pred": [
+      [
+        310,
+        5,
+        15
+      ],
+      [
+        2,
+        22,
+        39
+      ],
+      [
+        19,
+        16,
+        583
+      ]
+    ],
+    "labels": [
+      "INGESTIVE",
+      "ACTIVE",
+      "RESTING"
+    ]
+  },
+  "batch_size": 8,
+  "device": "cpu",
+  "elapsed_seconds": 2460.4,
+  "clips_per_second": 0.41,
+  "combined_from_chunks": [
+    "bigbroiler_finetune_test_eval_chunk0.json",
+    "bigbroiler_finetune_test_eval_chunk1.json",
+    "bigbroiler_finetune_test_eval_chunk2.json",
+    "bigbroiler_finetune_test_eval_chunk3.json"
+  ],
+  "note": "Evaluasi penuh 1.011 klip dipecah 4 chunk (~253 klip) karena run utuh kena SIGTERM di ~35 mnt (restart runtime); confusion matrix digabung (jumlah)."
+}

@@ -752,12 +752,12 @@ selesai 7.432 klip — resume dari JSONL bekerja, 7.432 pasangan
 
 ## Fine-tune Big Broiler — persiapan (16 Nov 2026)
 
-**Status: dataset + notebook SIAP; training BELUM dijalankan (menunggu
-user Run All di Colab).** Alasan: akurasi lapangan jauh di bawah
-test-set — INGESTIVE ketukar RESTING 86,57% (top-view 091) / 71,23%
-(miring 080). Model dilatih dari klip ChickenAct dan belum pernah
-melihat video kandang beneran; fine-tune lanjutan ini mengajarinya
-langsung dari video Big Broiler.
+**Status: training SELESAI 16 Nov 22:57 WIB + evaluasi kedua test set
+SELESAI 17 Nov 2026 — fine-tune BERHASIL (lihat hasil di bawah).**
+Alasan: akurasi lapangan jauh di bawah test-set — INGESTIVE ketukar
+RESTING 86,57% (top-view 091) / 71,23% (miring 080). Model dilatih dari
+klip ChickenAct dan belum pernah melihat video kandang beneran;
+fine-tune lanjutan ini mengajarinya langsung dari video Big Broiler.
 
 ### Dataset: BigBroiler-Finetune.zip (Drive: PBL-Ayam/dataset/, 2.590.811.233 byte, md5 37d836fefbaee1daf666706ccad88cc4) — v2, 16 Nov 2026
 
@@ -883,16 +883,101 @@ set setelah latih. Yang diharapkan naik: recall INGESTIVE (13,11%
 top-view / 28,77% miring sekarang). Kalau tidak naik, itu juga hasil —
 dilaporkan apa adanya.
 
+### Training fine-tune — SELESAI 16 Nov 2026, 22:57 WIB (user Run All di Colab)
+
+- 4/4 epoch, ~1.572 step, T4. Val terbaik **92,90%** (epoch 4 =
+  terakhir; INGESTIVE 97,64% / ACTIVE 85,85% / RESTING 92,13%;
+  eval loss 0,24; train loss akhir 0,39) — praktis sama dengan val
+  Stage 2 (92,94%), jadi val saja tidak membuktikan perbaikan; yang
+  menentukan adalah test set di bawah.
+- Model terbaik di Drive `runs/stage2-bigbroiler-finetune/best/` +
+  di repo `models_finetune/` (Git LFS; `model.safetensors` 87.546.468
+  byte, md5 `512258442e05c42ea11d180ea3fc92d8` + `config.json` 967 byte,
+  md5 `b8b08a3cff5145cd5aaddbb626ccc3d5` + `training_args.bin`).
+- Satu error saat Run All pertama (22:20 WIB): cell 6 gagal
+  `AssertionError: Model awal harus 3 kelas` — `config.json` Stage 2
+  tidak menyimpan `num_labels` (None) padahal `id2label`-nya 3 kelas;
+  modelnya benar, cek notebook terlalu ketat. Diperbaiki (hitung dari
+  `id2label`), commit `8241eb2`, notebook Drive diperbarui, user Run
+  All ulang.
+- Catatan muat model: model fine-tune (disimpan transformers 4.57.6)
+  dimuat di VM dengan transformers 5.22.2 TANPA bobot hilang/tak
+  terduga (`missing_keys`/`unexpected_keys` kosong, smoke test
+  lolos) — beda dengan checkpoint Stage 2 di 5.x dulu, yang
+  kehilangan 24 vektor bias.
+
+### Evaluasi test set fine-tune — SELESAI 17 Nov 2026 (VM, CPU)
+
+Perintah (sama seperti evaluasi Stage 2): `eval_test_set.py
+--checkpoint models_finetune --frames-manifest ... --data-root ...`.
+Run utuh 1.011 klip kena SIGTERM di ~35 menit (restart runtime, log
+di `/tmp` ikut hilang) — diulang dalam 4 chunk ~253 klip
+(~10 menit/chunk, log di workspace) lalu confusion matrix digabung;
+test-075 jalan utuh (~8 menit). Hasil gabungan di
+`results/bigbroiler_finetune_test_eval.json` (+ 4 file chunk) dan
+`results/bigbroiler_finetune_test075_eval.json`.
+
+**Test utama — 091 paruh-2 (1.011 klip, top-view): akurasi 90,50%
+(915/1.011)**, dari baseline 61,83% (**+28,67 poin**). Confusion
+(baris = GT, kolom = prediksi): INGESTIVE [310, 5, 15] n=330; ACTIVE
+[2, 22, 39] n=63; RESTING [19, 16, 583] n=618.
+
+| Kelas | Recall (sebelum → sesudah) | Precision | F1 |
+|---|---|---|---|
+| INGESTIVE | 13,11% → **93,94%** (+80,83) | 93,66% | 0,9380 |
+| ACTIVE | 7,86% → **34,92%** (+27,06) | 51,16% | 0,4151 |
+| RESTING | 97,00% → **94,34%** (−2,66) | 91,52% | 0,9291 |
+
+- INGESTIVE → RESTING tinggal 15 klip (dari 1.341 di baseline) —
+  masalah utama yang mau diperbaiki, TERATASI.
+- ACTIVE tetap lemah: recall 34,92% (39 dari 63 klip ACTIVE diprediksi
+  RESTING). ACTIVE train cuma 953 klip (paling sedikit) dan val-nya
+  85,85% — val tidak menangkap kelemahan ini karena val dari video
+  yang sama dengan train. Ini sisa masalah terbesar.
+- Caveat perbandingan: baseline 61,83% diukur `compare_gt` pada
+  seluruh video 091 (4.889 klip tercocokkan, klip dari tracking),
+  sedangkan angka fine-tune diukur pada 1.011 klip test (paruh-2,
+  klip dari kotak GT, aturan STRICT). Metriknya sama (akurasi klip
+  vs label GT), videonya sama, tapi himpunan klipnya tidak identik —
+  selisih +28,67 poin jauh lebih besar dari bias yang mungkin
+  ditimbulkan perbedaan ini.
+
+**Test kedua — 075 seluruhnya (208 klip, sudut miring, video tak
+terlihat): akurasi 67,31%** (140/208). Confusion: INGESTIVE [4, 0, 0]
+n=4; ACTIVE [15, 48, 23] n=86; RESTING [20, 10, 88] n=118. Per kelas:
+INGESTIVE recall 100% (4/4) tapi precision cuma 10,26% — model
+memprediksi INGESTIVE 39 kali, 35 di antaranya salah (15 ACTIVE +
+20 RESTING). ACTIVE recall 55,81% / precision 82,76%; RESTING recall
+74,58% / precision 79,28%. Tidak ada baseline 075 sebelum fine-tune
+(belum pernah diukur), jadi angka ini tidak bisa dibandingkan —
+yang bisa dibaca: di video baru, model cenderung TERLALU SERING
+menyebut INGESTIVE (kebalikan dari sebelum fine-tune, yang hampir
+tidak pernah menyebutnya).
+
+**Kesimpulan: fine-tune BERHASIL untuk target utamanya** — recall
+INGESTIVE top-view naik 13,11% → 93,94% dan akurasi lapangan top-view
+naik 61,83% → 90,50%, mendekati akurasi test-set Stage 2 (91,99%).
+Dua catatan jujur: (1) ACTIVE masih lemah (recall 34,92% di test
+091, 55,81% di test-075) — butuh data ACTIVE lebih banyak / penanganan
+khusus, bukan sekadar tambah epoch; (2) di video baru (075) model
+over-prediksi INGESTIVE — perlu kalibrasi/ambang sebelum dipakai
+langsung di Stage 3. Angka demo yang jujur sekarang: test-set
+91,99%, lapangan top-view 90,50% (fine-tune), lapangan miring
+80,91% (model lama — belum diukur ulang dengan model fine-tune).
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
   val 92,94%); **evaluasi test set** — SELESAI 11 Nov (91,99%,
   lihat di atas); **model hasil fine-tune** — TERSIMPAN di `models/`
   (Git LFS, `model.safetensors` 87 MB + `config.json`).
-- **Fine-tune Big Broiler (lanjutan)** — PERSIAPAN SELESAI 16 Nov
+- **Fine-tune Big Broiler (lanjutan)** — TRAINING SELESAI 16 Nov
+  22:57 WIB (val 92,90%) + **evaluasi test set SELESAI 17 Nov**
   (dataset v2: 8.749 klip, train 6.277 — INGESTIVE train 2.662, naik
-  6,1x dari v1 — + notebook v2 skema 13 part, lihat di atas);
-  **training BELUM dijalankan** — menunggu user Run All di Colab.
+  6,1x dari v1 — + notebook v2 skema 13 part, lihat di atas):
+  **test 091 paruh-2 90,50%** (recall INGESTIVE 93,94%, dari 13,11%),
+  **test-075 67,31%**; ACTIVE masih lemah (recall 34,92% di test 091).
+  Model di `models_finetune/` (Git LFS).
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —
