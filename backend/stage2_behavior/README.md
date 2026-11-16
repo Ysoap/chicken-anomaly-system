@@ -467,8 +467,8 @@ sebagai ayam dengan skor 0,97**. GT memang hanya 8 track.
 
 - **8/8 track GT tercocok** (3552–3559 semua ditemukan pipeline).
 - Distribusi aksi GT (94.973 baris frame): Eat+Drink 31,8%,
-  Locomotion+Explor_Forag+Stretching+Feather_Pecking 8,5%,
-  Inactive+Resting+Preening+Panting+Lying 57,3%, Out_Of_Sight 2,4%.
+  Locomotion+Explor_Forag+Stretching+Feather_Pecking 8,2%,
+  Inactive+Resting+Preening+Panting+Lying 57,6%, Out_Of_Sight 2,4%.
   Model: RESTING 91,7% vs GT ~57% — **bias top-view kuat**:
   dari atas, makan (kepala menunduk) terlihat seperti gumpalan
   statis → RESTING; crop mengikuti ayam sehingga gerak jalan hanya
@@ -492,6 +492,54 @@ sebagai ayam dengan skor 0,97**. GT memang hanya 8 track.
   tanpa oklusi — stitching posisi saja tidak cukup; ReID tetap opsi
   jangka panjang.
 
+### Akurasi label perilaku vs GT — SELESAI 16 Nov 2026
+
+Perbandingan klip-per-klip (bukan cuma distribusi): label prediksi
+(setelah filter FP statis: 6.119 klip, 17 track) vs label GT
+mayoritas per klip, dicocokkan lewat kotak (IoU ≥ 0,3).
+Script: `compare_gt.py`; angka lengkap: `gt_comparison.json`;
+ringkasan: `gt_comparison.md`.
+
+- **Penyelarasan frame TERVERIFIKASI**: frame_gt =
+  round(frame_10fps × 2,5). Bukti: jarak pusat kotak prediksi vs
+  kotak GT pasangannya pada frame ayam GT sedang bergerak — median
+  8,9 px di offset 0 vs 34–36 px di ±25 frame (±1 dtk) dan 81–129 px
+  di ±250 frame (±10 dtk); median IoU 0,850 di offset 0.
+- **Coverage 79,9% (4.889 / 6.119 klip tercocokkan GT)**; 1.230
+  klip tak tercocokkan — 246 di antaranya seluruh klip ID 1011
+  (ayam asli yang GT-nya bolong), 54% sisanya di 200 detik terakhir
+  (GT makin bolong).
+- **Akurasi (klip tercocokkan): 61,83% (3.023 / 4.889)** — angka
+  91,99% (test set, sudut miring) TIDAK pindah ke top-view.
+
+  | GT \ prediksi | INGESTIVE | ACTIVE | RESTING |
+  |---|---|---|---|
+  | INGESTIVE (1.549) | 203 | 5 | **1.341** |
+  | ACTIVE (471) | 79 | 37 | 355 |
+  | RESTING (2.869) | 85 | 1 | 2.783 |
+
+  Recall: INGESTIVE **13,11%**, ACTIVE 7,86%, RESTING 97,00%.
+  Precision: INGESTIVE 55,31%, ACTIVE 86,05%, RESTING 62,13%.
+- **Dugaan TERBUKTI: 86,57% klip INGESTIVE GT diprediksi RESTING**
+  (1.341 / 1.549); sebaliknya cuma 2,96%. Dari atas, makan
+  kelihatan seperti gumpalan diam. ACTIVE pun 75,4%-nya diprediksi
+  RESTING.
+- **Confidence tidak menyelamatkan**: akurasi klip confidence
+  ≥ 0,99 cuma 63,1% (4.590 klip) — kesalahannya yakin, bukan ragu.
+- **Uji sensitivitas — kesimpulan tidak berubah**: ambang IoU 0,5 →
+  akurasi 61,70%, INGESTIVE → RESTING 87,89%; Explor_Forag →
+  INGESTIVE (bukan ACTIVE) → akurasi 62,14%, INGESTIVE → RESTING
+  87,13%.
+- **Implikasi**: Stage 3 tidak bisa memakai label ini apa adanya
+  (durasi RESTING akan sangat kehitung lebih). Opsi yang belum
+  diputuskan: (a) fine-tune VideoMAE pada klip top-view (GT Big
+  Broiler menyediakan aksi per frame), (b) kamera miring untuk
+  perilaku + top-view untuk tracking, (c) terima biasnya dengan
+  faktor koreksi. Untuk demo 2 Des: sampaikan 91,99% sebagai
+  akurasi test-set (sudut miring) dan 61,8% sebagai akurasi lapangan
+  top-view — deteksi + tracking kuat, klasifikasi perilaku top-view
+  lemah.
+
 ### Perbandingan vs fCam16 (72 frame, sudut miring, 33 ayam/frame)
 
 | | fCam16 | Big Broiler 091 |
@@ -511,10 +559,14 @@ sebagai ayam dengan skor 0,97**. GT memang hanya 8 track.
 32 ID), `tracks_bigbroiler091_fixed.json` (seam diperbaiki),
 `merged_tracks_bigbroiler091.json` (41 ID) + `merge_report.json`,
 `clip_results.jsonl` + `track_predictions.json` (7.164 klip),
-`summary.json` (ringkasan + banding GT), `bigbroiler091_annotated.mp4`
+`merged_tracks_bigbroiler091.filtered.json` +
+`track_predictions_filtered.json` (setelah filter FP statis: 17 track,
+6.119 klip), `gt_comparison.json` + `gt_comparison.md` (banding vs GT:
+akurasi 61,83%), `summary.json` (ringkasan + banding GT), `bigbroiler091_annotated.mp4`
 (6000 frame, 600 dtk, 199 MB, 58.817 kotak digambar; gaya sama
 seperti fCam16 — kotak + `ID <n> <LABEL> <conf>`, track tanpa klip =
-kotak putih hanya ID), `bigbroiler091_60s_annotated.mp4` (sampel 60
+kotak putih hanya ID), `bigbroiler091_annotated_filtered.mp4`
+(197 MB, 49.832 kotak, tanpa FP statis), `bigbroiler091_60s_annotated.mp4` (sampel 60
 dtk pertama). Log: `infer_full.log`, `infer_full_resume1.log`,
 `infer_full_resume2.log`, `track_full_resume.log`,
 `render_full.log`.
