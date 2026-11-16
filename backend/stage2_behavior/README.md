@@ -581,6 +581,175 @@ bekerja, tidak ada klip yang hilang/duplikat); render ~5 mnt.
 Semua interupsi selamat karena hasil antara disimpan berkala
 (checkpoint JSON tiap N frame, JSONL per klip).
 
+## Pipeline penuh video sudut miring Big Broiler 080 (16 Nov 2026)
+
+Video 10 menit, setup 2 angled view ~45° (dataset Big Broiler yang sama,
+UGent/DECIDE, AGPL-3.0): `topview_test/oblique_bigbroiler_080_720p_10fps.mp4`
+— 6008 frame @10 fps, 1280×720, broiler umur 40 hari, 24 track GT.
+Dipilih user setelah 091 (top-view) akurasinya cuma 61,83%: hipotesisnya
+sudut miring — sama seperti data latih — mengembalikan akurasi mendekati
+91,99%. Alur SAMA seperti 091: tracking Stage 1 (threshold 0,6, filter
+statis aktif) → inference Stage 2 batched (resume dari JSONL) → filter
+prediksi → render → banding GT (`compare_gt.py` + flag `--force`, lihat
+di bawah).
+
+### Hasil tracking (6008 frame, 61.849 box)
+
+- **88 ID mentah → 52 setelah filter statis → 51 setelah buang silo.**
+  Jauh lebih banyak dari 091 (41 ID): sudut miring bikin ayam keluar-masuk
+  frame + oklusi dinding dekat, jadi banyak fragmen. Median span track
+  mentah cuma 26,5 frame (terfilter 86,0; 091: 166).
+- Run 1 mati SIGTERM di frame ~1900 (checkpoint 1800); resume MEMULIHKAN
+  state tracker (`frame_id=1800`) sehingga ID berlanjut tanpa putus —
+  **tidak perlu `fix_seam.py`/stitching** (berbeda dengan 091).
+- **24/24 track GT tercocok.** Kebanyakan track GT diwakili 1–2 ID kita;
+  pengecualian: GT 3313 diwakili 12 ID (ayam yang paling sering switch),
+  GT 3308 diwakili 5 ID. ID switch masih ada meski sudut miring.
+- **Kotak putih: 257 box-frame (0,45%)** setelah silo dibuang — dari 56.543
+  box. (Angka mentah di `summary.json`, 4.255, masih berisi 3.998 kotak silo.)
+
+### Filter track statis — dan satu FP yang LOLOS
+
+- Filter otomatis (ambang 10 px): 88 → 52 ID (buang 36, box 61.849 →
+  60.541). Celah bersih: terbuang maks 9,9 px, yang dipertahankan min
+  11,9 px — tidak ada ayam asli terbuang.
+- **TAPI: ID 40 = silo drinker putih (3.998 frame, skor rata-rata 0,92)
+  LOLOS filter.** Terverifikasi visual di frame 3000 dan 5700: kotaknya
+  menempel persis pada silo. Penyebab: silo tidak bergerak, tapi kotaknya
+  bergoyang saat ayam lewat di depan/belakangnya (oklusi) — tinggi box
+  167–265 px, lompatan pusat antar-frame sampai 34,7 px, rentang pusat
+  seumur hidup 28,8 × 51,3 px — jauh di atas ambang 10 px. Beda dengan
+  kotak listrik 091 (1,0 × 0,4 px, tidak pernah teroklusi).
+- Penanganan (prosedur sama seperti 091): inference jalan di tracks
+  terfilter (52 ID), lalu **496 klip ID 40 dibuang pada tahap filter
+  prediksi** (458 RESTING + 38 INGESTIVE — silo bahkan sempat diprediksi
+  INGESTIVE 38 kali). Bukti lengkap: `results/infer_bigbroiler080/fp_removal_080.json`.
+  Render memakai `tracks_bigbroiler080.filtered_nofp.json` (51 ID) supaya
+  silo tidak muncul sama sekali.
+- **Pelajaran buat filter:** ambang perpindahan pusat saja tidak cukup
+  untuk benda yang sering teroklusi. Kandidat perbaikan: cek juga variasi
+  ukuran box, atau deteksi objek statis dari frame referensi — belum
+  dikerjakan.
+
+### Hasil inference (7.432 klip, 27 track terklasifikasi)
+
+| Label | Klip sebelum filter | % | Klip sesudah filter | % |
+|---|---|---|---|---|
+| RESTING | 6.714 | 90,4% | 6.256 | 90,2% |
+| INGESTIVE | 671 | 9,0% | 633 | 9,1% |
+| ACTIVE | 47 | 0,6% | 47 | 0,7% |
+| **Total** | **7.432** | | **6.936** | |
+
+- 26 track terklasifikasi sesudah filter (1 track tanpa klip penuh:
+  15 track terfilter <16 frame). Tidak ada track mayoritas ACTIVE;
+  track paling INGESTIVE: ID 15 (197 INGESTIVE / 705 klip).
+- Confidence rata-rata: RESTING 0,9929, INGESTIVE 0,9338, ACTIVE 0,9149.
+- Verifikasi visual render (frame 3000 & 792): silo tanpa label; kotak +
+  label menempel pada ayam yang benar; label INGESTIVE (hijau) pada ayam
+  yang kepalanya menunduk makan/minum — masuk akal.
+
+### Akurasi label perilaku vs GT — SELESAI 16 Nov 2026
+
+Perbandingan klip-per-klip seperti 091 (IoU ≥ 0,3, label GT mayoritas).
+Script: `compare_gt.py` (+ flag `--force`, lihat catatan di bawah);
+angka lengkap: `gt_comparison.json`; ringkasan: `gt_comparison.md`.
+
+- **Akurasi (klip tercocokkan): 80,91% (1.144 / 1.414)** — naik dari 61,83%
+  di top-view 091 (+19,1 poin), tapi masih jauh dari 91,99% test-set.
+
+  | GT \ prediksi | INGESTIVE | ACTIVE | RESTING |
+  |---|---|---|---|
+  | INGESTIVE (212) | 61 | 0 | **151** |
+  | ACTIVE (50) | 3 | 5 | 42 |
+  | RESTING (1.152) | 59 | 15 | 1.078 |
+
+  Recall: INGESTIVE **28,77%**, ACTIVE 10,00%, RESTING 93,58%.
+  Precision: INGESTIVE 49,59%, ACTIVE 25,00%, RESTING 84,82%.
+- **INGESTIVE → RESTING masih dominan: 71,23%** (151/212), turun dari
+  86,57% di 091 — sudut miring membantu, tapi tidak menyelesaikan.
+  Sebaliknya cuma 5,12%.
+- **Coverage HANYA 20,4% (1.414 / 6.936 klip)** — GT setup 2 jarang
+  (~2,25 track/frame dianotasi; 091: ~8 track/frame, coverage 79,9%).
+  5.522 klip tak tercocokkan. **Angka 80,91% kemungkinan OPTIMIS:**
+  klip yang tercocokkan adalah yang kebetulan punya padanan GT (ayam yang
+  dianotasi cenderung yang mudah diamati; distribusi GT pada klip
+  tercocokkan RESTING 81,5% vs GT keseluruhan ~74%).
+- Confidence: klip confidence ≥0,99 akurasinya 84,09% (1.068/1.270) —
+  lebih baik dari 091 (63,1%), tapi tetap 16% salah walau sangat yakin.
+- **Uji sensitivitas — kesimpulan tidak berubah**: ambang IoU 0,5 →
+  akurasi 81,17%, ING→REST 71,23%; Explor_Forag → INGESTIVE → akurasi
+  80,91%, ING→REST 72,77%.
+- **Distribusi aksi GT 080** (26.922 baris): INGESTIVE (Eat+Drink) 13,8%,
+  ACTIVE 3,0%, RESTING (Inactive+Panting+Preening+aksi kosong) 74,0%,
+  Out_Of_Sight 1,3%, tidak terpetakan 8,0% (Sleeping 3,8%, Short_Leg_Move
+  2,7%, dst. — tidak menyumbang suara, pemetaan sama seperti 091).
+- **Penyelarasan frame DITERIMA DENGAN CATATAN (`--force`):** kriteria
+  ketat script gagal HANYA di m0 ≤ 15 px (m0 = 15,6 px, selisih 0,6 px,
+  n≈108 pasangan bergerak); dua syarat rasio lolos (m25 = 50,5 px,
+  m250 = 159,9 px); lembah datar 0..+5 frame, naik curam di −5
+  (26,6 px) dan ±25 frame. Ambang 15 px dikalibrasi untuk GT rapat 091
+  (n≈1.320); pada GT jarang sampel kecil membuat median berisik.
+  Bukti IoU pendukung tidak informatif (median 0,000 di semua offset —
+  artefak coverage GT jarang, bukan bukti pemetaan salah). Flag `--force`
+  ditambahkan ke `compare_gt.py` (perilaku default tetap ketat; hasil
+  ditandai `frame_alignment_forced: true` di JSON).
+- **Implikasi:** Stage 3 tetap tidak bisa memakai label ini apa adanya
+  (RESTING ~90% prediksi vs ~74% GT; INGESTIVE kehitung kurang). Opsi
+  yang belum diputuskan: (a) fine-tune VideoMAE pada klip Big Broiler
+  (080 + 075 + 091 digabung; GT 080 jarang tapi ada), (b) terima bias
+  dengan faktor koreksi, (c) kamera miring untuk perilaku + top-view
+  untuk tracking (keduanya terbukti di video ini: tracking 24/24 track
+  GT tercocok, klasifikasi perilaku yang lemah). Untuk demo 2 Des:
+  sampaikan 91,99% sebagai akurasi test-set, 80,9% sebagai akurasi
+  lapangan sudut miring (coverage 20%, kemungkinan optimis), dan 61,8%
+  sebagai akurasi lapangan top-view.
+
+### Perbandingan 091 (top-view) vs 080 (sudut miring)
+
+| | 091 top-view | 080 sudut miring |
+|---|---|---|
+| Frame / box | 6.000 / 58.817 | 6.008 / 61.849 |
+| ID mentah → terfilter | 32 → 17 | 88 → 52 (→ 51 tanpa silo) |
+| Median span track | 166 | 86 (mentah 26,5) |
+| Klip (sesudah filter) | 6.119 | 6.936 |
+| Track terklasifikasi | 29 | 26 |
+| Kotak putih | 108 (0,18%) | 257 (0,45%, tanpa silo) |
+| Distribusi klip | RESTING 90,4%, ING 8,6%, ACT 1,0% | RESTING 90,2%, ING 9,1%, ACT 0,7% |
+| GT track tercocok | 8/8 | 24/24 |
+| Coverage GT | 79,9% | 20,4% |
+| **Akurasi vs GT** | **61,83%** | **80,91%** |
+| Recall INGESTIVE | 13,11% | 28,77% |
+| INGESTIVE → RESTING | 86,57% | 71,23% |
+| FP statis | kotak listrik (filter 10 px cukup) | silo drinker (**lolos** filter 10 px) |
+
+### File hasil
+
+`results/infer_bigbroiler080/`: `tracks_bigbroiler080.json` (mentah,
+88 ID), `tracks_bigbroiler080.filtered.json` (52 ID, filter otomatis) +
+`tracks_bigbroiler080.filtered_nofp.json` (51 ID, tanpa silo),
+`clip_results.jsonl` + `track_predictions.json` (7.432 klip) +
+`track_predictions_filtered.json` (6.936 klip, tanpa silo),
+`fp_removal_080.json` (bukti FP silo), `summary.json` (ringkasan +
+banding GT), `gt_comparison.json` + `gt_comparison.md` (banding vs GT:
+akurasi 80,91%, coverage 20,4%) + `gt_comparison_iou05.json` +
+`gt_comparison_explor_ing.json` (uji sensitivitas),
+`bigbroiler080_annotated_filtered.mp4` (6008 frame, 600 dtk, ~280 MB,
+56.543 kotak digambar; gaya sama seperti 091 — kotak +
+`ID <n> <LABEL> <conf>`, track tanpa klip = kotak putih hanya ID).
+Log: `track_full.log`, `track_resume.log`, `infer_full.log`,
+`infer_full_resume1/2/3.log`, `render_full.log`.
+
+### Waktu jalan (CPU VM, 1,5 CPU shared)
+
+Tracking ~2 jam total (run 1 mati SIGTERM di frame ~1900, resume 84 mnt
+— resume dari checkpoint + state tracker, tanpa klip/frame hilang);
+inference ~5,4 jam total dalam 4 run (run 1 mati SIGTERM di klip 784,
+resume 1 mati di klip 3.240, resume 2 mati di klip 5.776, resume 3
+selesai 7.432 klip — resume dari JSONL bekerja, 7.432 pasangan
+(track_id, start_frame) unik, tidak ada yang hilang/duplikat); render
+~5 mnt. Pola interupsi sama seperti 091: restart runtime berkala
+(SIGTERM) — semua selamat karena hasil antara disimpan berkala.
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,

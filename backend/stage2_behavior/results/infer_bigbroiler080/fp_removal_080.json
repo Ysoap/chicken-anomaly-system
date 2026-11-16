@@ -1,0 +1,19 @@
+{
+  "video": "Big Broiler 080 (setup 2, angled view)",
+  "finding": "Filter track statis otomatis (ambang 10 px) membuang 36 track tapi LOLOS satu FP besar: ID 40 = silo drinker putih.",
+  "evidence": {
+    "track_id": 40,
+    "n_frames": 3998,
+    "span": "2006-6007",
+    "mean_score": 0.92,
+    "box_typical": [418, 1, 545, 250],
+    "center_range_x_px": 28.8,
+    "center_range_y_px": 51.3,
+    "max_frame_to_frame_center_jump_px": 34.7,
+    "median_frame_to_frame_jump_px": 0.24,
+    "visual_check": "Render frame 3000 dan 5700 dari tracks mentah: kotak ID 40 menempel persis pada silo drinker putih di tengah-atas frame; semua kotak lain menempel pada ayam asli."
+  },
+  "why_filter_missed_it": "Silo tidak bergerak, tapi kotaknya bergoyang saat ayam lewat di depan/belakang silo (oklusi): tinggi box bervariasi 167-265 px, lompatan pusat antar-frame sampai 34,7 px. Rentang pusat seumur hidup 28,8 x 51,3 px > ambang 10 px, jadi lolos. Berbeda dengan 091 (kotak listrik ID 2: 1,0 x 0,4 px, tidak pernah teroklusi).",
+  "action": "ID 40 TIDAK dibuang dari tracks terfilter sebelum inference (prosedur sama seperti 091: inference jalan di tracks terfilter, lalu klip ID 40 dibuang pada tahap filter prediksi -> track_predictions_filtered.json). Estimasi ~498 klip silo (semua akan jadi RESTING) yang dibuang sesudah inference.",
+  "other_low_displacement_kept_tracks_checked": "ID 9 (2042 frame, disp 34,8x26,2 px, ayam di pojok kanan-bawah), ID 10/37 (ayam di dinding jauh dekat silo), ID 114 (934 frame, disp 39,4 px) — semuanya ayam asli (terverifikasi visual frame 3000/5700), BUKAN FP."
+}

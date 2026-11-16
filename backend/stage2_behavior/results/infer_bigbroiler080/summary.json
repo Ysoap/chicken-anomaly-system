@@ -1,0 +1,1004 @@
+{
+ "video_fps": 10.0,
+ "n_frames": 6008,
+ "n_unique_ids": 52,
+ "n_boxes_total": 60541,
+ "median_track_span_frames": 86.0,
+ "track_span_min": 2,
+ "track_span_max": 6008,
+ "n_clips": 6936,
+ "label_distribution_clips": {
+  "RESTING": 6256,
+  "INGESTIVE": 633,
+  "ACTIVE": 47
+ },
+ "n_tracks_classified": 26,
+ "n_tracks_unclassified": 26,
+ "white_box_frames": 4255,
+ "tracks": {
+  "1": {
+   "n_frames": 2286,
+   "span_first": 0,
+   "span_last": 2286,
+   "span_len": 2287,
+   "center_range_x": 258.0,
+   "center_range_y": 75.9,
+   "mean_score": 0.966,
+   "min_score": 0.609,
+   "n_clips": 282,
+   "majority_label": "RESTING"
+  },
+  "2": {
+   "n_frames": 1043,
+   "span_first": 0,
+   "span_last": 1042,
+   "span_len": 1043,
+   "center_range_x": 87.9,
+   "center_range_y": 29.9,
+   "mean_score": 0.975,
+   "min_score": 0.713,
+   "n_clips": 129,
+   "majority_label": "RESTING"
+  },
+  "3": {
+   "n_frames": 6008,
+   "span_first": 0,
+   "span_last": 6007,
+   "span_len": 6008,
+   "center_range_x": 305.1,
+   "center_range_y": 478.5,
+   "mean_score": 0.958,
+   "min_score": 0.658,
+   "n_clips": 750,
+   "majority_label": "RESTING"
+  },
+  "4": {
+   "n_frames": 5143,
+   "span_first": 0,
+   "span_last": 5145,
+   "span_len": 5146,
+   "center_range_x": 556.8,
+   "center_range_y": 441.9,
+   "mean_score": 0.972,
+   "min_score": 0.604,
+   "n_clips": 639,
+   "majority_label": "RESTING"
+  },
+  "5": {
+   "n_frames": 2931,
+   "span_first": 0,
+   "span_last": 2930,
+   "span_len": 2931,
+   "center_range_x": 231.2,
+   "center_range_y": 55.9,
+   "mean_score": 0.969,
+   "min_score": 0.648,
+   "n_clips": 365,
+   "majority_label": "RESTING"
+  },
+  "6": {
+   "n_frames": 6005,
+   "span_first": 0,
+   "span_last": 6007,
+   "span_len": 6008,
+   "center_range_x": 131.0,
+   "center_range_y": 194.1,
+   "mean_score": 0.967,
+   "min_score": 0.622,
+   "n_clips": 747,
+   "majority_label": "RESTING"
+  },
+  "7": {
+   "n_frames": 6008,
+   "span_first": 0,
+   "span_last": 6007,
+   "span_len": 6008,
+   "center_range_x": 70.9,
+   "center_range_y": 58.6,
+   "mean_score": 0.968,
+   "min_score": 0.847,
+   "n_clips": 750,
+   "majority_label": "RESTING"
+  },
+  "8": {
+   "n_frames": 5991,
+   "span_first": 0,
+   "span_last": 6007,
+   "span_len": 6008,
+   "center_range_x": 86.4,
+   "center_range_y": 113.1,
+   "mean_score": 0.956,
+   "min_score": 0.603,
+   "n_clips": 742,
+   "majority_label": "RESTING"
+  },
+  "9": {
+   "n_frames": 2042,
+   "span_first": 0,
+   "span_last": 2042,
+   "span_len": 2043,
+   "center_range_x": 34.8,
+   "center_range_y": 26.2,
+   "mean_score": 0.962,
+   "min_score": 0.628,
+   "n_clips": 253,
+   "majority_label": "RESTING"
+  },
+  "10": {
+   "n_frames": 318,
+   "span_first": 0,
+   "span_last": 321,
+   "span_len": 322,
+   "center_range_x": 2.5,
+   "center_range_y": 31.5,
+   "mean_score": 0.905,
+   "min_score": 0.611,
+   "n_clips": 38,
+   "majority_label": "RESTING"
+  },
+  "11": {
+   "n_frames": 5,
+   "span_first": 40,
+   "span_last": 46,
+   "span_len": 7,
+   "center_range_x": 12.3,
+   "center_range_y": 0.5,
+   "mean_score": 0.623,
+   "min_score": 0.602,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "14": {
+   "n_frames": 5,
+   "span_first": 281,
+   "span_last": 287,
+   "span_len": 7,
+   "center_range_x": 17.4,
+   "center_range_y": 1.8,
+   "mean_score": 0.637,
+   "min_score": 0.602,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "15": {
+   "n_frames": 5691,
+   "span_first": 312,
+   "span_last": 6007,
+   "span_len": 5696,
+   "center_range_x": 582.7,
+   "center_range_y": 354.0,
+   "mean_score": 0.941,
+   "min_score": 0.601,
+   "n_clips": 705,
+   "majority_label": "RESTING"
+  },
+  "18": {
+   "n_frames": 11,
+   "span_first": 496,
+   "span_last": 523,
+   "span_len": 28,
+   "center_range_x": 13.8,
+   "center_range_y": 5.0,
+   "mean_score": 0.681,
+   "min_score": 0.603,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "28": {
+   "n_frames": 2549,
+   "span_first": 1042,
+   "span_last": 3599,
+   "span_len": 2558,
+   "center_range_x": 204.5,
+   "center_range_y": 136.8,
+   "mean_score": 0.967,
+   "min_score": 0.605,
+   "n_clips": 312,
+   "majority_label": "RESTING"
+  },
+  "30": {
+   "n_frames": 6,
+   "span_first": 1335,
+   "span_last": 1341,
+   "span_len": 7,
+   "center_range_x": 51.4,
+   "center_range_y": 42.3,
+   "mean_score": 0.672,
+   "min_score": 0.601,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "31": {
+   "n_frames": 22,
+   "span_first": 1356,
+   "span_last": 1382,
+   "span_len": 27,
+   "center_range_x": 185.8,
+   "center_range_y": 63.1,
+   "mean_score": 0.728,
+   "min_score": 0.605,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "32": {
+   "n_frames": 3,
+   "span_first": 1365,
+   "span_last": 1368,
+   "span_len": 4,
+   "center_range_x": 20.0,
+   "center_range_y": 46.0,
+   "mean_score": 0.744,
+   "min_score": 0.668,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "37": {
+   "n_frames": 546,
+   "span_first": 1860,
+   "span_last": 2405,
+   "span_len": 546,
+   "center_range_x": 33.1,
+   "center_range_y": 17.4,
+   "mean_score": 0.906,
+   "min_score": 0.706,
+   "n_clips": 67,
+   "majority_label": "RESTING"
+  },
+  "40": {
+   "n_frames": 3998,
+   "span_first": 2006,
+   "span_last": 6007,
+   "span_len": 4002,
+   "center_range_x": 28.8,
+   "center_range_y": 51.3,
+   "mean_score": 0.862,
+   "min_score": 0.604,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "41": {
+   "n_frames": 18,
+   "span_first": 2049,
+   "span_last": 2088,
+   "span_len": 40,
+   "center_range_x": 34.8,
+   "center_range_y": 28.4,
+   "mean_score": 0.672,
+   "min_score": 0.604,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "44": {
+   "n_frames": 12,
+   "span_first": 2232,
+   "span_last": 2246,
+   "span_len": 15,
+   "center_range_x": 69.8,
+   "center_range_y": 18.8,
+   "mean_score": 0.693,
+   "min_score": 0.616,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "46": {
+   "n_frames": 3132,
+   "span_first": 2249,
+   "span_last": 5403,
+   "span_len": 3155,
+   "center_range_x": 195.2,
+   "center_range_y": 82.9,
+   "mean_score": 0.957,
+   "min_score": 0.603,
+   "n_clips": 386,
+   "majority_label": "RESTING"
+  },
+  "52": {
+   "n_frames": 9,
+   "span_first": 2425,
+   "span_last": 2438,
+   "span_len": 14,
+   "center_range_x": 4.9,
+   "center_range_y": 15.1,
+   "mean_score": 0.732,
+   "min_score": 0.625,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "54": {
+   "n_frames": 44,
+   "span_first": 2429,
+   "span_last": 2515,
+   "span_len": 87,
+   "center_range_x": 74.9,
+   "center_range_y": 65.4,
+   "mean_score": 0.782,
+   "min_score": 0.613,
+   "n_clips": 1,
+   "majority_label": "ACTIVE"
+  },
+  "56": {
+   "n_frames": 2234,
+   "span_first": 2464,
+   "span_last": 4751,
+   "span_len": 2288,
+   "center_range_x": 76.3,
+   "center_range_y": 76.2,
+   "mean_score": 0.729,
+   "min_score": 0.6,
+   "n_clips": 259,
+   "majority_label": "RESTING"
+  },
+  "57": {
+   "n_frames": 14,
+   "span_first": 2553,
+   "span_last": 2578,
+   "span_len": 26,
+   "center_range_x": 13.4,
+   "center_range_y": 15.1,
+   "mean_score": 0.72,
+   "min_score": 0.625,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "59": {
+   "n_frames": 2,
+   "span_first": 2598,
+   "span_last": 2599,
+   "span_len": 2,
+   "center_range_x": 1.9,
+   "center_range_y": 24.9,
+   "mean_score": 0.78,
+   "min_score": 0.712,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "63": {
+   "n_frames": 4,
+   "span_first": 2623,
+   "span_last": 2626,
+   "span_len": 4,
+   "center_range_x": 12.3,
+   "center_range_y": 41.6,
+   "mean_score": 0.822,
+   "min_score": 0.667,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "74": {
+   "n_frames": 34,
+   "span_first": 3286,
+   "span_last": 3341,
+   "span_len": 56,
+   "center_range_x": 40.1,
+   "center_range_y": 38.5,
+   "mean_score": 0.732,
+   "min_score": 0.62,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "75": {
+   "n_frames": 80,
+   "span_first": 3593,
+   "span_last": 3677,
+   "span_len": 85,
+   "center_range_x": 71.7,
+   "center_range_y": 51.0,
+   "mean_score": 0.891,
+   "min_score": 0.603,
+   "n_clips": 8,
+   "majority_label": "RESTING"
+  },
+  "76": {
+   "n_frames": 20,
+   "span_first": 3641,
+   "span_last": 3669,
+   "span_len": 29,
+   "center_range_x": 37.0,
+   "center_range_y": 66.6,
+   "mean_score": 0.776,
+   "min_score": 0.604,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "78": {
+   "n_frames": 143,
+   "span_first": 3659,
+   "span_last": 3807,
+   "span_len": 149,
+   "center_range_x": 110.7,
+   "center_range_y": 70.8,
+   "mean_score": 0.912,
+   "min_score": 0.606,
+   "n_clips": 14,
+   "majority_label": "RESTING"
+  },
+  "79": {
+   "n_frames": 9,
+   "span_first": 3673,
+   "span_last": 3692,
+   "span_len": 20,
+   "center_range_x": 14.4,
+   "center_range_y": 13.7,
+   "mean_score": 0.712,
+   "min_score": 0.604,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "85": {
+   "n_frames": 169,
+   "span_first": 3771,
+   "span_last": 3964,
+   "span_len": 194,
+   "center_range_x": 100.4,
+   "center_range_y": 130.7,
+   "mean_score": 0.857,
+   "min_score": 0.604,
+   "n_clips": 15,
+   "majority_label": "RESTING"
+  },
+  "86": {
+   "n_frames": 2,
+   "span_first": 3775,
+   "span_last": 3778,
+   "span_len": 4,
+   "center_range_x": 30.0,
+   "center_range_y": 6.9,
+   "mean_score": 0.654,
+   "min_score": 0.654,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "88": {
+   "n_frames": 14,
+   "span_first": 3807,
+   "span_last": 3822,
+   "span_len": 16,
+   "center_range_x": 76.7,
+   "center_range_y": 64.2,
+   "mean_score": 0.665,
+   "min_score": 0.603,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "89": {
+   "n_frames": 5,
+   "span_first": 3809,
+   "span_last": 3817,
+   "span_len": 9,
+   "center_range_x": 29.4,
+   "center_range_y": 49.5,
+   "mean_score": 0.675,
+   "min_score": 0.623,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "95": {
+   "n_frames": 15,
+   "span_first": 3875,
+   "span_last": 3896,
+   "span_len": 22,
+   "center_range_x": 61.2,
+   "center_range_y": 83.5,
+   "mean_score": 0.789,
+   "min_score": 0.614,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "96": {
+   "n_frames": 9,
+   "span_first": 3885,
+   "span_last": 3895,
+   "span_len": 11,
+   "center_range_x": 8.8,
+   "center_range_y": 16.2,
+   "mean_score": 0.69,
+   "min_score": 0.626,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "99": {
+   "n_frames": 126,
+   "span_first": 3962,
+   "span_last": 4087,
+   "span_len": 126,
+   "center_range_x": 67.2,
+   "center_range_y": 49.5,
+   "mean_score": 0.942,
+   "min_score": 0.658,
+   "n_clips": 14,
+   "majority_label": "RESTING"
+  },
+  "100": {
+   "n_frames": 7,
+   "span_first": 4059,
+   "span_last": 4067,
+   "span_len": 9,
+   "center_range_x": 11.9,
+   "center_range_y": 2.5,
+   "mean_score": 0.646,
+   "min_score": 0.614,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "101": {
+   "n_frames": 696,
+   "span_first": 4087,
+   "span_last": 4783,
+   "span_len": 697,
+   "center_range_x": 88.9,
+   "center_range_y": 322.9,
+   "mean_score": 0.958,
+   "min_score": 0.628,
+   "n_clips": 85,
+   "majority_label": "RESTING"
+  },
+  "103": {
+   "n_frames": 5,
+   "span_first": 4669,
+   "span_last": 4673,
+   "span_len": 5,
+   "center_range_x": 67.6,
+   "center_range_y": 40.7,
+   "mean_score": 0.694,
+   "min_score": 0.621,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "106": {
+   "n_frames": 292,
+   "span_first": 4781,
+   "span_last": 5075,
+   "span_len": 295,
+   "center_range_x": 89.2,
+   "center_range_y": 131.7,
+   "mean_score": 0.925,
+   "min_score": 0.605,
+   "n_clips": 33,
+   "majority_label": "INGESTIVE"
+  },
+  "107": {
+   "n_frames": 1087,
+   "span_first": 4918,
+   "span_last": 6007,
+   "span_len": 1090,
+   "center_range_x": 802.7,
+   "center_range_y": 256.1,
+   "mean_score": 0.882,
+   "min_score": 0.606,
+   "n_clips": 132,
+   "majority_label": "RESTING"
+  },
+  "110": {
+   "n_frames": 3,
+   "span_first": 5020,
+   "span_last": 5024,
+   "span_len": 5,
+   "center_range_x": 30.2,
+   "center_range_y": 26.4,
+   "mean_score": 0.75,
+   "min_score": 0.71,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "111": {
+   "n_frames": 2,
+   "span_first": 5031,
+   "span_last": 5033,
+   "span_len": 3,
+   "center_range_x": 23.7,
+   "center_range_y": 21.2,
+   "mean_score": 0.698,
+   "min_score": 0.61,
+   "n_clips": 0,
+   "majority_label": null
+  },
+  "114": {
+   "n_frames": 934,
+   "span_first": 5074,
+   "span_last": 6007,
+   "span_len": 934,
+   "center_range_x": 39.4,
+   "center_range_y": 29.4,
+   "mean_score": 0.943,
+   "min_score": 0.601,
+   "n_clips": 115,
+   "majority_label": "RESTING"
+  },
+  "119": {
+   "n_frames": 519,
+   "span_first": 5485,
+   "span_last": 6007,
+   "span_len": 523,
+   "center_range_x": 106.4,
+   "center_range_y": 69.0,
+   "mean_score": 0.958,
+   "min_score": 0.66,
+   "n_clips": 63,
+   "majority_label": "RESTING"
+  },
+  "120": {
+   "n_frames": 269,
+   "span_first": 5739,
+   "span_last": 6007,
+   "span_len": 269,
+   "center_range_x": 70.2,
+   "center_range_y": 27.7,
+   "mean_score": 0.872,
+   "min_score": 0.625,
+   "n_clips": 32,
+   "majority_label": "RESTING"
+  },
+  "121": {
+   "n_frames": 21,
+   "span_first": 5978,
+   "span_last": 6007,
+   "span_len": 30,
+   "center_range_x": 47.7,
+   "center_range_y": 15.3,
+   "mean_score": 0.714,
+   "min_score": 0.622,
+   "n_clips": 0,
+   "majority_label": null
+  }
+ },
+ "fp_suspects_static": [],
+ "fp_suspect_boxes": 0,
+ "fp_suspect_clips": 0,
+ "ground_truth": {
+  "n_gt_tracks": 24,
+  "gt_tracks_matched": [
+   3302,
+   3303,
+   3304,
+   3305,
+   3306,
+   3307,
+   3308,
+   3309,
+   3310,
+   3311,
+   3312,
+   3313,
+   3314,
+   3315,
+   3316,
+   3317,
+   3318,
+   3319,
+   3320,
+   3321,
+   3322,
+   3323,
+   3324,
+   3325
+  ],
+  "n_gt_tracks_matched": 24,
+  "our_ids_per_gt_track": {
+   "3302": [
+    4
+   ],
+   "3304": [
+    3
+   ],
+   "3305": [
+    6
+   ],
+   "3306": [
+    7
+   ],
+   "3307": [
+    5
+   ],
+   "3308": [
+    2,
+    30,
+    31,
+    32,
+    54
+   ],
+   "3310": [
+    15
+   ],
+   "3311": [
+    1,
+    44
+   ],
+   "3313": [
+    28,
+    75,
+    76,
+    78,
+    79,
+    85,
+    86,
+    88,
+    89,
+    101,
+    106,
+    114
+   ],
+   "3314": [
+    74
+   ],
+   "3315": [
+    8
+   ],
+   "3316": [
+    46,
+    56
+   ],
+   "3321": [
+    107
+   ],
+   "3324": [
+    120
+   ],
+   "3325": [
+    119
+   ]
+  },
+  "our_ids_with_no_gt_match": [
+   9,
+   10,
+   11,
+   14,
+   18,
+   37,
+   40,
+   41,
+   52,
+   57,
+   59,
+   63,
+   95,
+   96,
+   99,
+   100,
+   103,
+   110,
+   111,
+   121
+  ],
+  "matches": {
+   "1": {
+    "3311": 124,
+    "3312": 3
+   },
+   "2": {
+    "3308": 77
+   },
+   "3": {
+    "3304": 814,
+    "3309": 1,
+    "3314": 274
+   },
+   "4": {
+    "3302": 1881,
+    "3320": 2
+   },
+   "5": {
+    "3307": 302
+   },
+   "6": {
+    "3305": 1036,
+    "3317": 347,
+    "3321": 1,
+    "3323": 486
+   },
+   "7": {
+    "3306": 656,
+    "3318": 50,
+    "3319": 361
+   },
+   "8": {
+    "3303": 150,
+    "3309": 274,
+    "3315": 731
+   },
+   "9": {},
+   "10": {},
+   "11": {},
+   "14": {},
+   "15": {
+    "3310": 230,
+    "3320": 172
+   },
+   "18": {},
+   "28": {
+    "3308": 375,
+    "3313": 651
+   },
+   "30": {
+    "3308": 6
+   },
+   "31": {
+    "3308": 15
+   },
+   "32": {
+    "3308": 2
+   },
+   "37": {},
+   "40": {},
+   "41": {},
+   "44": {
+    "3311": 3
+   },
+   "46": {
+    "3311": 5,
+    "3312": 280,
+    "3316": 322,
+    "3321": 1
+   },
+   "52": {},
+   "54": {
+    "3308": 35
+   },
+   "56": {
+    "3316": 8
+   },
+   "57": {},
+   "59": {},
+   "63": {},
+   "74": {
+    "3314": 3
+   },
+   "75": {
+    "3313": 20
+   },
+   "76": {
+    "3313": 3
+   },
+   "78": {
+    "3313": 139
+   },
+   "79": {
+    "3313": 6
+   },
+   "85": {
+    "3313": 26
+   },
+   "86": {
+    "3313": 2
+   },
+   "88": {
+    "3313": 10
+   },
+   "89": {
+    "3313": 3
+   },
+   "95": {},
+   "96": {},
+   "99": {},
+   "100": {},
+   "101": {
+    "3313": 75
+   },
+   "103": {},
+   "106": {
+    "3320": 3,
+    "3313": 52
+   },
+   "107": {
+    "3321": 155
+   },
+   "110": {},
+   "111": {},
+   "114": {
+    "3313": 298
+   },
+   "119": {
+    "3322": 74,
+    "3325": 77
+   },
+   "120": {
+    "3324": 225
+   },
+   "121": {}
+  },
+  "gt_action_distribution": {
+   "Inactive": 13008,
+   "Eat": 1659,
+   "Panting": 5464,
+   "Preening": 1208,
+   "Drink": 2040,
+   "Explor_Forag": 225,
+   "Stretching": 180,
+   "Sneezing": 93,
+   "Short_Leg_Move": 731,
+   "Sleeping": 1021,
+   "Video_Problem": 192,
+   "Out_Of_Sight": 340,
+   "Locomotion": 311,
+   "Flapping": 37,
+   "Feather_Pecking": 94,
+   "": 230,
+   "Head_Shaking": 12,
+   "Swallowing": 28,
+   "Defecating": 49
+  }
+ },
+ "video": "Big Broiler 080 (setup 2, angled view ~45 deg, UGent/DECIDE, AGPL-3.0)",
+ "video_file": "topview_test/oblique_bigbroiler_080_720p_10fps.mp4 (1280x720, 10 fps, 6008 frame, 600,8 dtk)",
+ "tracking_raw": {
+  "n_unique_ids": 88,
+  "n_boxes_total": 61849,
+  "median_track_span_frames": 26.5,
+  "note": "Run 1 mati SIGTERM di frame ~1900 (checkpoint 1800 frame); resume memulihkan state tracker (frame_id=1800) sehingga ID berlanjut tanpa putus \u2014 TIDAK perlu fix_seam/stitching (berbeda dengan 091)."
+ },
+ "static_filter_auto": {
+  "min_displacement_px": 10.0,
+  "n_tracks_before": 88,
+  "n_tracks_kept": 52,
+  "n_tracks_dropped": 36,
+  "dropped_track_ids": [
+   13,
+   16,
+   17,
+   19,
+   20,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   29,
+   35,
+   36,
+   38,
+   39,
+   43,
+   50,
+   51,
+   53,
+   55,
+   58,
+   60,
+   66,
+   67,
+   68,
+   69,
+   70,
+   72,
+   73,
+   80,
+   81,
+   87,
+   109,
+   117,
+   118
+  ],
+  "n_boxes_before": 61849,
+  "n_boxes_after": 60541,
+  "max_displacement_dropped_px": 9.9,
+  "min_displacement_kept_px": 11.9,
+  "note": "Tidak ada ayam asli terbuang (celah 9,9 -> 11,9 px)."
+ },
+ "static_filter_manual_fp": {
+  "track_id": 40,
+  "object": "silo drinker putih",
+  "n_frames": 3998,
+  "span": "2006-6007",
+  "mean_score": 0.92,
+  "center_range_px": [
+   28.8,
+   51.3
+  ],
+  "note": "Lolos filter otomatis 10 px karena oklusi membuat pusat kotaknya bergoyang (lompatan antar-frame maks 34,7 px). Terverifikasi visual frame 3000/5700. Klipnya (496: 458 RESTING, 38 INGESTIVE) dibuang pada tahap filter prediksi. Detail: fp_removal_080.json."
+ },
+ "white_box_frames_after_nofp_removal": 257,
+ "white_box_note": "Kotak putih 4.255 di summary (dari tracks terfilter, masih berisi ID 40): 3.998 di antaranya kotak silo; sisanya 257 box-frame (0,45% dari 56.543) milik fragmen ayam tanpa klip.",
+ "inference_runs": {
+  "total_clips_windows": 7432,
+  "n_tracks_input_filtered": 52,
+  "runs": "run 1 mati SIGTERM di klip 784 (frame 600); resume 1: 784->3240; resume 2: 3240->5776; resume 3: 5776->7432. Resume dari JSONL tanpa klip hilang/duplikat (7.432 pasangan (track_id, start_frame) unik). Total waktu inference ~5,4 jam.",
+  "time_tracking": "run 1 ~36 mnt (1900 frame) + resume 84 mnt (4208 frame, 1,20 dtk/frame)",
+  "time_render": "~5 mnt (6008 frame, 56.543 kotak)"
+ },
+ "gt_comparison_files": [
+  "gt_comparison.json",
+  "gt_comparison.md",
+  "gt_comparison_iou05.json",
+  "gt_comparison_explor_ing.json"
+ ]
+}
