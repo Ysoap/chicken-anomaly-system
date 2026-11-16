@@ -759,7 +759,17 @@ test-set — INGESTIVE ketukar RESTING 86,57% (top-view 091) / 71,23%
 melihat video kandang beneran; fine-tune lanjutan ini mengajarinya
 langsung dari video Big Broiler.
 
-### Dataset: BigBroiler-Finetune.zip (Drive: PBL-Ayam/dataset/, 554.110.228 byte, md5 28a3308ee3b307ac7c0552a3f095a4e3)
+### Dataset: BigBroiler-Finetune.zip (Drive: PBL-Ayam/dataset/, 2.590.811.233 byte, md5 37d836fefbaee1daf666706ccad88cc4) — v2, 16 Nov 2026
+
+> **Di Drive, zip v2 disimpan sebagai 13 part @200 MB**
+> (`BigBroiler-Finetune.zip.part-aa` s.d. `.part-am`) — upload zip utuh
+> gagal 3x di CLI (HTTP 500, http2 stream error, multipart; gagal juga
+> di file tes 1 GB, berhasil di file tes 200 MB). Notebook mengunduh
+> ke-13 part, memverifikasi tiap part (ukuran + md5), menggabungkannya
+> dengan `cat`, lalu memverifikasi zip utuh (ukuran + md5 di atas).
+> Per-part md5 ada di cell konfigurasi notebook + `parts.md5` (lokal).
+> Zip v1 lama di Drive di-rename jadi `BigBroiler-Finetune-v1.zip`
+> (554.110.228 byte, md5 28a3308ee3b307ac7c0552a3f095a4e3) sebagai backup.
 
 - Klip 16 frame @224x224, crop persegi mengikuti kotak GT tiap frame
   (margin 1,3 — sama seperti `clip_builder.py`), label = suara
@@ -773,30 +783,67 @@ langsung dari video Big Broiler.
   | 091 (top-view) | 734 | 138 | 1.271 | 2.143 |
   | 080 (miring) | 79 | 33 | 451 | 563 |
   | 075 (miring) | 4 | 86 | 118 | 208 |
+  | 067 (miring, 39 hr) | 784 | 352 | 1.213 | 2.349 |
+  | 057 (miring, 29 hr) | 611 | 372 | 2.511 | 3.494 |
+  | 060 (miring, 29 hr) | 579 | 86 | 1.725 | 2.390 |
+  | 064 (miring, 34 hr) | 501 | 141 | 1.957 | 2.599 |
 - Pemetaan aksi GT → 3 kelas = `compare_gt.ACTION_MAP` persis
   (Explor_Forag → ACTIVE). Perluasan HANYA untuk 5 aksi yang tidak ada
   di CSV 091: Sleeping → RESTING, Flapping → ACTIVE, Head_Shaking →
   RESTING, Short_Leg_Move → ACTIVE, Swallowing → INGESTIVE (mengikuti
   logika `label_mapping.py`; angka 091 tidak berubah). Tanpa suara:
   Sneezing, Defecating, Video_Problem, Other.
+- **Perluasan v2 (16 Nov 2026) — INGESTIVE train 435 → 2.662 (6,1x):**
+  user bertanya kenapa sampel kelas lemah tidak dibuat lebih banyak.
+  Jawabannya: sampel datang dari kejadian beneran di video — 075
+  praktis tidak ada adegan makan (4 klip), 080 sedikit (79). Jadi
+  digali video setup-2 lain: semua 32 CSV GT diunduh dari zip dataset,
+  dihitung klip usable-nya dengan logika jendela yang sama persis
+  (`topview_test/bb_rank.py`), dipilih 4 teratas (067/057/060/064 —
+  INGESTIVE 784/611/579/501, GT coverage 100%). Video dipilih
+  berdasarkan CSV dulu, baru videonya diunduh (range-download, 4 file
+  ~580–646 MB, CRC32 cocok), dibuat versi 720p 10fps, sudut miring
+  diverifikasi dari frame contoh + deteksi Stage 1 cepat (067: 15/12/12
+  box; 057: 12/11/13; 060: 14/14/10; 064: 10/11/11 — ada FP silo
+  drinker di beberapa frame, tidak menghalangi karena klip latih
+  dipotong dari kotak GT, bukan deteksi). 066 TIDAK dipilih (ING cuma
+  56 — GT-nya rapat tapi makannya sedikit; Eat 9,3%-nya ternyata kalah
+  dari 067 yang E+D-nya 24,6%).
 - **075 TIDAK bisa jadi test set utama**: cuma 208 klip usable dan
   INGESTIVE-nya cuma 4 (di 075 praktis tidak ada adegan makan — GT-nya
   didominasi Explor_Forag + Inactive). Rencana awal (075 hold-out
   penuh) diganti fallback yang sudah direncanakan: split temporal.
 - Split (seed 42): train/val dari 091 paruh-1 (start < 3000) + 080
-  semua; val 10% stratified per kelas (169 klip); **test utama = 091
-  paruh-2 (1.011 klip: ING 330 / ACT 63 / REST 618)**; **test kedua
-  = 075 seluruhnya (208 klip)** sebagai cek generalisasi video tak
-  terlihat.
-- Imbalance: train mentah ING 435 / ACT 97 / REST 994 → **RESTING
-  train di-downsample ke 435** (jumlah INGESTIVE), train akhir 967
-  klip. Alasan: paling gampang + andal; `train.py` tidak dukung
-  class-weighted loss tanpa ubah kode; ACTIVE dibiarkan (recall 95% di
-  test-set ChickenAct). Val/test TIDAK di-downsample (metrik jujur).
-  559 klip RESTING train yang dibuang tidak masuk manifest.
-- Verifikasi: semua 37.776 file frame ada (0 hilang); 8 contact sheet
+  + 067 + 057 + 060 + 064 semua; val 10% stratified per kelas
+  (1.253 klip: ING 296 / ACT 106 / REST 851); **test utama = 091
+  paruh-2 (1.011 klip: ING 330 / ACT 63 / REST 618) — TIDAK BERUBAH
+  dari v1 (clip-id + label terverifikasi identik)**; **test kedua
+  = 075 seluruhnya (208 klip) — TIDAK BERUBAH dari v1** sebagai cek
+  generalisasi video tak terlihat.
+- Imbalance: train mentah ING 2.662 / ACT 953 / REST 7.659 →
+  **RESTING train di-downsample ke 2.662** (jumlah INGESTIVE), train
+  akhir 6.277 klip. Alasan: paling gampang + andal; `train.py` tidak
+  dukung class-weighted loss tanpa ubah kode; ACTIVE dibiarkan (recall
+  95% di test-set ChickenAct). Val/test TIDAK di-downsample (metrik
+  jujur). 4.997 klip RESTING train yang dibuang tidak masuk manifest.
+- Verifikasi: semua 139.984 file frame ada (0 hilang); 6 contact sheet
   dicek visual — crop nempel di ayam yang benar, label masuk akal
-  (termasuk INGESTIVE top-view 091: ayam menunduk di drinker).
+  (INGESTIVE 057: ayam menunduk makan di trough; ACTIVE 057: ayam
+  berjalan; RESTING 057: ayam duduk diam).
+- Dataset v1 (2.355 klip, train 967) digantikan v2 ini. Rencana awal
+  (upload zip v2 sebagai revisi baru file yang sama di Drive) GAGAL:
+  upload multipart CLI gagal 3x (HTTP 500, http2 stream error) di file
+  2,6 GB — file tes 1 GB juga gagal, file tes 200 MB berhasil. Solusi:
+  zip di-split jadi 13 part @200 MB (`split -b 200M`, md5 per part
+  terverifikasi di Drive), notebook di-update ke skema part (unduh 13
+  part → verifikasi tiap part → `cat` → verifikasi zip utuh) dan
+  di-upload sebagai revisi baru (file id notebook sama). Zip v1 di
+  Drive di-rename jadi `BigBroiler-Finetune-v1.zip` (backup, file id
+  sama). Validasi skema part: cell 2+3 notebook dijalankan lokal
+  dengan 13 part — gabungan = 2.590.811.233 byte, md5
+  37d836fefbaee1daf666706ccad88cc4, cocok dengan zip v2. Manifest +
+  dataset_info v1 tersimpan di `bigbroiler_finetune_v1_backup/`
+  (lokal, bukan di repo).
 
 ### Notebook: notebooks/Colab-BigBroiler-Finetune.ipynb
 
@@ -815,8 +862,9 @@ langsung dari video Big Broiler.
   Drive; smoke test `train.py` (CPU VM, 6 train + 3 val klip, 1 epoch)
   lolos end-to-end (load model → train → eval → `best/` +
   `train_metrics.json`).
-- Perkiraan waktu training: ~61 step/epoch, 4 epoch ~244 step,
-  kira-kira 15–30 menit di T4.
+- Perkiraan waktu training: ~393 step/epoch, 4 epoch ~1.570 step,
+  kira-kira 30–45 menit di T4. Unduh 13 part + gabung + verifikasi di
+  awal menambah kira-kira 5–10 menit (sekali per sesi Colab).
 
 ### Cara jalanin (user, di Colab)
 
@@ -842,8 +890,9 @@ dilaporkan apa adanya.
   lihat di atas); **model hasil fine-tune** — TERSIMPAN di `models/`
   (Git LFS, `model.safetensors` 87 MB + `config.json`).
 - **Fine-tune Big Broiler (lanjutan)** — PERSIAPAN SELESAI 16 Nov
-  (dataset 2.355 klip + notebook, lihat di atas); **training BELUM
-  dijalankan** — menunggu user Run All di Colab.
+  (dataset v2: 8.749 klip, train 6.277 — INGESTIVE train 2.662, naik
+  6,1x dari v1 — + notebook v2 skema 13 part, lihat di atas);
+  **training BELUM dijalankan** — menunggu user Run All di Colab.
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —

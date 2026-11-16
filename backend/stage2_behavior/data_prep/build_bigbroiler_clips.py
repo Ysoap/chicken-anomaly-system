@@ -18,11 +18,12 @@ ke-16 frame harus bersuara (tanpa Out_Of_Sight / tanpa anotasi);
 seri suara mayoritas -> klip dibuang.
 
 Split (seed 42):
-- 091 paruh-1 (start < 3000) + 080 semua -> pool train/val;
-  val = 10% stratified per kelas; sisanya train.
+- 091 paruh-1 (start < 3000) + 080 semua + 067/057/060/064 semua
+  -> pool train/val; val = 10% stratified per kelas; sisanya train.
 - 091 paruh-2 (start >= 3000) -> split "test" (uji utama, GT rapat).
 - 075 semua -> split "test075" (uji generalisasi video tak terlihat;
   manifest terpisah frames_manifest_test075.json, split "test").
+  075 dan test utama TIDAK BERUBAH saat perluasan 16 Nov 2026.
 - Balancing TRAIN saja: RESTING di-downsample ke jumlah INGESTIVE
   train (ACTIVE dibiarkan apa adanya — sudah dikenali baik, recall
   95% di test-set ChickenAct). Val/test TIDAK di-downsample (metrik
@@ -90,6 +91,18 @@ VIDEOS = [
      "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_080_2_40_2688_024_0_10.csv", 6008),
     ("075", "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_075_720p_10fps.mp4",
      "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_075_2_38_1920_026_0_10.csv", 6066),
+    # Ditambah 16 Nov 2026 (perluasan INGESTIVE): 4 video setup-2 sudut
+    # miring dengan klip INGESTIVE terbanyak + GT rapat (100% coverage).
+    # Ranking dari bb_rank.py (aturan jendela sama persis): 067 ING 784,
+    # 057 ING 611, 060 ING 579, 064 ING 501. Semua masuk pool train/val.
+    ("067", "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_067_720p_10fps.mp4",
+     "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_067_2_39_2688_061_0_10.csv", 6008),
+    ("057", "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_057_720p_10fps.mp4",
+     "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_057_2_29_2688_041_0_10.csv", 6005),
+    ("060", "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_060_720p_10fps.mp4",
+     "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_060_2_29_2688_029_0_10.csv", 6008),
+    ("064", "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_064_720p_10fps.mp4",
+     "/home/hatch/workspace/pbl-ayam-obs-rtsp/topview_test/oblique_bigbroiler_064_2_34_2688_035_0_10.csv", 6001),
 ]
 
 STRIDE = 16
@@ -366,7 +379,7 @@ def main():
               f"(video {m['video']}, votes {m['gt_votes']})")
 
     info = {
-        "dataset": "BigBroiler-Finetune (091 + 080 + 075)",
+        "dataset": "BigBroiler-Finetune (091 + 080 + 075 + 067 + 057 + 060 + 064)",
         "seed": SEED, "stride": STRIDE, "clip_len": CLIP_LEN, "margin": MARGIN,
         "frame_mapping": "frame_gt = round(frame_10fps * 2.5)",
         "label_rule": "suara mayoritas aksi GT dalam 16 frame; STRICT: ke-16 frame harus bersuara; seri dibuang",
@@ -379,10 +392,11 @@ def main():
             "alasan": "hanya untuk aksi yang tidak ada di CSV 091; mengikuti logika label_mapping.py ChickenAct; angka 091 tidak berubah",
         },
         "split_rules": {
-            "train_val_pool": "091 paruh-1 (start<3000) + 080 semua",
+            "train_val_pool": "091 paruh-1 (start<3000) + 080 + 067 + 057 + 060 + 064 semua",
             "val": "10% stratified per kelas dari pool (seed 42)",
-            "test": "091 paruh-2 (start>=3000)",
-            "test075": "075 seluruhnya (video tak terlihat); manifest terpisah",
+            "test": "091 paruh-2 (start>=3000) — TIDAK BERUBAH dari v1",
+            "test075": "075 seluruhnya (video tak terlihat); manifest terpisah — TIDAK BERUBAH dari v1",
+            "perluasan_v2": "16 Nov 2026: tambah 067/057/060/064 (ranking bb_rank.py: ING 784/611/579/501, GT coverage 100%) khusus untuk menaikkan INGESTIVE train; video baru masuk pool train/val saja",
         },
         "imbalance": {
             "cara": "downsample RESTING train ke jumlah INGESTIVE train (seed 42)",
