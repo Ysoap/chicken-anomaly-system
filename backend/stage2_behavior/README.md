@@ -1025,6 +1025,62 @@ IoU ≥ 0,3, label GT suara mayoritas) + `analyze_gt_halves.py`
   ACTIVE masih terlemah (recall 54,14% video / 34,92% test klip)
   dan model sedikit over-prediksi INGESTIVE di RESTING (6,03%).
 
+### Uji video 080 dengan model fine-tune — SELESAI 17 Nov 2026 (VM, CPU)
+
+Prosedur SAMA seperti pipeline 080 baseline, hanya checkpoint diganti
+`models` (Stage 2) → `models_finetune`; tracking Stage 1 TIDAK
+diulang — inference jalan langsung pada
+`results/infer_bigbroiler080/tracks_bigbroiler080.filtered.json`
+(52 ID, 7.432 klip, termasuk silo ID 40), lalu klip silo dibuang
+pada tahap filter prediksi → 6.936 klip (26 track). Script
+`infer_video_batched.py` (stride 8, margin 1,3, batch 8) +
+`filter_static_tracks.filter_predictions` + `render_annotated_video.py`
+(pakai `tracks_bigbroiler080.filtered_nofp.json`, 51 ID, silo tanpa
+label) + `compare_gt.py` (metode sama: IoU ≥ 0,3, `--force` seperti
+baseline). File: `results/infer_bigbroiler080_finetune/`
+(`track_predictions.json`, `track_predictions_filtered.json`,
+`clip_results.jsonl`, `gt_comparison.json`/`.md` + 2 file sensitivitas,
+`bigbroiler080_annotated_filtered.mp4` — 6.008 frame, 56.543 kotak,
+jumlah sama persis dengan baseline karena track-nya sama).
+
+- **Akurasi GT: 75,81% (1.072/1.414 klip tercocokkan, coverage 20,4%)**,
+  dari baseline 80,91% (**−5,10 poin**). Confusion (baris = GT, kolom
+  = prediksi): INGESTIVE [160, 26, 26] n=212; ACTIVE [0, 36, 14] n=50;
+  RESTING [113, 163, 876] n=1.152.
+- Per kelas: INGESTIVE recall **75,47%** (dari 28,77%, +46,70),
+  precision 58,61%, F1 0,66 (dari 0,36); ACTIVE recall 72,00% (dari
+  10,00%), precision 16,00%, F1 0,26 (dari 0,14); RESTING recall
+  76,04% (dari 93,58%), precision 95,63%, F1 0,85 (dari 0,89).
+  Macro-F1 0,4656 → **0,5896** (+0,1240).
+- **INGESTIVE → RESTING tinggal 12,26%** (26/212), dari 71,23%. Tapi
+  RESTING → ACTIVE melonjak 1,30% → 14,15% (163/1.152) — precision
+  ACTIVE cuma 16,00%.
+- **CAVEAT: 080 adalah data latih fine-tune** (klip 080 masuk train)
+  — angka 75,81% TIDAK BOLEH disajikan sebagai bukti perbaikan vs
+  baseline 80,91% (baseline diukur saat 080 belum dilihat model).
+  Bukti perbaikan yang jujur hanya dari 091 paruh-2 (86,31%, +21,18
+  poin). Yang bisa dibaca dari 080: fine-tune menggeser bias model
+  dari "hampir semua RESTING" (baseline: 6.714/7.432 klip RESTING)
+  menjadi "terlalu sering INGESTIVE/ACTIVE" (fine-tune:
+  5.040/902/1.490) — recall kelas minoritas naik besar dengan harga
+  over-prediksi di kelas mayoritas.
+- Uji sensitivitas: IoU 0,5 → 76,12%; Explor_Forag → INGESTIVE →
+  75,46% — kesimpulan tidak berubah.
+- Verifikasi visual frame 792/3000/5700: kotak + label menempel di
+  ayam yang benar; label INGESTIVE masuk akal (ayam menunduk di
+  feeder/drinker/trough); silo tanpa label; over-prediksi ACTIVE
+  terlihat (frame 5700: ID 6/3/119 ACTIVE pada ayam berbaring).
+- Jalan: ~6 jam CPU (7.432 klip, ~0,35 klip/dtk) — runtime VM restart
+  1× (17 Nov ~10:11 WIB), resume dari `clip_results.jsonl` bekerja
+  (2.192 klip baru di run kedua, tanpa hilang/duplikat); monitor
+  tidak me-restart sia-sia (cabang WAIT saat render/compare jalan
+  bekerja — tidak ada render ganda seperti di 091).
+- **Kesimpulan: di 080, fine-tune memperbaiki recall kelas lemah tapi
+  menurunkan akurasi keseluruhan** — efek netto tergantung distribusi
+  kelas lapangan. Untuk Stage 3 perlu kalibrasi (ambang confidence per
+  kelas / prior) sebelum aturan durasi dijalankan, karena durasi ACTIVE
+  akan jauh kehitung lebih (853 vs 47 klip) dan sebagian besarnya salah.
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
@@ -1040,8 +1096,12 @@ IoU ≥ 0,3, label GT suara mayoritas) + `analyze_gt_halves.py`
   Model di `models_finetune/` (Git LFS). **Uji video 091 dengan
   model fine-tune SELESAI 17 Nov** (pipeline penuh, 6.119 klip:
   akurasi lapangan 87,11%, paruh-2 jujur 86,31%, recall INGESTIVE
-  92,47% — lihat di atas); uji video 080 dengan model fine-tune
-  dikerjakan terpisah (subagent lain, menunggu hasil 091).
+  92,47% — lihat di atas); **uji video 080 dengan model fine-tune
+  SELESAI 17 Nov** (pipeline penuh, 7.432 klip → 6.936 sesudah buang
+  silo: akurasi GT 75,81%, TURUN 5,10 poin dari baseline 80,91% —
+  recall INGESTIVE 75,47% / ACTIVE 72,00% naik besar, tapi RESTING
+  recall turun ke 76,04%; 080 adalah data latih jadi angka ini bukan
+  ukuran generalisasi — lihat di atas).
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —

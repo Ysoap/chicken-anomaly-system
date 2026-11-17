@@ -6,3 +6,4 @@
 backend/stage2_behavior/results/infer_bigbroiler091/*.mp4 filter=lfs diff=lfs merge=lfs -text
 backend/stage2_behavior/results/infer_bigbroiler080/*.mp4 filter=lfs diff=lfs merge=lfs -text
 backend/stage2_behavior/results/infer_bigbroiler091_finetune/*.mp4 filter=lfs diff=lfs merge=lfs -text
+backend/stage2_behavior/results/infer_bigbroiler080_finetune/*.mp4 filter=lfs diff=lfs merge=lfs -text
