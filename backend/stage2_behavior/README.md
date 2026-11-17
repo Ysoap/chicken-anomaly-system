@@ -962,8 +962,11 @@ Dua catatan jujur: (1) ACTIVE masih lemah (recall 34,92% di test
 khusus, bukan sekadar tambah epoch; (2) di video baru (075) model
 over-prediksi INGESTIVE — perlu kalibrasi/ambang sebelum dipakai
 langsung di Stage 3. Angka demo yang jujur sekarang: test-set
-91,99%, lapangan top-view 90,50% (fine-tune, klip test), lapangan
-miring 80,91% (model lama — belum diukur ulang dengan model fine-tune).
+91,99%; lapangan top-view 87,11% (video 091 fine-tune; paruh-2 jujur
+86,31%) / 90,50% (klip test); lapangan miring HELD-OUT 62,84% (video
+075 fine-tune — ukuran generalisasi yang valid, coverage 7%, n=479);
+lapangan miring 75,81% (video 080 fine-tune — TERKONTAMINASI data
+latih, bukan ukuran generalisasi).
 
 ### Uji video 091 dengan model fine-tune — SELESAI 17 Nov 2026 (VM, CPU)
 
@@ -1081,6 +1084,76 @@ jumlah sama persis dengan baseline karena track-nya sama).
   kelas / prior) sebelum aturan durasi dijalankan, karena durasi ACTIVE
   akan jauh kehitung lebih (853 vs 47 klip) dan sebagian besarnya salah.
 
+### Uji video 075 dengan model fine-tune — SELESAI 17 Nov 2026 (VM, CPU)
+
+**075 adalah video HELD-OUT** (tidak dipakai di training fine-tune v2:
+train 091, 080, 067, 057, 060, 064) — jadi angka ini ukuran
+generalisasi yang valid, tidak seperti 080 yang terkontaminasi. Ini
+pipeline video penuh 075 PERTAMA (belum pernah ada sebelumnya):
+tracking Stage 1 dikerjakan dulu (`run_075_track.sh`: 6.066 frame,
+61.878 box, 100 ID mentah → 62 ID sesudah filter statis 10 px),
+lalu inference `models_finetune` (`run_075_finetune.sh`: stride 8,
+margin 1,3) 7.325 klip (62 ID) → 6.851 klip (43 track) sesudah buang
+drinker. File: `results/infer_bigbroiler075_finetune/`
+(`track_predictions.json`, `track_predictions_filtered.json`,
+`clip_results.jsonl`, `gt_comparison.json`/`.md` + 2 file sensitivitas,
+`bigbroiler075_annotated_filtered.mp4` — 6.066 frame, 57.397 kotak,
+`fp_removal_075.json`).
+
+- **Drinker lolos filter statis — dibuang manual seperti silo 080.**
+  ID 33 (frame 685–4081, 3.395 box, skor 0,91) + ID 112 (4201–4630,
+  428 box, skor 0,92) adalah SATU drinker lonceng putih yang sama
+  (terverifikasi visual frame 2000/4400; kotak median 130×216 px).
+  Lolos ambang 10 px karena pusat kotaknya bergoyang saat ayam lewat
+  di depan (ID 33: 11,0 px — lolos tipis 1 px; ID 112: 32,6 px).
+  Mekanisme sama seperti silo ID 40 di 080. Total 474 klip drinker
+  dibuang (422 + 52). Track lain di dekat drinker (ID 47/37/77/dll)
+  terverifikasi ayam asli dan TIDAK dibuang.
+- **Akurasi GT: 62,84% (301/479 klip tercocokkan, coverage cuma 7,0%)**
+  — jauh di bawah 091 (87,11%) dan 080 (75,81%). Confusion (baris =
+  GT, kolom = prediksi): INGESTIVE [13, 0, 1] n=14; ACTIVE [33, 90,
+  56] n=179; RESTING [55, 33, 198] n=286.
+- Per kelas: INGESTIVE recall 92,86% (13/14) tapi precision **12,87%**
+  (model memprediksi INGESTIVE 101×, cuma 13 benar); ACTIVE recall
+  50,28%, precision 73,17%, F1 0,60; RESTING recall 69,23%,
+  precision 77,65%, F1 0,73. Macro-F1 0,52.
+- **Over-prediksi INGESTIVE berlanjut di video baru**: RESTING →
+  INGESTIVE 19,23% (55/286), ACTIVE → INGESTIVE 18,44% (33/179) —
+  pola yang SAMA dengan evaluasi klip test-075 (67,31%; precision
+  INGESTIVE 10,26%). Sebaliknya INGESTIVE → RESTING tinggal 7,14%.
+- **Coverage 7,0% dan INGESTIVE GT cuma 14 klip — angka ini berisik.**
+  GT 075 hanya menganotasi ~1,46 kotak/frame dari ~10 ayam, frame
+  beranotasi cuma 46,3%; tidak ada aksi `Eat` sama sekali (INGESTIVE
+  di sini hanya `Drink`). Selain itu 16,8% baris GT (`Sleeping` 887,
+  `Short_Leg_Move` 316, `Other` 192, `Video_Problem` 16,
+  `Out_Of_Sight` 305) tidak dipetakan `compare_gt.py` (ACTION_MAP
+  sama seperti 091/080) sehingga tidak pernah tercocokkan — prosedur
+  tidak diubah supaya tetap sebanding.
+- **Penyelarasan frame TERVERIFIKASI** (bukan `--force` seperti 080):
+  m0 = 7,2 px (n=50), offset ±25 frame jelas lebih buruk.
+- Uji sensitivitas: IoU 0,5 → 63,62% (kesimpulan tidak berubah);
+  Explor_Forag → INGESTIVE → 51,77% (TURUN 11 poin — model
+  memperlakukan Explor_Forag lebih seperti ACTIVE: 83 dari 179 klip
+  Explor_Forag diprediksi ACTIVE).
+- Verifikasi visual frame 600/3000/5000: kotak + label menempel di
+  ayam yang benar; drinker TANPA label di ketiga frame; ID 24
+  INGESTIVE 0,99 pada ayam menunduk di drinker/trough — masuk akal;
+  over-prediksi ACTIVE terlihat (frame 5000: ID 116 ACTIVE 0,55 pada
+  ayam yang tampak berbaring).
+- Jalan: tracking ~2 jam (6.066 frame, ~1,2 dtk/frame; VM restart 1×
+  di tengah tracking, resume dari checkpoint frame 4.800 bekerja) +
+  inference ~6 jam wall-clock (7.325 klip, ~0,36 klip/dtk; VM restart
+  3× selama inference, resume dari `clip_results.jsonl` bekerja
+  semua — 1.864 → 4.360 → 6.944 klip terselamatkan tanpa
+  hilang/duplikat); render + banding GT ~25 menit.
+- **Kesimpulan: fine-tune TIDAK menggeneralisasi sebaik di 091
+  paruh-2.** Di top-view tak terlihat akurasi naik +21,18 poin ke
+  86,31%; di 075 miring tak terlihat akurasi cuma 62,84% — konsisten
+  dengan test-075 67,31%. Klaim perbaikan harus dibatasi ke top-view
+  sampai ada bukti miring yang lebih kuat. Untuk Stage 3 perlu
+  kalibrasi sebelum aturan durasi dijalankan (durasi INGESTIVE akan
+  jauh kehitung lebih di video baru dan sebagian besarnya salah).
+
 ## Yang belum dikerjakan
 
 - **Fine-tuning VideoMAE** — SELESAI 11 Nov 00:15 WIB (10 epoch,
@@ -1101,7 +1174,13 @@ jumlah sama persis dengan baseline karena track-nya sama).
   silo: akurasi GT 75,81%, TURUN 5,10 poin dari baseline 80,91% —
   recall INGESTIVE 75,47% / ACTIVE 72,00% naik besar, tapi RESTING
   recall turun ke 76,04%; 080 adalah data latih jadi angka ini bukan
-  ukuran generalisasi — lihat di atas).
+  ukuran generalisasi — lihat di atas). **Uji video 075 dengan model
+  fine-tune SELESAI 17 Nov** (video HELD-OUT, pipeline penuh pertama:
+  tracking 6.066 frame → 62 ID; 7.325 klip → 6.851 sesudah buang
+  drinker ID 33+112: akurasi GT 62,84% (301/479, coverage cuma 7,0%),
+  INGESTIVE recall 92,86% tapi precision 12,87% — over-prediksi
+  INGESTIVE berlanjut; penyelarasan frame TERVERIFIKASI — lihat di
+  atas).
 - **Uji `inference.py` end-to-end di video sample** — SELESAI 11 Nov
   (lihat di atas: 120 klip, 43 track, video berlabel
   `results/fCam16_annotated.mp4`); **stitching fragmen track** —
